@@ -33,6 +33,9 @@
       "@thryve-disseminate/home/ui": ["libs/home/ui/src/index.ts"],
       "@thryve-disseminate/login/feature": ["libs/login/feature/src/index.ts"],
       "@thryve-disseminate/login/ui": ["libs/login/ui/src/index.ts"],
+      "@thryve-disseminate/section-widget": [
+        "libs/section-widget/src/index.ts"
+      ],
       "@thryve-disseminate/shared/feature": [
         "libs/shared/feature/src/index.ts"
       ],

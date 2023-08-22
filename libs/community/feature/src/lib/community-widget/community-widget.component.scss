@@ -1,0 +1,48 @@
+.section-widget{
+    border: 1px solid grayscale($color: #b1abab);
+    border-radius: 25px;
+    width: 300px;
+    height: fit-content;
+    background-color: #fff;
+    margin: 5px;
+   
+     .section-title{
+      margin: 10px;
+      font-weight: 500 !important;
+      color: black;
+     }
+     .section-content{
+       margin: 15px;
+       display: flex;
+           .community-information{
+               margin-bottom: 5px;
+               .type{
+                color: grayscale($color: #646363);
+                text-transform: uppercase;
+               }
+               .name{
+                font-weight: 500;
+                color: #01637c;
+               }
+           }
+           img{
+               width: 60px;
+               height: 60px;
+               border: 1px solid grayscale($color: #b1abab);
+               margin: 3px;
+           }
+           
+     }
+     button{
+        background-color: #fff;
+        color: #01637c;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        border-radius: 12px;
+        border: 1px solid #01637c;
+     }
+   }
