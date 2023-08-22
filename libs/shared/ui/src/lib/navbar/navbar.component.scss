@@ -14,7 +14,7 @@
             height: 100%;
             position: relative;
             justify-content: center;
-            &:hover, &:active, &.router-link-active{
+            &:hover, &:active, &.active{
                 &::before{
                     content: "";
                     position: absolute;
