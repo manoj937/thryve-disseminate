@@ -7,8 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
-import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
-import { FormsModule } from '@angular/forms';
+import { SharedUiModule } from '@thryve-disseminate/shared/ui';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,10 +15,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
+    SharedUiModule,
     AlertModule.forRoot(),
     BsDropdownModule.forRoot(),
-    TypeaheadModule.forRoot(),
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [], 

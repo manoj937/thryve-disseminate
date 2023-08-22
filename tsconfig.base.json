@@ -14,7 +14,30 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@thryve-disseminate/activity/feature": [
+        "libs/activity/feature/src/index.ts"
+      ],
+      "@thryve-disseminate/activity/ui": ["libs/activity/ui/src/index.ts"],
+      "@thryve-disseminate/community/feature": [
+        "libs/community/feature/src/index.ts"
+      ],
+      "@thryve-disseminate/community/ui": ["libs/community/ui/src/index.ts"],
+      "@thryve-disseminate/dashboard/feature": [
+        "libs/dashboard/feature/src/index.ts"
+      ],
+      "@thryve-disseminate/dashboard/ui": ["libs/dashboard/ui/src/index.ts"],
+      "@thryve-disseminate/event/feature": ["libs/event/feature/src/index.ts"],
+      "@thryve-disseminate/event/ui": ["libs/event/ui/src/index.ts"],
+      "@thryve-disseminate/home/feature": ["libs/home/feature/src/index.ts"],
+      "@thryve-disseminate/home/ui": ["libs/home/ui/src/index.ts"],
+      "@thryve-disseminate/login/feature": ["libs/login/feature/src/index.ts"],
+      "@thryve-disseminate/login/ui": ["libs/login/ui/src/index.ts"],
+      "@thryve-disseminate/shared/feature": [
+        "libs/shared/feature/src/index.ts"
+      ],
+      "@thryve-disseminate/shared/ui": ["libs/shared/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
