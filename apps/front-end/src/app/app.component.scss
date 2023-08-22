@@ -1,0 +1,49 @@
+nav{
+    height: 90px;
+    padding: 0 2rem;
+}
+
+.search{
+    position: relative;
+    width: 30%;
+    input{
+        padding-left: 2rem;
+        border: 0;
+        &:focus{
+            outline: none;
+            box-shadow: none; 
+            border: 0;
+        }
+    }
+    i{
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    .user{
+        display: flex;
+        align-items: center;
+        .image{
+            width: 35px;
+            display: inline-block;
+            height: 35px;
+            border-radius: 300px;
+            overflow: hidden;
+            margin: 0 0.5rem;
+            img{
+                width: 100%;
+            }
+        }
+        &:active{
+            border-color: transparent;
+        }
+    }
+    .notification{
+        padding-right: 1rem;
+    }
+}

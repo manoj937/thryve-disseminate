@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+// Variable overrides
+// $primary: #900;
+$enable-shadows: true;
+$prefix: "td-";
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+
+@font-face {
+    font-family: futura pt;
+    font-style: normal;
+    font-weight: 400;
+    src: local('Futura PT'), url(assets/fonts/FuturaPTLight.woff) format('woff')
+}
+
+@font-face {
+    font-family: futura pt;
+    font-style: normal;
+    font-weight: 450;
+    src: local('Futura PT'), url(assets/fonts/FuturaPTMedium.woff) format('woff')
+}
+
+@font-face {
+    font-family: futura pt;
+    font-style: normal;
+    font-weight: 500;
+    src: local('Futura PT'), url(assets/fonts/FuturaPTDemi.woff) format('woff')
+}
+
+@font-face {
+    font-family: futura pt;
+    font-style: normal;
+    font-weight: 600;
+    src: local('Futura PT'), url(assets/fonts/FuturaPTHeavy.woff) format('woff')
+}
+
+@font-face {
+    font-family: futura pt;
+    font-style: normal;
+    font-weight: 700;
+    src: local('Futura PT'), url(assets/fonts/FuturaPTBold.woff) format('woff')
+}
+
+@font-face {
+    font-family: futura pt;
+    font-style: normal;
+    font-weight: 800;
+    src: local('Futura PT'), url(assets/fonts/FuturaPTExtraBold.woff) format('woff')
+}
+
+body *{
+    font-family: 'Futura PT', sans-serif;
+    letter-spacing: normal !important;
+}
+
+typeahead-container{
+    width: 100%;
+    max-height: 85vh;
+}
