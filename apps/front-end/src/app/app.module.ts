@@ -5,8 +5,6 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { AlertModule } from 'ngx-bootstrap/alert';
-import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import { SharedUiModule } from '@thryve-disseminate/shared/ui';
 
 @NgModule({
@@ -16,8 +14,6 @@ import { SharedUiModule } from '@thryve-disseminate/shared/ui';
     BrowserModule,
     BrowserAnimationsModule,
     SharedUiModule,
-    AlertModule.forRoot(),
-    BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [], 
