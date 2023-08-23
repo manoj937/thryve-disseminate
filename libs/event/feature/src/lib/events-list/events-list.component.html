@@ -1,0 +1,28 @@
+<div>
+    <ng-container *ngFor="let content of sectionContent; let i = index">
+        <div class="section-content row">
+            <div class="row col">
+                <div class="img">
+                    <img class="col-6" [src]="content?.src" alt="img">
+                </div>
+                
+            <div class="events-information col-6">
+                <div class="date">
+                  {{moment(content?.date).format('DD-MMMM-YYYY')}}
+                </div>
+                <div class="name">
+                   {{content?.title}}
+                </div>
+                <div>
+                    {{content?.members}} People joined this event
+                </div>
+            </div>
+            </div>
+            <div class="col">
+                <button>Join Event</button>
+            </div>
+            
+        </div>
+        <hr *ngIf="contentTotal != i"/>
+    </ng-container> 
+</div>

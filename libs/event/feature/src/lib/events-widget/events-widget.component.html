@@ -1,18 +1,18 @@
 <div class="section-widget">
-    <div class="section-title">My Community</div>
+    <div class="section-title">Events</div>
     <hr/>
     <ng-container *ngFor="let content of sectionContent">
         <div class="section-content">
             <img [src]="content?.src" alt="img">
-            <div class="community-information">
-                <div class="type">
-                  {{content?.type}}
+            <div class="events-information">
+                <div class="date">
+                  {{moment(content?.date).format('DD-MMMM-YYYY')}}
                 </div>
                 <div class="name">
                    {{content?.title}}
                 </div>
                 <div>
-                    {{content?.members}} Members
+                    {{content?.members}} People joined this event
                 </div>
             </div>
         </div>
