@@ -22,7 +22,8 @@
                }
                .name{
                 font-weight: 500;
-                color: #01637c;
+                text-transform: capitalize;
+                color: #034c5e;
                }
            }
            img{
@@ -35,7 +36,7 @@
      }
      button{
         background-color: #fff;
-        color: #01637c;
+        color: #034c5e;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -43,6 +44,11 @@
         margin-bottom: 30px;
         margin-top: 30px;
         border-radius: 12px;
-        border: 1px solid #01637c;
+        border: 1px solid #034c5e;
+     }
+     button:hover{
+        color: white;
+        background-color: #034c5e;
      }
    }
+  

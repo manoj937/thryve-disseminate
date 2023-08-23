@@ -1,0 +1,89 @@
+
+.post{
+    width: 500px;
+    height: 500px;
+    border: 1px solid grayscale($color: #fff);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin:  10px;
+    background-color: #fff;
+    box-shadow: 2px 5px #b1abab;
+    padding: 10px;
+    position: relative;
+}
+.hero-img{
+    width:480px;
+                height:250px;
+                
+    border: 1px solid transparent;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.title{
+   font-size: x-large; 
+   font-weight: 500;
+   color: #034c5e;
+   cursor: pointer;
+   
+}
+.title:hover{
+    color: #1e1247;
+}
+.hashtag{
+    font-size: large;
+    font-weight: 400; 
+   // color: #176bca;
+   color: grayscale($color: #222121);
+ }
+ .blog-props{
+    margin-top: 3px;
+    display: flex;
+    .image{
+        width: 35px;
+        display: inline-block;
+        height: 35px;
+        border-radius: 300px;
+        overflow: hidden;
+        margin: 0 0.5rem;
+        img{
+            width: 100%;
+        }
+    }
+    .author{
+        margin-top: 5px;
+        color: #1e1247;
+        font-weight: 500;
+    }
+    .date{
+        margin-top: 5px;
+        color: #948e8e;
+        font-weight: 300; 
+    }
+ }
+.nav-text{
+    font-size: large; 
+    font-weight: 300;
+    position: absolute;
+    right: 2px;
+    bottom: 0px;
+}
+button{
+    background-color: #fff;
+    color: #034c5e;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 12px;
+    border: 1px solid #034c5e;
+ }
+
+ button:hover{
+    color: white;
+    background-color: #034c5e;
+ }
