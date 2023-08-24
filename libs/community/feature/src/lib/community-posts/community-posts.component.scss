@@ -10,11 +10,16 @@
     box-shadow: 2px 5px #b1abab;
     padding: 10px;
     position: relative;
+    // margin-left: 15%;
+    // margin-right: 15%;
+}
+.test{
+    align-items: center;
+    justify-content: center;
 }
 .hero-img{
     width:480px;
-                height:250px;
-                
+    height:250px;
     border: 1px solid transparent;
 }
 img{

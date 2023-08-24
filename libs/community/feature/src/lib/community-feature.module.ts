@@ -4,7 +4,8 @@ import { CommunityComponent } from './community/community.component';
 import { Route, RouterModule } from '@angular/router';
 import { CommunityWidgetComponent } from './community-widget/community-widget.component';
 import { CommunityPostsComponent } from './community-posts/community-posts.component';
-
+import { CommunityCarouselComponent } from './community-carousel/community-carousel.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 const routes: Route[] = [
   {
     path: '',
@@ -12,11 +13,15 @@ const routes: Route[] = [
   },
 ];
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule, RouterModule.forChild(routes),
+    CarouselModule
+  ],
   declarations: [
     CommunityComponent,
     CommunityWidgetComponent,
     CommunityPostsComponent,
+    CommunityCarouselComponent,
   ],
   exports: [CommunityComponent, RouterModule],
 })
