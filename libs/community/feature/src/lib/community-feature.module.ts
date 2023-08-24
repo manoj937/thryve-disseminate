@@ -4,6 +4,8 @@ import { CommunityComponent } from './community/community.component';
 import { Route, RouterModule } from '@angular/router';
 import { CommunityWidgetComponent } from './community-widget/community-widget.component';
 import { CommunityPostsComponent } from './community-posts/community-posts.component';
+import { SharedUiModule } from '@thryve-disseminate/shared/ui';
+
 
 const routes: Route[] = [
   {
@@ -12,7 +14,10 @@ const routes: Route[] = [
   },
 ];
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule, 
+    SharedUiModule,
+    RouterModule.forChild(routes)],
   declarations: [
     CommunityComponent,
     CommunityWidgetComponent,

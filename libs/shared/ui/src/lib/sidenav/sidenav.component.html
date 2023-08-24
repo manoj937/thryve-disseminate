@@ -1,0 +1,72 @@
+<div
+  class="sidenav-container border-end d-flex flex-column flex-shrink-0 bg-secondary text-light"
+>
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li (click)="isBlog = !isBlog"
+    [attr.aria-expanded]="!isBlog" aria-controls="collapseblog">
+      <a>
+        <i class="fa fa-pencil-square"></i>
+        <span>Blog</span>
+      </a>
+      <ul id="collapseblog" [collapse]="isBlog" [isAnimated]="true">
+        <li>
+          <a>
+            <i class="fa fa-plus-square"></i>
+            <span>Add a post</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="fa fa-folder"></i>
+            <span>My blogs</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="fa fa-save"></i>
+            <span>Saved</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li (click)="isQA = !isQA"
+    [attr.aria-expanded]="!isQA" aria-controls="collapseqa">
+      <a>
+        <i class="fa fa-question-circle"></i>
+      <span>Q&A</span>
+      </a>
+      <ul id="collapseqa" [collapse]="isQA" [isAnimated]="true">
+        <li>
+          <a>
+            <i class="fa fa-group"></i>
+            <span>Ask community</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="fa fa-external-link-square"></i>
+            <span>My threads</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="fa fa-save"></i>
+            <span>Saved</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a>
+        <i class="fa fa-lightbulb-o"></i>
+        <span>Ideas</span>
+      </a>
+    </li>
+    <li>
+        <a>
+          <i class="fa fa-bookmark"></i>
+          <span>Bookmarks</span>
+        </a>
+      </li>
+  </ul>
+</div>

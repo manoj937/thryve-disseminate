@@ -1,0 +1,32 @@
+<!-- <div class="section-widget">
+    <div class="section-title">My Community</div>
+    <hr/>
+    <ng-container *ngFor="let content of sectionContent">
+        <div class="section-content">
+            <img [src]="content?.src" alt="img">
+            <div class="community-information">
+                <div class="type">
+                  {{content?.type}}
+                </div>
+                <div class="name">
+                   {{content?.title}}
+                </div>
+                <div>
+                    {{content?.members}} Members
+                </div>
+            </div>
+        </div>
+    </ng-container> 
+    <button>Explore All</button>
+</div> -->
+
+<ul>
+    <li *ngFor="let content of sectionContent">
+        <img [src]="content?.src" alt="img">
+        <div>
+          <span>{{content?.type}}</span>
+          <h5>{{content?.title}}</h5>
+          <p>{{content?.members}} Members</p>
+        </div>
+    </li>
+    </ul>

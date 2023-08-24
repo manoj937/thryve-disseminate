@@ -2,3 +2,15 @@
     margin-right: 0px;
     margin-left: 0px; 
 }
+
+.left{
+    width: calc(25% - 85px);
+}
+
+.center{
+    width: calc(50% + 85px);
+}
+
+.right{
+    width: 25%;
+}
