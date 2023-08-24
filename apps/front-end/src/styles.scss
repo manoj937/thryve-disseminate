@@ -50,10 +50,10 @@ $prefix: "td-";
     src: local('Futura PT'), url(assets/fonts/FuturaPTExtraBold.woff) format('woff')
 }
 
-// body *{
-//     font-family: 'Futura PT', sans-serif;
-//     letter-spacing: normal !important;
-// }
+body *{
+    font-family: 'Futura PT', sans-serif;
+    letter-spacing: normal !important;
+}
 
 typeahead-container{
     width: 100%;

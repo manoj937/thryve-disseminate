@@ -20,13 +20,31 @@
     <button>Explore All</button>
 </div> -->
 
-<ul>
-    <li *ngFor="let content of sectionContent">
-        <img [src]="content?.src" alt="img">
-        <div>
-          <span>{{content?.type}}</span>
-          <h5>{{content?.title}}</h5>
-          <p>{{content?.members}} Members</p>
-        </div>
-    </li>
+<div class="community">
+    <h6>Communities</h6>
+    <ul>
+        <li *ngFor="let content of sectionContent">
+            <img [src]="content?.src" alt="img">
+            <div>
+              <span>{{content?.type}}</span>
+              <h5>{{content?.title}}</h5>
+              <p>{{content?.members}} Members</p>
+            </div>
+        </li>
     </ul>
+</div>
+
+<div class="event">
+    <h6>Events</h6>
+    <ul>
+        <li *ngFor="let content of sectionContent">
+            <img [src]="content?.src" alt="img">
+            <div>
+              <span>{{content?.type}}</span>
+              <h5>{{content?.title}}</h5>
+              <p>{{content?.members}} Members</p>
+            </div>
+        </li>
+    </ul>
+</div>
+

@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AsideComponent {
   sectionContent = [
-    {type: "content type", title: "Community Title", members: 65, src: "assets/1.jpg"},
-    {type: "content type", title: "Community Title", members: 65, src: "assets/2.jpg"},
-    {type: "content type", title: "Community Title", members: 65, src: "assets/1.jpg"}
+    {type: "Content type", title: "Community Title", members: 65, src: "assets/1.jpg"},
+    {type: "Content type", title: "Community Title", members: 65, src: "assets/2.jpg"},
+    {type: "Content type", title: "Community Title", members: 65, src: "assets/1.jpg"}
   ]
 }
