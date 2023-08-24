@@ -6,6 +6,9 @@ import { CommunityWidgetComponent } from './community-widget/community-widget.co
 import { CommunityPostsComponent } from './community-posts/community-posts.component';
 import { CommunityCarouselComponent } from './community-carousel/community-carousel.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SharedUiModule } from '@thryve-disseminate/shared/ui';
+
+
 const routes: Route[] = [
   {
     path: '',
@@ -14,9 +17,10 @@ const routes: Route[] = [
 ];
 @NgModule({
   imports: [
-    CommonModule, RouterModule.forChild(routes),
-    CarouselModule
-  ],
+    CommonModule, 
+    SharedUiModule,
+    CarouselModule,
+    RouterModule.forChild(routes)],
   declarations: [
     CommunityComponent,
     CommunityWidgetComponent,

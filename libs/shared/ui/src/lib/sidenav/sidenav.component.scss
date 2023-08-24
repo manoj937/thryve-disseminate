@@ -1,0 +1,54 @@
+i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+:host {
+    height: calc(100vh - 70px);
+    width: 250px;
+    display: block;
+    position: sticky;
+    top: 70px;
+}
+
+.sidenav-container {
+    height: 100%;
+    padding-top: 1rem;
+}
+
+li {
+    cursor: pointer;
+}
+
+ul.nav {
+    list-style-type: none;
+    padding: 0;
+
+    >li {
+        >a {
+            width: 100%;
+            display: block;
+            padding: 10px 20px;
+
+            &:hover {
+                background: #f8f9fa;
+                color: #01637c;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+
+            li {
+                padding: 10px 45px;
+                font-size: 14px;
+
+                &:hover {
+                    background: #f8f9fa;
+                    color: #01637c;
+                }
+            }
+        }
+    }
+}
