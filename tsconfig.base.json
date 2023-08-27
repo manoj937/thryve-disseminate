@@ -19,6 +19,15 @@
         "libs/activity/feature/src/index.ts"
       ],
       "@thryve-disseminate/activity/ui": ["libs/activity/ui/src/index.ts"],
+      "@thryve-disseminate/back-end/blogs": [
+        "libs/back-end/blogs/src/index.ts"
+      ],
+      "@thryve-disseminate/back-end/community": [
+        "libs/back-end/community/src/index.ts"
+      ],
+      "@thryve-disseminate/back-end/members": [
+        "libs/back-end/members/src/index.ts"
+      ],
       "@thryve-disseminate/community/feature": [
         "libs/community/feature/src/index.ts"
       ],

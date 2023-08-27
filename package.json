@@ -40,6 +40,7 @@
     "@angular/language-service": "~16.2.0",
     "@nestjs/schematics": "^10.0.1",
     "@nestjs/testing": "^10.0.2",
+    "@nestjs/typeorm": "^10.0.0",
     "@nx/cypress": "16.7.2",
     "@nx/eslint-plugin": "16.7.2",
     "@nx/jest": "16.7.2",
@@ -56,6 +57,8 @@
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "bootstrap": "^5.3.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
     "cypress": "^12.16.0",
     "eslint": "~8.46.0",
     "eslint-config-prettier": "8.1.0",
@@ -65,12 +68,14 @@
     "jest-environment-jsdom": "^29.4.1",
     "jest-environment-node": "^29.4.1",
     "jest-preset-angular": "~13.1.0",
+    "mysql": "^2.18.1",
     "ngx-bootstrap": "^11.0.2",
     "nx": "16.7.2",
     "nx-cloud": "latest",
     "prettier": "^2.6.2",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
+    "typeorm": "^0.3.17",
     "typescript": "~5.1.3"
   }
 }
