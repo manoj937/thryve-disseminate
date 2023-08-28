@@ -1,0 +1,10 @@
+<p>wsiwyg-editor works!</p>
+<angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor>
+
+<div class="html">
+    {{ htmlContent }}
+  </div>
+
+  <div [innerHTML]="htmlContent">
+
+  </div>

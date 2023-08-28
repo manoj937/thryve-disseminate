@@ -1,0 +1,33 @@
+
+<div class="container">
+    <div class="my-3">
+            <h3 class="card-title">Deep dive into the OnPush change detection strategy in Angular</h3>
+            <div class="card-body">
+                <p class="card-text text-primary">#javascript #Angular #frontend #fullstack #meanstack</p>
+              </div>
+            <div class="blog-props">
+                <span class="image"><img src="assets/avatar_img.jpg"></span>
+                <span class="author">Neha V K</span><span class="date">&nbsp; | &nbsp;</span>
+                <span class="date">{{moment(yesterday).from(moment(todaysDate))}}</span>
+            </div>
+            <img src="assets/blog_img2.jpg" class="my-3 card-img-top" alt="...">
+            <!--  -->
+            <div>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro dicta dolores, doloribus dolorem quia reprehenderit deserunt ipsum, praesentium quaerat
+                     quasi quibusdam. Natus, quis dolorum? Nulla similique laboriosam aliquid at vel?
+                </p>
+                <p>
+                    Angular uses these strategies to determine whether a child component should be checked while running change detection for a parent component. A strategy defined for a component impacts all child directives since they are checked as part of checking the host component. A defined strategy cannot be overridden in runtime.
+</p>
+<p>
+    The default strategy, internally referred to as CheckAlways, implies regular automatic change detection for a component unless the view is explicitly detached. What’s known as OnPush strategy, internally referred to as CheckOnce, implies that change detection is skipped unless a component is marked as dirty. Angular implements mechanisms to automatically mark a component as dirty. When needed, a component can be marked dirty manually using markForCheck method exposed on ChangeDetectorRef.
+
+</p>
+<p>
+When we define a strategy using @Component() decorator, Angular’s compiler records it in a component’s definition through the defineComponent function. For example, for the component like this:
+                </p>
+            </div>
+         
+    </div>
+</div>

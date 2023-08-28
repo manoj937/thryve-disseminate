@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="">
+        <form class="form row" [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+            
+            <div class="px-5 py-2 col-11 d-flex flex-column align-items-end">
+                <button class=" btn btn-outline-primary float-right" type="submit">Submit Blog</button>
+            </div>
+            <div class="align-items-start form-group col-8">
+                <label class="label">Title</label>
+                <input type="text" class="form-control" formControlName="title">
+                <span class="text-danger"
+                    *ngIf="blogForm.get('title')?.errors && blogForm.get('title')?.hasError('required') && 
+                    blogForm.get('title')?.touched">
+                    Title is required
+                </span>
+            </div>
+            <div class="form-group col-8">
+                <label class="label">Display Image</label>
+                <input type="file" class="form-control" formControlName="display_image">
+                <span class="text-danger"
+                    *ngIf="blogForm.get('display_image')?.errors && blogForm.get('display_image')?.hasError('required') && 
+                    blogForm.get('display_image')?.touched">
+                    Display Image is required
+                </span>
+            </div>
+            <div class="form-group">
+                <label class="label">Content</label>
+                <div>
+                    <textarea rows="40" cols="150" formControllerName="content" required></textarea>
+                </div>
+                <span class="text-danger"
+                    *ngIf="blogForm.get('content')?.errors && blogForm.get('content')?.hasError('required') && 
+                    blogForm.get('content')?.touched">
+                    Content Image is required
+                </span>
+            </div>
+        </form>
+    </div>
+  </div>
