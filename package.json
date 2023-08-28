@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "app": "nx run front-end:serve:development",
-    "api": "nx run back-end:serve:development"
+    "app": "npx nx run front-end:serve:development",
+    "api": "npx nx run back-end:serve:development",
+    "build-app": "npx nx run front-end:build:production",
+    "build-api": "npx nx run back-end:build:production"
   },
   "private": true,
   "dependencies": {
