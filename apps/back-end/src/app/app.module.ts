@@ -14,13 +14,15 @@ const entities = [ MemberDetails, CommunityDetails, BlogDetails];
     BlogsModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: '94.100.26.108',
       port: 3306,
-      username: 'root',
-      password: 'manoj',
+      username: 'thryve',
+      password: 'thryve123',
       database: 'thryve_disseminate',
       entities,
       synchronize: true,
+      connectTimeout: 60 * 60 * 1000,
+      acquireTimeout: 60 * 60 * 1000
     }),
   ],
   controllers: [],
