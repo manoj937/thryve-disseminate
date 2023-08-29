@@ -41,7 +41,7 @@ const routes: Route[] = [
     AddBlogComponent,
     BlogDetailComponent,
   ],
- // providers: [CommunityService],
+ providers: [CommunityService],
   exports: [CommunityComponent, RouterModule],
 })
 export class CommunityFeatureModule {}

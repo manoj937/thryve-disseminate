@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import * as moment from 'moment/moment';
 @Component({
   selector: 'thryve-disseminate-community-posts',
@@ -9,6 +9,7 @@ export class CommunityPostsComponent implements OnInit {
   todaysDate = new Date();
   yesterday = new Date();
   moment: any = moment;
+  @Input() blogsList: any;
   ngOnInit(){
     this.yesterday.setDate(this.todaysDate.getDate() - 1);
   }
