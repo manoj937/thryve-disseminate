@@ -12,7 +12,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { WsiwygEditorComponent } from './wsiwyg-editor/wsiwyg-editor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddBlogComponent } from './add-blog/add-blog.component';
-import { CommunityService } from './community.service';
+// import { CommunityService } from './community.service';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 const routes: Route[] = [
   {
