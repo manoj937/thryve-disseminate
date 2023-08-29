@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddBlogComponent } from './add-blog/add-blog.component';
 // import { CommunityService } from './community.service';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { CommunityService } from './community.service';
 const routes: Route[] = [
   {
     path: '',
@@ -41,7 +42,7 @@ const routes: Route[] = [
     AddBlogComponent,
     BlogDetailComponent,
   ],
- providers: [CommunityService],
+  providers: [CommunityService],
   exports: [CommunityComponent, RouterModule],
 })
 export class CommunityFeatureModule {}
