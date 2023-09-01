@@ -56,8 +56,19 @@
                 <span class="author">Neha V K</span><span class="date">&nbsp; | &nbsp;</span>
                     <span class="date">{{moment(blog.time).from(moment(todaysDate))}}</span>
             </div>
-            <div class="d-flex justify-content-end">
-                <a href="#" class="btn btn-primary">Dive In</a>
+           
+            <div class="d-flex justify-content-between">
+                <div>
+                    <i  data-toggle="tooltip" data-placement="bottom" [title]="blog?.likes + ' likes'" class="action-icons fa fa-heart-o" aria-hidden="true"></i>
+                    <!-- <i class="action-icons fa fa-heart" aria-hidden="true"></i> -->
+                    <i data-toggle="tooltip" data-placement="bottom" [title]="blog?.bookmarks?.length + ' bookmarks'" class="action-icons fa fa-bookmark-o" aria-hidden="true"></i>
+                    <!-- <i data-toggle="tooltip" data-placement="bottom" [title]="blog?.likes + ' likes'" class="action-icons fa fa-bookmark" aria-hidden="true"></i> -->
+                    <i data-toggle="tooltip" data-placement="bottom" [title]="blog?.comments + ' comments'" class="action-icons fa fa-comment-o" aria-hidden="true"></i>
+                    <i data-toggle="tooltip" data-placement="bottom" [title]="blog?.views + ' views'" class="action-icons fa fa-eye" aria-hidden="true"></i>
+                    </div>
+                <div>
+                    <a href="#" class="btn btn-primary">Dive In</a>
+                </div>
             </div>
             </div>
           </div>
