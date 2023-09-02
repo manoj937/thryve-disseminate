@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="">
+        <form class="form row" [formGroup]="qaForm" (ngSubmit)="onSubmit()">
+            
+            <div class="px-5 py-2 col-11 d-flex flex-column align-items-end">
+                <button  [disabled]="!qaForm.valid" [ngClass]="!qaForm.valid ? 'btn btn-secondary disabled': ' btn btn-outline-primary'" class="float-right" type="submit">Post Question</button>
+            </div>
+            <div class="align-items-start form-group col-9">
+                <label class="label">Question</label>
+                <input placeholder="Post your question" type="text" class="form-control" formControlName="question">
+                <span class="text-danger"
+                    *ngIf="qaForm.get('question')?.errors && qaForm.get('question')?.hasError('required') && 
+                    qaForm.get('question')?.touched">
+                    Question is required
+                </span>
+            </div>
+            <div class="form-group">
+                <label class="label">Description</label>
+                <div>
+                    <textarea rows="10" cols="127" formControlName="description" required></textarea>
+                </div>
+                <span class="text-danger"
+                    *ngIf="qaForm.get('description')?.errors && qaForm.get('description')?.hasError('required') && 
+                    qaForm.get('description')?.touched">
+                    Description Image is required
+                </span>
+            </div>
+        </form>
+    </div>
+  </div>

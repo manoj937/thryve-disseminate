@@ -3,7 +3,7 @@
         <form class="form row" [formGroup]="blogForm" (ngSubmit)="onSubmit()">
             
             <div class="px-5 py-2 col-11 d-flex flex-column align-items-end">
-                <button class=" btn btn-outline-primary float-right" type="submit">Submit Blog</button>
+                <button  [disabled]="!blogForm.valid" [ngClass]="!blogForm.valid ? 'btn btn-secondary disabled': ' btn btn-outline-primary'"  class=" btn btn-outline-primary float-right" type="submit">Submit Blog</button>
             </div>
             <div class="align-items-start form-group col-8">
                 <label class="label">Title</label>
@@ -26,7 +26,7 @@
             <div class="form-group">
                 <label class="label">Content</label>
                 <div>
-                    <textarea rows="40" cols="150" formControllerName="content" required></textarea>
+                    <textarea rows="40" cols="150" formControlName="content" required></textarea>
                 </div>
                 <span class="text-danger"
                     *ngIf="blogForm.get('content')?.errors && blogForm.get('content')?.hasError('required') && 

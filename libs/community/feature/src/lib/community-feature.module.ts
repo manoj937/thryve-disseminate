@@ -15,6 +15,7 @@ import { AddBlogComponent } from './add-blog/add-blog.component';
 // import { CommunityService } from './community.service';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { CommunityService } from './community.service';
+import { AskCommunityComponent } from './ask-community/ask-community.component';
 const routes: Route[] = [
   {
     path: '',
@@ -41,6 +42,7 @@ const routes: Route[] = [
     WsiwygEditorComponent,
     AddBlogComponent,
     BlogDetailComponent,
+    AskCommunityComponent,
   ],
   providers: [CommunityService],
   exports: [CommunityComponent, RouterModule],

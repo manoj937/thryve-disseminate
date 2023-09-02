@@ -16,14 +16,7 @@ constructor( private fb: FormBuilder){}
       display_image: ['', Validators.required],
       content: ['', Validators.required]
     })
-     
 
-    // this.SignupForm.setValue({
-    //   'userData':{
-    //     'username':'geetha',
-    //     'email':'geetha@gmail.com'
-    //   }
-    // })
   }
   get f(): { [key: string]: AbstractControl } {
     return this.blogForm.controls;
