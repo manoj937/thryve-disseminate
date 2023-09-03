@@ -20,6 +20,10 @@ const routes: Route[] = [
     path: '',
     component: CommunityComponent,
   },
+  {
+    path: 'blog-detail',
+    component: BlogDetailComponent,
+  }
 ];
 @NgModule({
   imports: [

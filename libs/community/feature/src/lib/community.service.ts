@@ -6,7 +6,7 @@ import { Subject } from 'rxjs/internal/Subject';
   providedIn: 'root'
 })
 export class CommunityService {
-  baseUrl = "http://localhost:3000";
+  baseUrl = "http://api.thryve-disseminate.com";
   $communityList = new Subject();
   $blogList = new Subject();
   $blogs = new Subject();

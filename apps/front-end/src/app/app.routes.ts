@@ -2,8 +2,8 @@ import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
     {
-        path: 'home',
-        loadChildren: () => import('@thryve-disseminate/home/feature').then(m => m.HomeFeatureModule)
+        path: 'auth',
+        loadChildren: () => import('@thryve-disseminate/auth/feature').then(m => m.AuthFeatureModule)
     },
     {
         path: 'dashboard',
@@ -23,7 +23,7 @@ export const appRoutes: Route[] = [
     },
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'auth',
         pathMatch: 'full'
     }
   ];
