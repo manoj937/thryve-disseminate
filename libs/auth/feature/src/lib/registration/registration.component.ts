@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RegisterService } from '@thryve-disseminate/auth/data-access';
 
 @Component({
@@ -8,9 +9,15 @@ import { RegisterService } from '@thryve-disseminate/auth/data-access';
   styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent implements OnInit{
-  constructor(private registerService: RegisterService, public fb: FormBuilder){}
+  constructor(
+    private registerService: RegisterService,
+    private router: Router,
+    public fb: FormBuilder
+  ){}
 
   registerForm!: FormGroup;
+  dismissible = true;
+  alert = false;
 
   ngOnInit() {
     this.registerForm = this.fb.group({
@@ -22,9 +29,16 @@ export class RegistrationComponent implements OnInit{
   }
 
   onSubmit() {
-    this.registerService.register(this.registerForm.value).subscribe((valid)=>{
-      console.log(valid);
-      return valid;
+    this.registerService.register(this.registerForm.value).subscribe({
+      next: (response: any) => {
+        this.alert = true;
+        console.log(response)
+      },
+      error: (e) => console.log(e)
     })
+  }
+
+  login(){
+    this.router.navigate(['/login'])
   }
 }
