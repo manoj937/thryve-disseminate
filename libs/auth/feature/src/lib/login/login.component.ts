@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -29,12 +30,15 @@ export class LoginComponent implements OnInit{
   }
 
   onSubmit() {
-    this.loginService.login(this.loginForm.value).subscribe((user: any)=>{
-      if(user?.data?.memberId){
-        this.router.navigate(['/dashboard'])
-      } else {
-        this.alert = true;
-      }
+    this.loginService.login(this.loginForm.value).subscribe({
+      next: (response: any) => {
+        if(response?.data?.memberId){
+            this.router.navigate(['/dashboard'])
+          } else {
+            this.alert = true;
+          }
+      },
+      error: () => this.alert = true
     })
   }
 }

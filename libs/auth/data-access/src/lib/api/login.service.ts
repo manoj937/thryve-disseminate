@@ -31,7 +31,7 @@ export class LoginService {
       catchError((error: any): Observable<any> => {
         this.errorMessage = error.message;
         console.error('There was an error!', error);
-        return of();
+        return of(error);
       })
     );
   }
