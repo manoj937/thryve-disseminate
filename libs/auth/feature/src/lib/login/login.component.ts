@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginService } from '@thryve-disseminate/auth/data-access';
 
 @Component({
@@ -9,10 +10,15 @@ import { LoginService } from '@thryve-disseminate/auth/data-access';
 })
 export class LoginComponent implements OnInit{
 
-  constructor(private loginService: LoginService, public fb: FormBuilder){}
+  constructor(
+    private loginService: LoginService, 
+    public fb: FormBuilder,
+    private router: Router
+  ){}
 
   loginForm!: FormGroup;
-  validUser!: boolean;
+  dismissible = true;
+  alert = false;
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -22,13 +28,13 @@ export class LoginComponent implements OnInit{
     });
   }
 
-  onSubmit(form: FormGroup) {
-    console.log('Valid?', form.valid); // true or false
-    console.log('Email', form.value.email);
-    console.log('Message', form.value.password);
-     this.loginService.login(this.loginForm.value).subscribe((valid)=>{
-      console.log(valid);
-      return this.validUser=Boolean(valid)
+  onSubmit() {
+    this.loginService.login(this.loginForm.value).subscribe((user: any)=>{
+      if(user?.data?.memberId){
+        this.router.navigate(['/dashboard'])
+      } else {
+        this.alert = true;
+      }
     })
   }
 }

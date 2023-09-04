@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Observable, catchError, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -19,13 +19,15 @@ interface User {
   providedIn: 'root',
 })
 export class LoginService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    @Inject('env') private env:any
+  ) {}
 
-  baseUrl = 'http://api.thryve-disseminate.com/login';
   errorMessage: any;
 
   login(user: User): Observable<User> {
-    return this.http.post<User>(this.baseUrl, user, httpOptions).pipe(
+    return this.http.post<User>(this.env.domain+'/login', user, httpOptions).pipe(
       catchError((error: any): Observable<any> => {
         this.errorMessage = error.message;
         console.error('There was an error!', error);

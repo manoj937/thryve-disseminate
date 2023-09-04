@@ -64,3 +64,14 @@ typeahead-container{
     height: 70px;
     padding: 0 2rem;
 }
+
+alert {
+    display: flex;
+    justify-content: center;
+    .alert{
+        position: absolute;
+        width: 300px;
+        top: 20px;
+        z-index: 2;
+    }
+}

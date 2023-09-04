@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginService } from './api/login.service';
 import { RegisterService } from './api/register.service';
@@ -15,4 +15,20 @@ import { HttpClientModule } from '@angular/common/http';
     ResetPasswordService
   ]
 })
-export class AuthDataAccessModule {}
+export class AuthDataAccessModule {
+  public static forRoot(environment: any): ModuleWithProviders<AuthDataAccessModule> {
+    return {
+        ngModule: AuthDataAccessModule,
+        providers: [
+          LoginService,
+          RegisterService,
+          ForgetPasswordService,
+          ResetPasswordService,
+          {
+              provide: 'env',
+              useValue: environment
+          }
+        ]
+    };
+  }
+}

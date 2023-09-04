@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { SharedUiModule } from '@thryve-disseminate/shared/ui';
 import { AuthFeatureModule } from '@thryve-disseminate/auth/feature';
+import { AuthDataAccessModule } from '@thryve-disseminate/auth/data-access';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +18,7 @@ import { AuthFeatureModule } from '@thryve-disseminate/auth/feature';
     BrowserAnimationsModule,
     SharedUiModule,
     AuthFeatureModule,
+    AuthDataAccessModule.forRoot(environment),
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [], 

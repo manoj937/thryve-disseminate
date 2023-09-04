@@ -1,6 +1,4 @@
-<!-- <thryve-disseminate-header></thryve-disseminate-header> -->
-<div class="pages">
+<thryve-disseminate-header *ngIf="showHead"></thryve-disseminate-header>
+<div [ngClass]="{ 'pages': showHead }" >
     <router-outlet></router-outlet>
 </div>
-<!-- <thryve-disseminate-login></thryve-disseminate-login> -->
-<!-- <thryve-disseminate-registration></thryve-disseminate-registration> -->

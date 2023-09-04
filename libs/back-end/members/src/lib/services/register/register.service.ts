@@ -27,9 +27,10 @@ export class RegisterService {
   async updateMember(memberId: string, registerUser:  Register){
     const updatedMember = await this.membersService.findMember(memberId);
     if(updatedMember !== null){
-        updatedMember.isAdmin = registerUser.isAdmin;
-        updatedMember.userPassword = !registerUser.isAdmin ? registerUser.password: updatedMember.userPassword;
-        updatedMember.adminPassword = registerUser.isAdmin ? registerUser.password: updatedMember.adminPassword;
+        const isAdmin = registerUser.loginas === 'member' ? false : true;
+        updatedMember.isAdmin = isAdmin;
+        updatedMember.userPassword = !isAdmin ? registerUser.password: updatedMember.userPassword;
+        updatedMember.adminPassword = isAdmin ? registerUser.password: updatedMember.adminPassword;
         return this.memberRepository.save(updatedMember);
     } else { return 0 }
   }
@@ -38,18 +39,19 @@ export class RegisterService {
     const members = await this.membersService.getMembers();
     const memberId = this.setMemberId(members, members.length);
     let newUser = false;
+    const isAdmin = registerUser.loginas === 'member' ? false : true;
     const createMemberDto: CreateMemberDto = {
         memberId: memberId,
         name: registerUser.name,
         email: registerUser.email,
-        userPassword: !registerUser.isAdmin ? registerUser.password : "",
-        isAdmin: registerUser.isAdmin,
-        adminPassword: registerUser.isAdmin ? registerUser.password : ""
+        userPassword: !isAdmin ? registerUser.password : "",
+        isAdmin: isAdmin,
+        adminPassword: isAdmin ? registerUser.password : ""
     };
 
     for(const member of members){
         if(member.email === registerUser.email){
-            if(member.isAdmin !== registerUser.isAdmin){
+            if(member.isAdmin !== isAdmin){
                return this.updateMember(member.memberId, registerUser);
             } else {
                 return {
@@ -63,8 +65,8 @@ export class RegisterService {
     }
 
     if(newUser || !members.length){
-        createMemberDto.userPassword = !registerUser.isAdmin ? registerUser.password : "";
-        createMemberDto.adminPassword = registerUser.isAdmin ? registerUser.password : "";
+        createMemberDto.userPassword = !isAdmin ? registerUser.password : "";
+        createMemberDto.adminPassword = isAdmin ? registerUser.password : "";
         const newMember = this.memberRepository.create(createMemberDto);
         return this.memberRepository.save(newMember);
     } else{

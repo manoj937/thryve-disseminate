@@ -1,4 +1,5 @@
 <section class="h-100">
+  <alert *ngIf="alert" type="warning" [dismissible]="dismissible" (onClosed)="alert=!alert"> Invalid user Credentials!</alert>
   <div class="container h-100">
     <div class="row justify-content-md-center h-100">
       <div class="card-wrapper">
@@ -8,7 +9,7 @@
         <div class="card fat">
           <div class="card-body">
             <h4 class="card-title">Login</h4>
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
                 <label for="email">E-Mail Address</label>
                 <input
@@ -27,14 +28,14 @@
                 <label for="loginas">Login as</label>
                 <div class="d-flex">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" formControlName="loginas">
-                    <label class="form-check-label">
+                    <input class="form-check-input" type="radio" id="member" value="member" formControlName="loginas">
+                    <label for="member" class="form-check-label">
                       Member
                     </label>
                   </div>
                   <div class="form-check ms-3">
-                    <input class="form-check-input" type="radio" formControlName="loginas">
-                    <label class="form-check-label">
+                    <input class="form-check-input" type="radio" id="admin" value="admin" formControlName="loginas">
+                    <label for="admin" class="form-check-label">
                       Admin
                     </label>
                   </div>
@@ -85,7 +86,7 @@
             </form>
           </div>
         </div>
-        <div class="footer">Copyright &copy; 2023 &mdash; Thryve Disseminate</div>
+        <div class="footer">Copyright &copy; 2023 &mdash; Thryve Digital</div>
       </div>
     </div>
   </div>

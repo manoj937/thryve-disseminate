@@ -7,6 +7,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { Route, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthDataAccessModule } from '@thryve-disseminate/auth/data-access';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 const routes: Route[] = [
   {
@@ -37,6 +38,7 @@ const routes: Route[] = [
     CommonModule,
     ReactiveFormsModule,
     AuthDataAccessModule,
+    AlertModule.forRoot(),
     RouterModule.forChild(routes)],
   declarations: [
     LoginComponent,

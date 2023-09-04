@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { MemberDetails } from '../../typeorm/MemberDetails';
 import { Repository } from 'typeorm';
@@ -32,9 +32,16 @@ export class LoginService {
             }
         }
     }
-    return validUser ? 
-    { status: "success", message: "Login successfully", data: { memberId: memberInfo?.memberId } } : 
-    { status: "Error", message: "User not found" };
+    if (!validUser) {
+      throw new NotFoundException(`User not found.`);
+    }
+    return {
+      status: "success", 
+      message: "Login successfully", 
+      data: { 
+        memberId: memberInfo?.memberId 
+      } 
+    }
   }
 
   async forgetPassword(loginInfo: Login) {

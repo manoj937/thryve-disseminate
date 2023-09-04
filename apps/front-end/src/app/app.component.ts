@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'thryve-disseminate-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Home';
+  title = 'Dashboard';
+
+  showHead = false;
+
+  constructor(private router: Router){
+    router.events.forEach((event) => {
+      if (event instanceof NavigationStart || event instanceof NavigationEnd) {
+        console.log(event);
+        if (event['url'] == '/login' || event['url'] == '/register' || event['url'] == '/') {
+          this.showHead = false;
+        } else {
+          this.showHead = true;
+        }
+      }
+    });
+  }
+
 }
