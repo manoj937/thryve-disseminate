@@ -10,14 +10,42 @@ export class CommunityDetails {
   communityId!: string;
 
   @Column({
+    name: 'member_id',
     nullable: false
   })
-  name!: string;
+  memberId!: string;
+
+  @Column({
+    nullable: false
+  })
+  title!: string;
+
+  @Column({
+    nullable: false
+  })
+  description!: string;
 
   @Column()
   members!: string;
 
-  @Column()
+  @Column({
+    nullable: false
+  })
   tags!: string;
 
+  @Column({
+    nullable: false
+  })
+  type!: string;
+
+  @Column({
+    name: 'pending_approvals',
+  })
+  pendingApprovals!: string;
+
+  @Column({
+    name: 'created_on',
+    nullable: false
+  })
+  createdOn!: string;
 }

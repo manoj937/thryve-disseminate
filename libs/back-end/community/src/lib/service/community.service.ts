@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CommunityDetails } from '../typeorm/CommunityDetails';
 import { Repository } from 'typeorm';
@@ -16,9 +16,14 @@ export class CommunityService {
     const communities = this.communityRepository.find().then((communities) => {
       return communities.map((community) => ({
         communityId: community.communityId,
-        name: community.name,
+        memberId: community.memberId,
+        title: community.title,
+        description: community.description,
         members: community.members.split('"').filter((t) => t.length > 3),
         tags: community.tags.split('"').filter((t) => t.length > 3),
+        type: community.type,
+        pendingApprovals: community.pendingApprovals.split('"').filter((t) => t.length > 3),
+        createdOn: community.createdOn
       }));
     });
     return communities;
@@ -52,14 +57,26 @@ export class CommunityService {
     const communities = await this.getCommunities();
     const communityId = this.setCommunityId(communities, communities.length);
     let newCommunity = false;
+
+    const date = new Date();
+    const currentDay= String(date.getDate()).padStart(2, '0');
+    const currentMonth = String(date.getMonth()+1).padStart(2,"0");
+    const currentYear = date.getFullYear();
+    const currentDate = `${currentDay}-${currentMonth}-${currentYear}`;
+
     const createCommunityDto: CreateCommunityDto = {
       communityId,
-      name: communityInfo.name,
+      memberId: communityInfo.memberId,
+      title: communityInfo.title,
+      description: communityInfo.description,
       members: String(communityInfo.members),
       tags: String(communityInfo.tags),
+      type: communityInfo.type,
+      pendingApprovals: '',
+      createdOn:String(currentDate)
     };
     for (const community of communities) {
-      if (community.name === communityInfo.name) {
+      if (community.title === communityInfo.title) {
         return {
           status: 'Error',
           message: 'Community already exist',
@@ -72,5 +89,12 @@ export class CommunityService {
       const addCommunity = this.communityRepository.create(createCommunityDto);
       return this.communityRepository.save(addCommunity);
     } else { return 0 }
+  }
+
+  async deleteCommunity(id: string) {
+    const result = this.communityRepository.delete(id);
+    if (!result) {
+      throw new NotFoundException('Could not find community.');
+    }
   }
 }

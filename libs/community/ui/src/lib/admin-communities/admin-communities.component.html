@@ -1,0 +1,39 @@
+<div class="m-3 communities">
+    <div class="card1 add-community">
+      <img src="assets/community.jpg" />
+      <button type="button" class="btn btn-primary">Add Community</button>
+    </div>
+    <ng-container *ngIf="!!communityList?.length">
+        <div *ngFor="let community of communityList" class="card1">
+            <div class="card-image">
+              <img src="assets/1.jpg" />
+            </div>
+            <div class="card-text">
+              <span class="date {{community.type.toLowerCase()}}-text">Created On {{community.createdOn}}</span>
+              <h2>{{community.title}}</h2>
+              <span class="text-primary tags">
+                <a>{{community.tags}}</a>
+                </span
+              >
+              <p>{{community.description}}</p>
+            </div>
+            <div class="card-stats {{community.type.toLowerCase()}}-bg">
+              <div class="stat">
+                <div class="value">4<sup>th</sup></div>
+                <div class="type">Rank</div>
+              </div>
+              <div class="stat border">
+                <div class="value">5123</div>
+                <div class="type">Moderators</div>
+              </div>
+              <div class="stat">
+                <div class="value">32</div>
+                <div class="type">Blogs</div>
+              </div>
+            </div>
+          <span (click)="deleteCommunity(community.communityId)" class="delete-community {{community.type.toLowerCase()}}-bg">
+            <i class="fa fa-trash-o"></i>
+          </span>
+        </div>
+    </ng-container>
+  </div>

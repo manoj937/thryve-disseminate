@@ -16,4 +16,5 @@ export class HeaderComponent {
   'Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina',
   'South Dakota','Tennessee','Texas','Utah','Vermont',
   'Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
+  navigations = sessionStorage.getItem('admin') === 'true' ? ['Dashboard', 'Community'] : ['Dashboard', 'Community', 'Explore', 'Activity'];
 }

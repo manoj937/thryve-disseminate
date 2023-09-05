@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit{
   }
 
   onSubmit() {
+    sessionStorage.setItem('admin', this.loginForm?.value?.loginas === 'admin' ? 'true' : 'false');
     this.loginService.login(this.loginForm.value).subscribe({
       next: (response: any) => {
         if(response?.data?.memberId){

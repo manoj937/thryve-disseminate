@@ -15,6 +15,8 @@ import { AddBlogComponent } from './add-blog/add-blog.component';
 // import { CommunityService } from './community.service';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { CommunityService } from './community.service';
+import { CommunityUiModule } from '@thryve-disseminate/community/ui';
+
 const routes: Route[] = [
   {
     path: '',
@@ -34,6 +36,7 @@ const routes: Route[] = [
     FormsModule,
     ReactiveFormsModule,
     AngularEditorModule,
+    CommunityUiModule,
     RouterModule.forChild(routes),
   ],
 

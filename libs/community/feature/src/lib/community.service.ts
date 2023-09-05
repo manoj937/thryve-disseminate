@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/internal/Subject';
@@ -16,5 +17,12 @@ export class CommunityService {
   }
   getBlogList(): any{
     this.http.get(`${this.baseUrl}/blogs`).subscribe(data => this.$blogList.next(data))
+  }
+  deleteCommunity(id: string){
+    this.http.delete<string>(this.baseUrl+"/communities/delete/"+id).subscribe(data => {
+      if(data){
+        this.getCommunityList();
+      }
+    })
   }
 }

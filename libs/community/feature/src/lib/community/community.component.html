@@ -1,18 +1,26 @@
+<ng-container *ngIf="admin">
+  <thryve-disseminate-admin-communities (delete)="deleteCommunity($event)" [communityList]="communityService.$communityList | async"></thryve-disseminate-admin-communities>
+</ng-container>
 
-    <div class="row">
-        <div class="left p-0">
-            <thryve-disseminate-sidenav></thryve-disseminate-sidenav>
-        </div>
-        <div class="center">
-            <thryve-disseminate-community-posts [blogsList]="(communityService.$blogList) | async"></thryve-disseminate-community-posts>
-        </div>
-        <div class="right border-start">
-            <thryve-disseminate-aside [communityList]="(communityService.$communityList) | async"></thryve-disseminate-aside>
-        </div>
+<ng-container *ngIf="!admin">
+  <div class="row">
+    <div class="left p-0">
+      <thryve-disseminate-sidenav></thryve-disseminate-sidenav>
     </div>
-    <!-- <thryve-disseminate-community-carousel></thryve-disseminate-community-carousel> -->
-  
+    <div class="center">
+      <thryve-disseminate-community-posts
+        [blogsList]="communityService.$blogList | async"
+      ></thryve-disseminate-community-posts>
+    </div>
+    <div class="right border-start">
+      <thryve-disseminate-aside
+        [communityList]="communityService.$communityList | async"
+      ></thryve-disseminate-aside>
+    </div>
+  </div>
+  <!-- <thryve-disseminate-community-carousel></thryve-disseminate-community-carousel> -->
 
-    <!-- <thryve-disseminate-wsiwyg-editor></thryve-disseminate-wsiwyg-editor> -->
-    <!-- <thryve-disseminate-add-blog></thryve-disseminate-add-blog> -->
-    <!-- <thryve-disseminate-blog-detail></thryve-disseminate-blog-detail> -->
+  <!-- <thryve-disseminate-wsiwyg-editor></thryve-disseminate-wsiwyg-editor> -->
+  <!-- <thryve-disseminate-add-blog></thryve-disseminate-add-blog> -->
+  <!-- <thryve-disseminate-blog-detail></thryve-disseminate-blog-detail> -->
+</ng-container>
