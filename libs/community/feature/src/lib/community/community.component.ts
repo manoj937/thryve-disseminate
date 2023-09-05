@@ -20,7 +20,6 @@ async ngOnInit() {
 }
 
 deleteCommunity(id: string){
-  debugger;
   this.communityService.deleteCommunity(id);
 }
 }
