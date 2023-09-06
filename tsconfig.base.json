@@ -19,6 +19,11 @@
         "libs/activity/feature/src/index.ts"
       ],
       "@thryve-disseminate/activity/ui": ["libs/activity/ui/src/index.ts"],
+      "@thryve-disseminate/auth/data-access": [
+        "libs/auth/data-access/src/index.ts"
+      ],
+      "@thryve-disseminate/auth/feature": ["libs/auth/feature/src/index.ts"],
+      "@thryve-disseminate/auth/ui": ["libs/auth/ui/src/index.ts"],
       "@thryve-disseminate/back-end/blogs": [
         "libs/back-end/blogs/src/index.ts"
       ],
@@ -38,8 +43,6 @@
       "@thryve-disseminate/dashboard/ui": ["libs/dashboard/ui/src/index.ts"],
       "@thryve-disseminate/event/feature": ["libs/event/feature/src/index.ts"],
       "@thryve-disseminate/event/ui": ["libs/event/ui/src/index.ts"],
-      "@thryve-disseminate/home/feature": ["libs/home/feature/src/index.ts"],
-      "@thryve-disseminate/home/ui": ["libs/home/ui/src/index.ts"],
       "@thryve-disseminate/login/feature": ["libs/login/feature/src/index.ts"],
       "@thryve-disseminate/login/ui": ["libs/login/ui/src/index.ts"],
       "@thryve-disseminate/section-widget": [

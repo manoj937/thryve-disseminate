@@ -1,0 +1,91 @@
+
+.brand {
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.brand img {
+    width: 55px;
+}
+
+.card-wrapper {
+    width: 400px;
+}
+
+.card {
+    border-color: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
+}
+
+.card.fat {
+    padding: 10px;
+}
+
+.card .card-title {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border-width: 2.3px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    button{
+        width: 100%;
+    }
+}
+
+.float-right {
+    float: right!important;
+}
+
+.form-group label {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.btn.btn-block {
+    padding: 12px 10px;
+}
+
+.footer {
+    margin: 30px 0;
+    color: #888;
+    text-align: center;
+}
+
+.custom-checkbox{
+    margin-bottom: 10px;
+    display: flex;
+    input{
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .card-wrapper {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .card.fat {
+        padding: 0;
+    }
+
+    .card.fat .card-body {
+        padding: 15px;
+    }
+}

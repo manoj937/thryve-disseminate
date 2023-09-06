@@ -17,11 +17,17 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { CommunityService } from './community.service';
 import { AskCommunityComponent } from './ask-community/ask-community.component';
 import { CommunityQuestionsComponent } from './community-questions/community-questions.component';
+import { CommunityUiModule } from '@thryve-disseminate/community/ui';
+
 const routes: Route[] = [
   {
     path: '',
     component: CommunityComponent,
   },
+  {
+    path: 'blog-detail',
+    component: BlogDetailComponent,
+  }
 ];
 @NgModule({
   imports: [
@@ -32,6 +38,7 @@ const routes: Route[] = [
     FormsModule,
     ReactiveFormsModule,
     AngularEditorModule,
+    CommunityUiModule,
     RouterModule.forChild(routes),
   ],
 
