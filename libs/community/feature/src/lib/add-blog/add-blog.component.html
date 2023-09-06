@@ -3,7 +3,7 @@
         <form class="form row" [formGroup]="blogForm" (ngSubmit)="onSubmit()">
             
             <div class="px-5 py-2 col-11 d-flex flex-column align-items-end">
-                <button  [disabled]="!blogForm.valid" [ngClass]="!blogForm.valid ? 'btn btn-secondary disabled': ' btn btn-outline-primary'"  class=" btn btn-outline-primary float-right" type="submit">Submit Blog</button>
+                <button  [disabled]="!blogForm.valid" [ngClass]="!blogForm.valid ? 'btn btn-outline-secondary disabled': ' btn btn-outline-primary'"  class=" btn btn-outline-primary float-right" type="submit">Submit Blog</button>
             </div>
             <div class="align-items-start form-group col-8">
                 <label class="label">Title</label>

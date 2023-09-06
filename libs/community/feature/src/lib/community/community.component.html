@@ -1,19 +1,20 @@
-<!-- 
+
     <div class="row">
         <div class="left p-0">
             <thryve-disseminate-sidenav></thryve-disseminate-sidenav>
         </div>
         <div class="center">
-            <thryve-disseminate-community-posts [blogsList]="(communityService.$blogList) | async"></thryve-disseminate-community-posts>
+            <!-- <thryve-disseminate-community-posts [blogsList]="(communityService.$blogList) | async"></thryve-disseminate-community-posts> -->
+            <thryve-disseminate-community-questions [blogsList]="(communityService.$blogList) | async"></thryve-disseminate-community-questions>
         </div>
         <div class="right border-start">
             <thryve-disseminate-aside [communityList]="(communityService.$communityList) | async"></thryve-disseminate-aside>
         </div>
-    </div> -->
+    </div>
     <!-- <thryve-disseminate-community-carousel></thryve-disseminate-community-carousel> -->
   
 
     <!-- <thryve-disseminate-wsiwyg-editor></thryve-disseminate-wsiwyg-editor> -->
-    <thryve-disseminate-add-blog></thryve-disseminate-add-blog>
+    <!-- <thryve-disseminate-add-blog></thryve-disseminate-add-blog> -->
     <!-- <thryve-disseminate-blog-detail></thryve-disseminate-blog-detail> -->
-    <thryve-disseminate-ask-community></thryve-disseminate-ask-community>
+    <!-- <thryve-disseminate-ask-community></thryve-disseminate-ask-community> -->

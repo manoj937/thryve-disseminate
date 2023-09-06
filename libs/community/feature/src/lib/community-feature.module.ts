@@ -16,6 +16,7 @@ import { AddBlogComponent } from './add-blog/add-blog.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { CommunityService } from './community.service';
 import { AskCommunityComponent } from './ask-community/ask-community.component';
+import { CommunityQuestionsComponent } from './community-questions/community-questions.component';
 const routes: Route[] = [
   {
     path: '',
@@ -43,6 +44,7 @@ const routes: Route[] = [
     AddBlogComponent,
     BlogDetailComponent,
     AskCommunityComponent,
+    CommunityQuestionsComponent,
   ],
   providers: [CommunityService],
   exports: [CommunityComponent, RouterModule],
