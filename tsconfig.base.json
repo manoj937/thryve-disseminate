@@ -33,6 +33,14 @@
       "@thryve-disseminate/back-end/members": [
         "libs/back-end/members/src/index.ts"
       ],
+      "@thryve-disseminate/blogs/data-access": [
+        "libs/blogs/data-access/src/index.ts"
+      ],
+      "@thryve-disseminate/blogs/feature": ["libs/blogs/feature/src/index.ts"],
+      "@thryve-disseminate/blogs/ui": ["libs/blogs/ui/src/index.ts"],
+      "@thryve-disseminate/community/data-access": [
+        "libs/community/data-access/src/index.ts"
+      ],
       "@thryve-disseminate/community/feature": [
         "libs/community/feature/src/index.ts"
       ],
@@ -45,6 +53,11 @@
       "@thryve-disseminate/event/ui": ["libs/event/ui/src/index.ts"],
       "@thryve-disseminate/login/feature": ["libs/login/feature/src/index.ts"],
       "@thryve-disseminate/login/ui": ["libs/login/ui/src/index.ts"],
+      "@thryve-disseminate/qa/data-access": [
+        "libs/qa/data-access/src/index.ts"
+      ],
+      "@thryve-disseminate/qa/feature": ["libs/qa/feature/src/index.ts"],
+      "@thryve-disseminate/qa/ui": ["libs/qa/ui/src/index.ts"],
       "@thryve-disseminate/section-widget": [
         "libs/section-widget/src/index.ts"
       ],

@@ -8,6 +8,7 @@ $prefix: "td-";
 @import "~font-awesome/css/font-awesome.min.css";
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
 @font-face {
     font-family: futura pt;
     font-style: normal;
@@ -74,4 +75,17 @@ alert {
         top: 20px;
         z-index: 2;
     }
+}
+
+mdb-modal-container{
+    background: #00000038;
+}
+
+.modal-dialog{
+    height: 92vh;
+}
+
+.modal-content{
+    height: 100%;
+    padding: 30px;
 }

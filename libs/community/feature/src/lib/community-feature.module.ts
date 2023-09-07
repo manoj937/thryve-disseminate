@@ -2,58 +2,63 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CommunityComponent } from './community/community.component';
 import { Route, RouterModule } from '@angular/router';
-import { CommunityWidgetComponent } from './community-widget/community-widget.component';
-import { CommunityPostsComponent } from './community-posts/community-posts.component';
-import { CommunityCarouselComponent } from './community-carousel/community-carousel.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SharedUiModule } from '@thryve-disseminate/shared/ui';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import { WsiwygEditorComponent } from './wsiwyg-editor/wsiwyg-editor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddBlogComponent } from './add-blog/add-blog.component';
-// import { CommunityService } from './community.service';
-import { BlogDetailComponent } from './blog-detail/blog-detail.component';
-import { CommunityService } from './community.service';
-import { AskCommunityComponent } from './ask-community/ask-community.component';
-import { CommunityQuestionsComponent } from './community-questions/community-questions.component';
 import { CommunityUiModule } from '@thryve-disseminate/community/ui';
+import { CommunityFacade } from '@thryve-disseminate/community/data-access';
+import { BlogsFacade } from '@thryve-disseminate/blogs/data-access';
+import { QaUiModule } from '@thryve-disseminate/qa/ui';
+import { BlogsFeatureModule } from '@thryve-disseminate/blogs/feature';
+import { BlogDetailComponent, BlogsComponent, AddBlogComponent } from '@thryve-disseminate/blogs/feature';
+import { AskCommunityComponent, CommunityQuestionsComponent } from '@thryve-disseminate/qa/feature';
 
 const routes: Route[] = [
   {
     path: '',
     component: CommunityComponent,
+    children: [{
+        path: '', 
+        redirectTo: 'blogs', 
+        pathMatch: 'full'
+      },
+      {
+        path: 'add-blog',
+        component: AddBlogComponent,
+      },
+      {
+        path: 'blogs',
+        component: BlogsComponent,
+        children: [{ path: ':id', component: BlogDetailComponent }],
+      },
+      {
+        path: 'qa',
+        component: CommunityQuestionsComponent,
+      },
+      {
+        path: 'ask-community',
+        component: AskCommunityComponent,
+      },
+    ],
   },
-  {
-    path: 'blog-detail',
-    component: BlogDetailComponent,
-  }
 ];
 @NgModule({
   imports: [
     CommonModule,
     SharedUiModule,
-    CarouselModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     AngularEditorModule,
     CommunityUiModule,
+    QaUiModule,
+    BlogsFeatureModule,
     RouterModule.forChild(routes),
   ],
 
-  declarations: [
-    CommunityComponent,
-    CommunityWidgetComponent,
-    CommunityPostsComponent,
-    CommunityCarouselComponent,
-    WsiwygEditorComponent,
-    AddBlogComponent,
-    BlogDetailComponent,
-    AskCommunityComponent,
-    CommunityQuestionsComponent,
-  ],
-  providers: [CommunityService],
+  declarations: [CommunityComponent],
+  providers: [CommunityFacade, BlogsFacade],
   exports: [CommunityComponent, RouterModule],
 })
 export class CommunityFeatureModule {}

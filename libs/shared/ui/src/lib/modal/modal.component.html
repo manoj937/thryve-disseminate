@@ -1,0 +1,88 @@
+<ng-container *ngIf="title==='Add Community'">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          (click)="modalRef.close()"
+        ></button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="communityForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input
+                  id="title"
+                  type="text"
+                  class="form-control"
+                  name="title"
+                  formControlName="title"
+                  required
+                  autofocus
+                />
+                <div class="invalid-feedback">Title is invalid</div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea
+                  id="description"
+                  type="text"
+                  class="form-control"
+                  name="description"
+                  formControlName="description"
+                  required
+                  autofocus
+                ></textarea>
+                <div class="invalid-feedback">Description is invalid</div>
+            </div>
+
+            <div class="form-group">
+              <label for="category">Category</label>
+              <div class="d-flex flex-wrap">
+                <div *ngFor="let category of categories" class="form-check">
+                  <input class="form-check-input" type="radio" [id]="category" [value]="category" formControlName="category">
+                  <label [for]="category" class="form-check-label">
+                    {{ category }}
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tags">Tags</label>
+                <input
+                  id="tags"
+                  type="text"
+                  class="form-control"
+                  name="tags"
+                  formControlName="tags"
+                  required
+                  autofocus
+                />
+                <div class="invalid-feedback">Tags are invalid</div>
+            </div>
+
+            <div class="form-group">
+                <label for="members">Members</label>
+                <input
+                  id="members"
+                  type="text"
+                  class="form-control"
+                  name="members"
+                  formControlName="members"
+                  required
+                  autofocus
+                />
+                <div class="invalid-feedback">Members are invalid</div>
+            </div>
+          </form>
+    </div>
+        <div class="modal-footer">
+        <button type="button" class="close btn btn-secondary" (click)="modalRef.close()">
+            Close
+        </button>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</ng-container>

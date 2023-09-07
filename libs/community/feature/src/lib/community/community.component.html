@@ -1,28 +1,29 @@
-<ng-container *ngIf="admin">
-  <thryve-disseminate-admin-communities (delete)="deleteCommunity($event)" [communityList]="communityService.$communityList | async"></thryve-disseminate-admin-communities>
-</ng-container>
+<ng-container
+  *ngIf="{
+    communities: communityDetails.allCommunity$ | async,
+    blogs: blogsDetails.allBlogs$ | async
+  } as data"
+>
+  <ng-container *ngIf="admin === 'true'">
+    <thryve-disseminate-admin-communities
+      (delete)="deleteCommunity($event)"
+      [communityList]="data.communities"
+    ></thryve-disseminate-admin-communities>
+  </ng-container>
 
-<ng-container *ngIf="!admin">
-  <div class="row">
-    <div class="left p-0">
-      <thryve-disseminate-sidenav></thryve-disseminate-sidenav>
+  <ng-container *ngIf="admin === 'false'">
+    <div class="row">
+      <div class="left p-0">
+        <thryve-disseminate-sidenav></thryve-disseminate-sidenav>
+      </div>
+      <div class="center">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="right border-start">
+        <thryve-disseminate-aside
+          [communityList]="data.communities"
+        ></thryve-disseminate-aside>
+      </div>
     </div>
-    <div class="center">
-      <thryve-disseminate-community-posts
-        [blogsList]="communityService.$blogList | async"
-      ></thryve-disseminate-community-posts>
-      <!-- <thryve-disseminate-community-questions [blogsList]="(communityService.$blogList) | async"></thryve-disseminate-community-questions> -->
-    </div>
-    <div class="right border-start">
-      <thryve-disseminate-aside
-        [communityList]="communityService.$communityList | async"
-      ></thryve-disseminate-aside>
-    </div>
-  </div>
-  <!-- <thryve-disseminate-community-carousel></thryve-disseminate-community-carousel> -->
-
-  <!-- <thryve-disseminate-wsiwyg-editor></thryve-disseminate-wsiwyg-editor> -->
-  <!-- <thryve-disseminate-add-blog></thryve-disseminate-add-blog> -->
-  <!-- <thryve-disseminate-blog-detail></thryve-disseminate-blog-detail> -->
-    <!-- <thryve-disseminate-ask-community></thryve-disseminate-ask-community> -->
+  </ng-container>
 </ng-container>

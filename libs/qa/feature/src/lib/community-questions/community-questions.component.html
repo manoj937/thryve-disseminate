@@ -1,0 +1,7 @@
+<ng-container
+  *ngIf="{
+    blogs: blogsDetails.allBlogs$ | async
+  } as data"
+>
+<thryve-disseminate-community-questions-ui [blogsList]="data.blogs"></thryve-disseminate-community-questions-ui>
+</ng-container>

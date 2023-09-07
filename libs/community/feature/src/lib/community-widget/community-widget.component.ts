@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommunityService } from '../community.service';
 
 @Component({
   selector: 'thryve-disseminate-community-widget',
@@ -7,7 +6,6 @@ import { CommunityService } from '../community.service';
   styleUrls: ['./community-widget.component.scss'],
 })
 export class CommunityWidgetComponent {
-  constructor(public communityService: CommunityService){}
   sectionContent = [
     {type: "content type", title: "Community Title", members: 65, src: "assets/thumb1.jpg"},
     {type: "content type", title: "Community Title", members: 65, src: "assets/thumb2.jpg"},

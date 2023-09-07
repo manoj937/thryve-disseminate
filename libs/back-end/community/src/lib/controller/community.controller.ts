@@ -32,6 +32,6 @@ export class CommunityController {
   @Delete('delete/:id')
   async removeEmployee(@Param('id') community: any) {
     await this.communityService.deleteCommunity(community);
-    return community;
+    return { communityId: community };
   }
 }

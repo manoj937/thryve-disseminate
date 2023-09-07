@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommunityService } from '../community.service';
+import { BlogsFacade } from '@thryve-disseminate/blogs/data-access';
+import { CommunityFacade } from '@thryve-disseminate/community/data-access';
 
 @Component({
   selector: 'thryve-disseminate-community',
@@ -7,19 +8,22 @@ import { CommunityService } from '../community.service';
   styleUrls: ['./community.component.scss'],
 })
 export class CommunityComponent implements OnInit {
-constructor(public communityService: CommunityService){}
+constructor(
+  public communityDetails: CommunityFacade,
+  public blogsDetails: BlogsFacade
+){}
+
 admin!: string | null;
-async ngOnInit() {
+
+ngOnInit() {
   this.admin = sessionStorage.getItem('admin');
-  if(this.admin === 'true'){
-    this.communityService.getCommunityList();
-  } else if(this.admin === 'false') {
-    this.communityService.getCommunityList();
-    this.communityService.getBlogList();
+  this.communityDetails.initLoadCommunities();
+  if(this.admin !== 'true'){
+    this.blogsDetails.initLoadBlogs();
   }
 }
 
 deleteCommunity(id: string){
-  this.communityService.deleteCommunity(id);
+  this.communityDetails.initCommunityDeletion(id);
 }
 }
