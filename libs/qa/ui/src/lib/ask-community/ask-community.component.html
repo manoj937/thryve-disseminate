@@ -1,6 +1,6 @@
 <div class="container">
     <div class="form-container">
-        <form class="form row" [formGroup]="qaForm" (ngSubmit)="onSubmit()">
+        <form class="form-group form row" [formGroup]="qaForm" (ngSubmit)="onSubmit()">
             
             <div class="px-5 py-2 col-12 d-flex flex-column align-items-end">
                 <button  [disabled]="!qaForm.valid" [ngClass]="!qaForm.valid ? 'btn btn-outline-secondary disabled': ' btn btn-outline-primary'" type="submit">Post Question</button>
@@ -17,13 +17,13 @@
             <div class="form-group">
                 <label class="label">Description</label>
                 <div>
-                    <textarea rows="10" cols="100" formControlName="description" required></textarea>
+                    <span class="text-danger"
+                        *ngIf="qaForm.get('description')?.errors && qaForm.get('description')?.hasError('required') && 
+                        qaForm.get('description')?.touched">
+                        Description is required
+                    </span>
+                    <textarea class="form-control" rows="10" cols="100" formControlName="description" required></textarea>
                 </div>
-                <span class="text-danger"
-                    *ngIf="qaForm.get('description')?.errors && qaForm.get('description')?.hasError('required') && 
-                    qaForm.get('description')?.touched">
-                    Description Image is required
-                </span>
             </div>
         </form>
     </div>

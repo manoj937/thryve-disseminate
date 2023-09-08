@@ -1,6 +1,6 @@
 <div class="container">
     <div class="form-container">
-        <form class="form row" [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+        <form class="form-group form row" [formGroup]="blogForm" (ngSubmit)="onSubmit()">
             
             <div class="px-5 py-2 col-12 d-flex flex-column align-items-end">
                 <button  [disabled]="!blogForm.valid"
@@ -28,13 +28,13 @@
             <div class="form-group">
                 <label class="label">Content</label>
                 <div>
-                    <textarea rows="30" cols="100" formControlName="content" required></textarea>
+                    <span class="text-danger"
+                        *ngIf="blogForm.get('content')?.errors && blogForm.get('content')?.hasError('required') && 
+                        blogForm.get('content')?.touched">
+                        Content is required
+                    </span>
+                    <textarea class="form-control" rows="30" cols="100" formControlName="content" required></textarea>
                 </div>
-                <span class="text-danger"
-                    *ngIf="blogForm.get('content')?.errors && blogForm.get('content')?.hasError('required') && 
-                    blogForm.get('content')?.touched">
-                    Content Image is required
-                </span>
             </div>
         </form>
     </div>
