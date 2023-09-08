@@ -76,9 +76,8 @@ export class CommunityCarouselComponent {
    
     nav: false,
   }
-  getCommunity(community: Object){
+  getCommunity(community: any){
     console.log(community)
-
   }
 }
 

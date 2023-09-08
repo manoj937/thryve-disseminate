@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class CommunityWidgetComponent {
   sectionContent = [
-    {type: "content type", title: "Community Title", members: 65, src: "assets/thumb1.jpg"},
-    {type: "content type", title: "Community Title", members: 65, src: "assets/thumb2.jpg"},
-    {type: "content type", title: "Community Title", members: 65, src: "assets/thumb3.jpg"}
+    {type: "content type", title: "Community Title", moderators: 65, src: "assets/thumb1.jpg"},
+    {type: "content type", title: "Community Title", moderators: 65, src: "assets/thumb2.jpg"},
+    {type: "content type", title: "Community Title", moderators: 65, src: "assets/thumb3.jpg"}
   ]
 }

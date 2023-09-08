@@ -30,9 +30,10 @@
       "@thryve-disseminate/back-end/community": [
         "libs/back-end/community/src/index.ts"
       ],
-      "@thryve-disseminate/back-end/members": [
-        "libs/back-end/members/src/index.ts"
+      "@thryve-disseminate/back-end/moderators": [
+        "libs/back-end/moderators/src/index.ts"
       ],
+      "@thryve-disseminate/back-end/qa": ["libs/back-end/qa/src/index.ts"],
       "@thryve-disseminate/blogs/data-access": [
         "libs/blogs/data-access/src/index.ts"
       ],

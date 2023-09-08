@@ -1,15 +1,32 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Body, Controller, Get, Param, Post, UsePipes, ValidationPipe } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Query,
+  UsePipes,
+  ValidationPipe,
+} from '@nestjs/common';
 import { BlogsService } from '../service/blogs.service';
 import { Blogs } from '../interface/blogs.interface';
 
 @Controller('blogs')
 export class BlogsController {
-    constructor(private readonly blogsService: BlogsService) {}
+  constructor(private readonly blogsService: BlogsService) {}
 
   @Get()
   async getBlogs() {
     const blogs = await this.blogsService.getBlogs();
+    return blogs.filter((blog) => !blog.pending);
+  }
+
+  @Get('search?')
+  async findBlogs(@Query('keyword') keyValue: string) {
+    const blogs = await this.blogsService.searchBlogs(keyValue);
     return blogs;
   }
 
@@ -23,20 +40,33 @@ export class BlogsController {
     return this.blogsService.findBlogsByCommunity(community.id);
   }
 
-  @Get('member/:id')
-  getBlogsByMemberId(@Param() member: any) {
-    return this.blogsService.findBlogsByMember(member.id);
+  @Get('moderator/:id')
+  getBlogsByModeratorId(@Param() moderator: any) {
+    return this.blogsService.findBlogsByModerator(moderator.id);
   }
 
   @Get('bookmarks/:id')
-  getBlogsByMemberBookmarks(@Param() member: any) {
-    console.log(member.id)
-    return this.blogsService.findBlogsByMemberBookmarks(member.id);
+  getBlogsByModeratorBookmarks(@Param() moderator: any) {
+    return this.blogsService.findBlogsByModeratorBookmarks(moderator.id);
   }
 
   @Post()
   @UsePipes(ValidationPipe)
-  createMember(@Body() blogInfo: Blogs) {
+  createModerator(@Body() blogInfo: Blogs) {
     return this.blogsService.addBlog(blogInfo);
+  }
+
+  @Patch(':blogId')
+  async updateBlog(@Param('blogId') blogId: string) {
+    await this.blogsService.updateBlog(blogId, false);
+    return {
+      blogId,
+    };
+  }
+
+  @Delete('delete/:id')
+  async removeBlog(@Param('id') blog: any) {
+    await this.blogsService.deleteBlog(blog);
+    return { blogId: blog };
   }
 }

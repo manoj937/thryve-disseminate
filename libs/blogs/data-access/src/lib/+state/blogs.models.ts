@@ -3,7 +3,7 @@
  */
 export interface BlogsEntity {
   blogId: string;
-  memberId: string;
+  moderatorId: string;
   communityId: string;
   title: string;
   tags: string[];

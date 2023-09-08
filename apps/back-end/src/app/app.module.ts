@@ -3,25 +3,24 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { BlogDetails, BlogsModule } from '@thryve-disseminate/back-end/blogs';
 import { CommunityDetails, CommunityModule } from '@thryve-disseminate/back-end/community';
-import { MemberDetails, MembersModule } from '@thryve-disseminate/back-end/members';
+import { ModeratorDetails, ModeratorsModule } from '@thryve-disseminate/back-end/moderators';
+import { QaDetails, QaModule } from '@thryve-disseminate/back-end/qa';
 
-const entities = [ MemberDetails, CommunityDetails, BlogDetails];
+const entities = [ ModeratorDetails, CommunityDetails, BlogDetails, QaDetails];
 
 @Module({
   imports: [
-    MembersModule,
+    ModeratorsModule,
     CommunityModule,
     BlogsModule,
+    QaModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: '94.100.26.108',
-      // host: 'localhost',
       port: 3306,
       username: 'thryve',
       password: 'thryve123',
-       database: 'thryve_disseminate',
-      //  username: 'root',
-      // password: 'neha',
+      database: 'thryve_disseminate',
       entities,
       synchronize: true,
       connectTimeout: 60 * 60 * 1000,

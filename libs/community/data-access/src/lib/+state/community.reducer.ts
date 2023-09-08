@@ -43,13 +43,11 @@ const reducer = createReducer(
     loaded: false,
     error: null,
   })),
-  on(CommunityActions.loadCommunitySuccess, (state, action) => {
-    console.log();
-    return communityAdapter.setAll(action.community, {
+  on(CommunityActions.loadCommunitySuccess, (state, action) => communityAdapter.setAll(action.community, {
       ...state,
       loaded: true,
-    });
-  }),
+    })
+  ),
   on(CommunityActions.loadCommunityFailure, (state, { error }) => ({
     ...state,
     error,

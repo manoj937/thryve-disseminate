@@ -10,10 +10,10 @@ export class BlogDetails {
   blogId!: string;
 
   @Column({
-    name: 'member_id',
+    name: 'moderator_id',
     nullable: false
   })
-  memberId!: string;
+  moderatorId!: string;
 
   @Column({
     name: 'community_id',
@@ -70,4 +70,8 @@ export class BlogDetails {
   })
   readTime!: string;
 
+  @Column({
+    nullable: false
+  })
+  pending!: boolean;
 }

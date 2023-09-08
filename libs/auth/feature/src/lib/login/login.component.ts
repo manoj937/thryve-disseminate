@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit{
     sessionStorage.setItem('admin', this.loginForm?.value?.loginas === 'admin' ? 'true' : 'false');
     this.loginService.login(this.loginForm.value).subscribe({
       next: (response: any) => {
-        if(response?.data?.memberId){
+        if(response?.data?.moderatorId){
             this.router.navigate(['/dashboard'])
           } else {
             this.alert = true;

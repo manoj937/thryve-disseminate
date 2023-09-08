@@ -1,6 +1,6 @@
 export interface Blogs {
     blogId?: string;
-    memberId: string;
+    moderatorId: string;
     communityId: string;
     title: string;
     tags: string[];
@@ -12,4 +12,5 @@ export interface Blogs {
     comments: string;
     views: string;
     readTime: string;
+    pending: boolean;
 }

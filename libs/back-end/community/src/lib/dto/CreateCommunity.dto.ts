@@ -7,7 +7,7 @@ export class CreateCommunityDto {
 
   @IsNotEmpty()
   @MinLength(3)
-  memberId!: string;
+  moderatorId!: string;
 
   @IsNotEmpty()
   @MinLength(3)
@@ -18,7 +18,7 @@ export class CreateCommunityDto {
   description!: string;
 
   @IsNotEmpty()
-  members!: string;
+  moderators!: string;
 
   @IsNotEmpty()
   tags!: string;

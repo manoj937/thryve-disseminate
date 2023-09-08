@@ -7,7 +7,7 @@ export class CreateBlogDto {
 
   @IsNotEmpty()
   @MinLength(3)
-  memberId!: string;
+  moderatorId!: string;
 
   @IsNotEmpty()
   @MinLength(3)
@@ -39,4 +39,7 @@ export class CreateBlogDto {
 
   @IsNotEmpty()
   readTime!: string;
+
+  @IsNotEmpty()
+  pending!: boolean;
 }

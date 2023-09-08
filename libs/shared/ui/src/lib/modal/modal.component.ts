@@ -27,7 +27,7 @@ export class ModalComponent implements OnInit{
       title: ['', Validators.required],
       description: ['', Validators.required],
       category: ['', Validators.required],
-      members: ['', Validators.required],
+      moderators: ['', Validators.required],
       tags: ['', Validators.required]
     });
   }

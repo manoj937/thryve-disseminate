@@ -32,7 +32,6 @@ export class RegistrationComponent implements OnInit{
     this.registerService.register(this.registerForm.value).subscribe({
       next: (response: any) => {
         this.alert = true;
-        console.log(response)
       },
       error: (e) => console.log(e)
     })

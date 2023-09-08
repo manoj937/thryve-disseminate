@@ -3,10 +3,10 @@
  */
 export interface CommunityEntity {
   communityId: string;
-  memberId: string,
+  moderatorId: string,
   title: string,
   description: string,
-  members: string[],
+  moderators: string[],
   tags: string[],
   type: string,
   pendingApprovals?: string[];

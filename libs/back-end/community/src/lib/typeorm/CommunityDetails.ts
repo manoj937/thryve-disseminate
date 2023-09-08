@@ -10,10 +10,10 @@ export class CommunityDetails {
   communityId!: string;
 
   @Column({
-    name: 'member_id',
+    name: 'moderator_id',
     nullable: false
   })
-  memberId!: string;
+  moderatorId!: string;
 
   @Column({
     nullable: false
@@ -26,7 +26,7 @@ export class CommunityDetails {
   description!: string;
 
   @Column()
-  members!: string;
+  moderators!: string;
 
   @Column({
     nullable: false
