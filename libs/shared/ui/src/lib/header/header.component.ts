@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {Subject, fromEvent } from 'rxjs';
+import { filter, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'thryve-disseminate-header',
@@ -17,4 +19,15 @@ export class HeaderComponent {
   'South Dakota','Tennessee','Texas','Utah','Vermont',
   'Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
   navigations = sessionStorage.getItem('admin') === 'true' ? ['Dashboard', 'Community'] : ['Dashboard', 'Community', 'Explore', 'Activity'];
+  searchValue = new Subject<string>();
+  constructor() {
+    this.searchValue.pipe(
+      debounceTime(400),
+      distinctUntilChanged())
+      .subscribe(value => {
+        console.log(value);
+        //dispatch the action here
+      });
+  }
+
 }

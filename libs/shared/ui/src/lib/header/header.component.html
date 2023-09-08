@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <img src="assets/logo-thryve.png" width="120px"  alt="Thryve Disseminate">
       <div class="search">
-        <input placeholder="Search .." [(ngModel)]="selectedState" [typeahead]="states" class="bg-body-tertiary form-control">
+        <input (ngModelChange)="this.searchValue.next($event)" placeholder="Search .." [(ngModel)]="selectedState" [typeahead]="states" class="bg-body-tertiary form-control">
         <i class="fa fa-search text-dark"></i>
       </div>
       <ul class="navbar-nav mr-auto">
