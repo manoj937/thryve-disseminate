@@ -1,1 +1,64 @@
-<p>activity works!</p>
+<div  class="m-3 row">
+    <div class="col-8">
+        <div class=" row">
+            <div  class="card col-2">
+                <div class="member">
+                 <span class="image my-3"><img src="assets/avatar_img.jpg"></span>
+                 <div class="">
+                    Neha V K
+                 </div>
+                 <div class="">
+                    Designation
+                 </div>
+                </div>
+             </div>
+             <div  class="my-level col">
+                <div>
+                 <h2>Congratulation! You're a Rookie</h2>
+                 <h4>More to go!! Explore more!!</h4>
+                 <h4>You're on the right track</h4>
+                </div>
+             </div>
+        </div>
+        <div class="achieved">
+            <h4 class="m-2">My badges</h4>
+            <div class="d-flex">
+                <div class="m-2">
+                    <span class="image my-3"><img src="assets/badge1.png"></span>
+                    <p>Blog Star</p>
+                </div>
+                <div class="m-2">
+                    <span class="image my-3"><img src="assets/badge2.png"></span>
+                    <p>Voracious Reader</p>
+                </div>
+            </div>
+        </div>
+        <div class="achieved">
+            <h4 class="m-2">My Monthly Activity</h4>
+            <div >
+                <div id="container"></div>
+              .....
+            </div>
+            <div>
+                chart
+            </div>
+        </div>
+       
+    </div>
+    
+    <div  class="col-3 levels">
+        <h2>
+            Disseminate Levels
+        </h2>
+        <ng-container *ngFor="let level of levels">
+            <div class="my-4">
+                <h4>
+                    {{level?.value}}
+                </h4>
+                <div class="note">
+                    {{level?.note}}
+                </div>
+            </div>
+     </ng-container>
+</div>
+

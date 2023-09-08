@@ -1,0 +1,86 @@
+.card {
+    position: relative;
+      display: grid;
+      width: 200px;
+      height: 200px;
+     // grid-template-rows: 21px 21px 80px;
+        border: white;
+      background: white;
+      font-family: roboto;
+      text-align: center;
+      border-radius: 15px;
+      margin: 20px;
+     
+    }
+    .member{
+        color:#06549c;
+        font-size: large;
+        font-weight: 500;
+    }
+    .image{
+        width: 75px;
+        display: inline-block;
+        align-items: center;
+        height: 75px;
+        border-radius: 300px;
+        overflow: hidden;
+        margin: 0 0.5rem 0.5rem 0;
+        img{
+            width: 100%;
+        }
+    }
+    .my-level{
+        position: relative;
+        display: grid;
+         width: 500px;
+        // height: 200px;
+        border: white;
+        background: white;
+        font-family: roboto;
+        text-align: center;
+        align-items: center;
+        border-radius: 15px;
+        
+      color:#08506d;
+        margin: 20px;  
+    }
+    .levels{
+        position: sticky;
+      // width: 400px;
+       height: fit-content;
+        border: white;
+      background: white;
+      font-family: roboto;
+      text-align: center;
+      color:#06549c;
+      border-radius: 15px;
+      margin: 20px;
+      h2{
+          //color: #034c5e;
+          color:#086386;
+        }
+        .note{
+            color:#56b0d3;
+        font-size: medium;
+
+      }
+    }
+    .left-container{
+        grid-template-rows: 1fr 1fr;
+    }
+    .achieved{
+        position: relative;
+        display: grid;
+        width: 100%;
+        // height: 200px;
+        border: white;
+        background: white;
+        font-family: roboto;
+        border-radius: 15px;
+        
+      color:#1e1247;
+        margin-top: 10px; 
+    }
+    p{
+        font-size: larger;
+    }
