@@ -2,6 +2,7 @@
 import { createAction, props } from '@ngrx/store';
 import { CommunityEntity } from './community.models';
 
+/* Community Creation Starts*/
 export const initCommunityCreation = createAction(
   '[Community Creation Page] Init',
   props<{ result: CommunityEntity }>()
@@ -16,6 +17,10 @@ export const communityCreationFailure = createAction(
   '[Community/API] Community Creation Failure',
   props<{ error: any }>()
 );
+/* Community Creation Ends*/
+
+
+/* Fetch All Communities Starts*/
 
 export const initLoadCommunities = createAction('[Get All Communitys] Init');
 
@@ -28,6 +33,9 @@ export const loadCommunityFailure = createAction(
   '[Community/API] Load Community Failure',
   props<{ error: any }>()
 );
+
+/* Fetch All Communities Ends*/
+
 
 export const initCommunityUpdation = createAction(
   '[Update Community Page] Init',
@@ -44,6 +52,8 @@ export const updateCommunityFailure = createAction(
   props<{ error: any }>()
 );
 
+/* Delete Community Starts*/
+
 export const initCommunityDeletion = createAction(
   '[Community Deletion Page] Init',
   props<{ communityId: string }>()
@@ -58,3 +68,5 @@ export const deleteCommunityFailure = createAction(
   '[Community/API] Community Deletion Failure',
   props<{ error: any }>()
 );
+
+/* Delete Community Ends*/

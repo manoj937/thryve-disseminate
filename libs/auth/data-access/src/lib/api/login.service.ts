@@ -12,7 +12,8 @@ const httpOptions = {
 interface User {
   email: string;
   password: string;
-  loginas: string;
+  isAdmin?: boolean;
+  loginas?:string;
 }
 
 @Injectable({
@@ -27,6 +28,7 @@ export class LoginService {
   errorMessage: any;
 
   login(user: User): Observable<User> {
+    user.isAdmin =  Boolean(user.loginas === "admin"); 
     return this.http.post<User>(this.env.domain+'/login', user, httpOptions).pipe(
       catchError((error: any): Observable<any> => {
         this.errorMessage = error.message;

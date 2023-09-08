@@ -26,13 +26,13 @@ export class ModalComponent implements OnInit{
     this.communityForm = this.fb.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
-      category: ['', Validators.required],
+      type: ['', Validators.required],
       moderators: ['', Validators.required],
       tags: ['', Validators.required]
     });
   }
 
   onSubmit() {
-    return 0;
+    this.modalRef.close(this.communityForm);
   }
 }

@@ -39,12 +39,12 @@
             </div>
 
             <div class="form-group">
-              <label for="category">Category</label>
+              <label for="type">Category</label>
               <div class="d-flex flex-wrap">
-                <div *ngFor="let category of categories" class="form-check">
-                  <input class="form-check-input" type="radio" [id]="category" [value]="category" formControlName="category">
-                  <label [for]="category" class="form-check-label">
-                    {{ category }}
+                <div *ngFor="let type of categories" class="form-check">
+                  <input class="form-check-input" type="radio" [id]="type" [value]="type" formControlName="type">
+                  <label [for]="type" class="form-check-label">
+                    {{ type }}
                   </label>
                 </div>
               </div>
@@ -77,12 +77,13 @@
                 />
                 <div class="invalid-feedback">Moderators are invalid</div>
             </div>
+            <div class="modal-footer">
+              <button type="button" class="close btn btn-secondary" (click)="modalRef.close()">
+                  Close
+              </button>
+              <button type="submit" class="btn btn-primary">Add</button>
+          </div>
           </form>
     </div>
-        <div class="modal-footer">
-        <button type="button" class="close btn btn-secondary" (click)="modalRef.close()">
-            Close
-        </button>
-        <button type="submit" class="btn btn-primary">Add</button>
-    </div>
+        
 </ng-container>

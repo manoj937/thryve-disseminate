@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -14,4 +14,18 @@ import { QaFacade } from './+state/qa.facade';
   ],
   providers: [QaFacade],
 })
-export class QaDataAccessModule {}
+export class QaDataAccessModule {
+  public static forRoot(
+    environment: any
+  ): ModuleWithProviders<QaDataAccessModule> {
+    return {
+      ngModule: QaDataAccessModule,
+      providers: [
+        {
+          provide: 'env',
+          useValue: environment,
+        },
+      ],
+    };
+  }
+}

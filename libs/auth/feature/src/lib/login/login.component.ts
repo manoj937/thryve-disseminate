@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit{
           } else {
             this.alert = true;
           }
+          sessionStorage.setItem('moderatorId', response.data.moderatorId);
       },
       error: () => this.alert = true
     })

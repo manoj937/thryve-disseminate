@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { ModalComponent } from '@thryve-disseminate/shared/ui';
@@ -10,6 +11,7 @@ import { ModalComponent } from '@thryve-disseminate/shared/ui';
 export class AdminCommunitiesComponent {
   @Input() communityList: any;
   @Output() delete = new EventEmitter<string>();
+  @Output() add = new EventEmitter<any>();
 
   modalRef: MdbModalRef<ModalComponent> | null = null;
 
@@ -19,9 +21,14 @@ export class AdminCommunitiesComponent {
     this.modalRef = this.modalService.open(ModalComponent, {
       data: { title: 'Add Community' },
     });
+    this.modalRef?.onClose.subscribe((data) => {
+      if (data.value) {
+        this.add.emit(data.value);
+      }
+    });
   }
-  
-  deleteCommunity(id: string){
+
+  deleteCommunity(id: string) {
     this.delete.emit(id);
   }
 }

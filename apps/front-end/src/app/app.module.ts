@@ -15,6 +15,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommunityDataAccessModule } from '@thryve-disseminate/community/data-access';
 import { BlogsDataAccessModule } from '@thryve-disseminate/blogs/data-access';
+import { QaDataAccessModule } from '@thryve-disseminate/qa/data-access';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +34,7 @@ import { BlogsDataAccessModule } from '@thryve-disseminate/blogs/data-access';
     BlogsDataAccessModule.forRoot(environment),
     CommunityDataAccessModule.forRoot(environment),
     AuthDataAccessModule.forRoot(environment),
+    QaDataAccessModule.forRoot(environment),
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [], 
