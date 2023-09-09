@@ -1,0 +1,35 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
+    padding: 10px;
+  }
+  
+  .grid-item {
+    background-color: white;
+    border: white;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 30px;
+    margin: 5px;
+    //text-align: center;
+  }
+
+  .pages-info{
+    color:#06549c;
+    .count{
+        color: black;
+    }
+  }
+  .green{
+    color: green;
+  }
+  .red{
+    color: red;
+  }
+  .name{
+    font-size: large;
+  }
+  .pointer{
+    cursor: pointer;
+  }
