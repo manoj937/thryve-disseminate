@@ -6,7 +6,7 @@
     <ng-container *ngIf="!!communityList?.length">
         <div *ngFor="let community of communityList" class="card1">
             <div class="card-image">
-              <img src="assets/1.jpg" />
+              <img [src]="'assets/community/' +  Math.floor(Math.random() * (4) + 1) + '.jpg'" />
             </div>
             <div class="card-text">
               <span class="date {{community.type.toLowerCase()}}-text">Created On {{community.createdOn}}</span>

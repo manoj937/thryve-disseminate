@@ -12,7 +12,7 @@ export class AdminCommunitiesComponent {
   @Input() communityList: any;
   @Output() delete = new EventEmitter<string>();
   @Output() add = new EventEmitter<any>();
-
+  Math= Math;
   modalRef: MdbModalRef<ModalComponent> | null = null;
 
   constructor(private modalService: MdbModalService) {}

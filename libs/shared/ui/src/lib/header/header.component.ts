@@ -8,6 +8,7 @@ import { filter, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators'
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  Math = Math;
   selectedState!: string;
   states: string[] = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado',
   'Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois',

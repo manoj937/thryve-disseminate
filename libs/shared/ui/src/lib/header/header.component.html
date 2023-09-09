@@ -18,7 +18,7 @@
             <button id="button-basic" dropdownToggle type="button" class="btn user dropdown-toggle"
                     aria-controls="dropdown-basic">
                 <span>Manoj</span>
-                <span class="image"><img src="assets/user.png"></span>
+                <span class="image"><img [src]="'assets/members/' +  Math.floor(Math.random() * (4) + 1) + '.jpg'"></span>
                 <span class="caret"></span>
             </button>
             <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
