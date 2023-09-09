@@ -9,6 +9,7 @@ export class BlogDetailComponent implements OnInit {
   todaysDate = new Date();
   yesterday = new Date();
   moment: any = moment;
+  Math = Math;
   ngOnInit(){
     this.yesterday.setDate(this.todaysDate.getDate() - 1);
   }
