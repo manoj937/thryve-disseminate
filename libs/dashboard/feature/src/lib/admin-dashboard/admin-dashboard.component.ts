@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from "highcharts";
+import { BlogsFacade } from '@thryve-disseminate/blogs/data-access';
+import { CommunityFacade } from '@thryve-disseminate/community/data-access';
 @Component({
   selector: 'thryve-disseminate-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -8,6 +10,10 @@ import * as Highcharts from "highcharts";
 export class AdminDashboardComponent implements OnInit {
   blogchart: any;
   communitychart: any;
+  constructor(
+    public communityDetails: CommunityFacade,
+    public blogsDetails: BlogsFacade
+  ) {}
   ngOnInit(): void {
     this.blogchart = Highcharts.chart('blog', {
       title: {
@@ -27,7 +33,6 @@ export class AdminDashboardComponent implements OnInit {
         data: [10, 15, 12, 18, 20, 16, 22, 25]
       }]
     });
-  
   this.communitychart = Highcharts.chart('community', {
     title: {
       text: ''
@@ -46,6 +51,11 @@ export class AdminDashboardComponent implements OnInit {
       data: [7, 15, 22, 8, 37, 16, 29, 25]
     }]
   });
+  this.communityDetails.initLoadCommunities();
+  this.blogsDetails.initLoadBlogs();
+  this.communityDetails.allCommunity$.subscribe(x => console.log(x));
+  this.blogsDetails.allBlogs$.subscribe(x => console.log(x))
+
 }
   
   }

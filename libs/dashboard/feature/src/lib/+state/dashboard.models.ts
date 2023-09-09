@@ -1,7 +1,7 @@
 /**
- * Interface for the 'Blogs' data
+ * Interface for the 'Dashboard' data
  */
-export interface BlogsEntity {
+export interface DashboardEntity {
   blogId: string;
   moderatorId: string;
   communityId: string;
@@ -15,5 +15,4 @@ export interface BlogsEntity {
   comments: string;
   views: string;
   readTime: string;
-  pending: boolean;
 }

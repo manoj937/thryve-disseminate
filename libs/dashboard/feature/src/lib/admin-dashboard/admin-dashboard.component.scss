@@ -29,6 +29,8 @@
   }
   .name{
     font-size: large;
+    max-width: 300px;
+    word-break: break-all;
   }
   .pointer{
     cursor: pointer;

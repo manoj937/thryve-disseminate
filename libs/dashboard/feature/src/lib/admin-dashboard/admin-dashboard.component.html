@@ -54,69 +54,60 @@ Moderator
       <h4 class="mx-3">
         Pending Approvals (Communities)
       </h4>
-      <ng-container>
-        <div class="d-flex justify-content-between m-2">
-          <div class="name m-3">
-            Neha V K
-          </div>
-          <div class="">
-            <i class="m-3 name fa fa-check green pointer" aria-hidden="true"></i>
-            <i class="m-3 name fa fa-times red pointer" aria-hidden="true"></i>
-          </div>
-        </div>
-        <div class="d-flex justify-content-between m-2">
-          <div class="name m-3">
-           Manoj
-          </div>
-          <div class="">
-            <i class="m-3 name fa fa-check green pointer" aria-hidden="true"></i>
-            <i class="m-3 name fa fa-times red pointer" aria-hidden="true"></i>
-          </div>
-        </div>
-        <div class="d-flex justify-content-between m-2">
-          <div class="name m-3">
-            Neha V K
-          </div>
-          <div class="">
-            <i class="m-3 name fa fa-check green pointer" aria-hidden="true"></i>
-            <i class="m-3 name fa fa-times red pointer" aria-hidden="true"></i>
-          </div>
+      <ng-container *ngIf="(communityDetails.allCommunity$ | async)?.length">
+      <ng-container *ngFor="let community of (communityDetails.allCommunity$ | async)">
+        <div class="" *ngIf="community?.pendingApprovals?.length">
+          <table *ngFor="let moderator of community?.pendingApprovals">
+            <tr>
+              <td>
+                <div class="name m-3">
+                  {{community?.title}}
+                </div>
+
+              </td>
+              <td>
+                <div class="name m-3">
+                  {{moderator}}
+                </div>
+              </td>
+              <td>
+                <div class="pb-2">
+                  <i class="mx-1 name fa fa-check green pointer" aria-hidden="true"></i>
+                  <i class="mx-1 name fa fa-times red pointer" aria-hidden="true"></i>
+                </div>
+              </td>
+            </tr>
+          </table>
         </div>
       </ng-container>
+    </ng-container>
 
     </div>
     <div class="grid-item pages-info">
       <h4 class="mx-3">
         Pending Approvals (Blogs)
       </h4>
-      <ng-container>
-        <div class="d-flex justify-content-between m-2">
-          <div class="name m-3">
-            Neha V K
+      <ng-container *ngIf="(blogsDetails.allBlogs$ | async)?.length">
+        <ng-container *ngFor="let blog of (blogsDetails.allBlogs$ | async)">
+          <div class="" *ngIf="!blog?.pending" >
+            <table>
+              <tr>
+                <td>
+                  <div class="name m-3">
+                    {{blog?.title}}
+                  </div>
+  
+                </td>
+                <td>
+                  <div class="pb-2">
+                    <i class="mx-1 name fa fa-check green pointer" aria-hidden="true"></i>
+                    <i class="mx-1 name fa fa-times red pointer" aria-hidden="true"></i>
+                  </div>
+                </td>
+              </tr>
+            </table>
           </div>
-          <div class="">
-            <i class="m-3 name fa fa-check green pointer" aria-hidden="true"></i>
-            <i class="m-3 name fa fa-times red pointer" aria-hidden="true"></i>
-          </div>
-        </div>
-        <div class="d-flex justify-content-between m-2">
-          <div class="name m-3">
-           Manoj
-          </div>
-          <div class="">
-            <i class="m-3 name fa fa-check green pointer" aria-hidden="true"></i>
-            <i class="m-3 name fa fa-times red pointer" aria-hidden="true"></i>
-          </div>
-        </div>
-        <div class="d-flex justify-content-between m-2">
-          <div class="name m-3">
-            Neha V K
-          </div>
-          <div class="">
-            <i class="m-3 name fa fa-check green pointer" aria-hidden="true"></i>
-            <i class="m-3 name fa fa-times red pointer" aria-hidden="true"></i>
-          </div>
-        </div>
+          </ng-container>
       </ng-container>
 
     </div>
