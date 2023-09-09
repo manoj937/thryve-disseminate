@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import {Subject, fromEvent } from 'rxjs';
 import { filter, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
-
+import { BlogsFacade } from '@thryve-disseminate/blogs/data-access';
 @Component({
   selector: 'thryve-disseminate-header',
   templateUrl: './header.component.html',
@@ -21,13 +21,14 @@ export class HeaderComponent {
   'Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
   navigations = sessionStorage.getItem('admin') === 'true' ? ['Dashboard', 'Community'] : ['Dashboard', 'Community', 'Explore', 'Activity'];
   searchValue = new Subject<string>();
-  constructor() {
+  constructor(public blogsDetails: BlogsFacade) {
     this.searchValue.pipe(
       debounceTime(400),
       distinctUntilChanged())
       .subscribe(value => {
         console.log(value);
         //dispatch the action here
+        this.blogsDetails.initLoadBlogs();
       });
   }
 
