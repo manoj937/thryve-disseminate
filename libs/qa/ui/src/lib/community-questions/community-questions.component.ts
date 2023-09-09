@@ -10,7 +10,7 @@ export class CommunityQuestionsComponent { todaysDate = new Date();
   yesterday = new Date();
   moment: any = moment;
   @Input() blogsList: any;
-  
+  Math = Math;
   ngOnInit(){
     this.yesterday.setDate(this.todaysDate.getDate() - 1);
   }

@@ -1,29 +1,9 @@
-<!-- <div class="section-widget">
-    <div class="section-title">My Community</div>
-    <hr/>
-    <ng-container *ngFor="let content of sectionContent">
-        <div class="section-content">
-            <img [src]="content?.src" alt="img">
-            <div class="community-information">
-                <div class="type">
-                  {{content?.type}}
-                </div>
-                <div class="name">
-                   {{content?.title}}
-                </div>
-                <div>
-                    {{content?.moderators}} Moderators
-                </div>
-            </div>
-        </div>
-    </ng-container> 
-    <button>Explore All</button>
-</div> -->
+
 <div class="community" *ngIf="!!communityList?.length">
     <h6>Communities</h6>
     <ul>
         <li *ngFor="let content of communityList">
-            <img src="assets/1.jpg" alt="img">
+            <img [src]="'assets/community/' + getRandomInt() + '.jpg'" alt="img">
             <div>
               <span>
                 <ng-container *ngFor="let tag of content.tags">
@@ -41,7 +21,7 @@
     <h6>Events</h6>
     <ul>
         <li *ngFor="let content of sectionContent">
-            <img [src]="content?.src" alt="img">
+            <img [src]="'assets/events/' + getRandomInt() + '.jpg'" alt="img">
             <div>
               <span>{{content?.type}}</span>
               <h5>{{content?.title}}</h5>

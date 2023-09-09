@@ -12,6 +12,7 @@ export class CommunityPostsComponent implements OnInit {
   yesterday = new Date();
   moment: any = moment;
   @Input() blogsList: any;
+  Math = Math;
   
   ngOnInit(){
    (<any> $('[data-toggle="tooltip"]'))?.tooltip();
