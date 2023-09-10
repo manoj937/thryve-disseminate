@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import {Subject, fromEvent } from 'rxjs';
 import { filter, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
 import { BlogsFacade } from '@thryve-disseminate/blogs/data-access';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 @Component({
   selector: 'thryve-disseminate-header',
   templateUrl: './header.component.html',
@@ -21,7 +22,17 @@ export class HeaderComponent {
   'Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
   navigations = sessionStorage.getItem('admin') === 'true' ? ['Dashboard', 'Community'] : ['Dashboard', 'Community', 'Explore', 'Activity'];
   searchValue = new Subject<string>();
-  constructor(public blogsDetails: BlogsFacade) {
+  url: string = '';
+  constructor(public blogsDetails: BlogsFacade, private router: Router,
+    private route:ActivatedRoute) {
+      this.router.events.subscribe(
+        (event: any) => {
+          if (event instanceof NavigationEnd) {
+            this.url = this.router.url
+            console.log('this.router.url', this.router.url);
+          }
+        }
+      );
     this.searchValue.pipe(
       debounceTime(400),
       distinctUntilChanged())
@@ -30,6 +41,13 @@ export class HeaderComponent {
         //dispatch the action here
         this.blogsDetails.initLoadBlogs();
       });
+  }
+  routeTo(){
+    if(this.url.includes('community/qa') || this.url.includes('community/blogs')){
+      //todo
+    } else {
+      this.router.navigate(['/community/blogs']);
+    }
   }
 
 }
