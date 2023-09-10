@@ -10,7 +10,7 @@ export class FindBlogByModeratoridService {
   constructor(private http: HttpClient, @Inject('env') private env:any) { }
 
   getBlogsByModeratorId(moderatorId: string): Observable<any>{
-    return this.http.get(`${this.env.domain}/blogs/${moderatorId}`).pipe(
+    return this.http.get(`${this.env.domain}/blogs/moderator/${moderatorId}`).pipe(
       catchError((error: any): Observable<any> => {
         console.error('There was an error!', error);
         return of(error);

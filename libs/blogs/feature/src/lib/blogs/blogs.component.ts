@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { BlogsFacade } from '@thryve-disseminate/blogs/data-access';
 
 @Component({
@@ -7,5 +8,13 @@ import { BlogsFacade } from '@thryve-disseminate/blogs/data-access';
   styleUrls: ['./blogs.component.scss'],
 })
 export class BlogsComponent {
-  constructor(public blogsDetails: BlogsFacade){}
+
+  moderatorId = sessionStorage.getItem('moderatorId');
+  constructor(public blogsDetails: BlogsFacade, private router: Router){
+    if(this.router.url.split('/').includes('myblogs')){
+      this.blogsDetails.initLoadBlogsByModeratorId(String(this.moderatorId));
+    } else{
+      this.blogsDetails.initLoadBlogs();
+    }
+  }
 }
