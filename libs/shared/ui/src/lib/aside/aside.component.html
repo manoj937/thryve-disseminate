@@ -3,7 +3,7 @@
     <h6>Communities</h6>
     <ul>
         <li *ngFor="let content of communityList">
-            <img [src]="'assets/community/' + getRandomInt() + '.jpg'" alt="img">
+            <img [src]="'assets/community/1.jpg'" alt="img">
             <div>
               <span>
                 <ng-container *ngFor="let tag of content.tags">
@@ -21,7 +21,7 @@
     <h6>Events</h6>
     <ul>
         <li *ngFor="let content of sectionContent">
-            <img [src]="'assets/events/' + getRandomInt() + '.jpg'" alt="img">
+            <img [src]="'assets/events/1.jpg'" alt="img">
             <div>
               <span>{{content?.type}}</span>
               <h5>{{content?.title}}</h5>

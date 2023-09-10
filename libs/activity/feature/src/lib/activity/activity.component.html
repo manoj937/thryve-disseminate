@@ -1,26 +1,38 @@
-<div  class="m-3 row">
-    <div class="col-8">
-        <div class=" row">
-            <div  class="card col-2">
-                <div class="member">
-                 <span class="image my-3"><img src="assets/members/1.jpg"></span>
-                 <div class="">
-                    Neha V K
-                 </div>
-                 <div class="">
-                    Designation
-                 </div>
-                </div>
-             </div>
-             <div  class="my-level col">
-                <div>
-                 <h2>Congratulation! You're a Veteran</h2>
-                 <h4>More to go!! Explore more!!</h4>
-                 <h4>You're on the right track</h4>
-                </div>
-             </div>
+<div class="card-container">
+    <div class="card user-card">
+        <img src="assets/bg.png">
+        <h2>Congratulation! You're a Veteran</h2>
+        <h4>More to go!! Explore more!!</h4>
+        <h5>You're on the right track!!!</h5>
+    </div>
+    <div class="card">
+        <div class="member">
+         <span class="image my-3"><img src="assets/members/1.jpg"></span>
+         <div>
+            Neha V K
+         </div>
+         <div class="designation">
+            Designation
+         </div>
         </div>
-        <div class="achieved">
+    </div>
+    <div class="card levels">
+        <div class="head">
+            <img width="60px" src="assets/thryve.png"></div>
+        <ul>
+            <li [ngClass]="level.class" class="bg-light card" *ngFor="let level of levels">
+                <h4 class="card-title">
+                    {{level?.value}}
+                </h4>
+                <div class="note card-content">
+                    {{level?.note}}
+                </div>
+                <span class="logo"><img [src]="'assets/badge/'+level.class+'.png'"></span>
+            </li>
+        </ul>
+     </div>
+     <div class="col">
+        <div class="card achieved">
             <h4 class="m-2">My badges</h4>
             <div class="d-flex">
                 <div class="m-2">
@@ -33,29 +45,13 @@
                 </div>
             </div>
         </div>
-        <div class="achieved">
+        <div class="card achieved margin-top">
             <h4 class="m-2">My Monthly Activity</h4>
             <div >
-                <div id="container"></div>
+                <div class="p-3" id="container"></div>
               
             </div>
         </div>
-       
-    </div>
-    
-    <div  class="col-3 levels">
-        <h2>
-            Disseminate Levels
-        </h2>
-        <ng-container *ngFor="let level of levels">
-            <div class="my-4">
-                <h4>
-                    {{level?.value}}
-                </h4>
-                <div class="note">
-                    {{level?.note}}
-                </div>
-            </div>
-     </ng-container>
-</div>
+     </div>
+ </div>
 

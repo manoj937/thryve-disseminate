@@ -1,86 +1,285 @@
+.card-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  .user-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    grid-column: 1 / span 4;
+    img{
+      width: 100%;
+    position: absolute;
+    opacity: 0.1;
+    }
+    h2 {
+      font-size: 24px;
+      color: #01637c;
+    }
+  
+    h4 {
+      font-size: 18px;
+      color: #9E9E9E;
+      font-weight: 400;
+    }
+  
+    h5 {
+      color: #498c67;
+    }
+  }
+  .head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .card {
-    position: relative;
-      display: grid;
-      width: 200px;
-      height: 200px;
-     // grid-template-rows: 21px 21px 80px;
-        border: white;
-      background: white;
-      font-family: roboto;
-      text-align: center;
-      border-radius: 15px;
-      margin: 20px;
-     
-    }
-    .member{
-        color:#06549c;
-        font-size: large;
-        font-weight: 500;
-    }
-    .image{
-        width: 75px;
-        display: inline-block;
-        align-items: center;
-        height: 75px;
-        border-radius: 300px;
-        overflow: hidden;
-        margin: 0 0.5rem 0.5rem 0;
-        img{
-            width: 100%;
-        }
-    }
-    .my-level{
-        position: relative;
-        display: grid;
-         width: 500px;
-        // height: 200px;
-        border: white;
-        background: white;
-        font-family: roboto;
-        text-align: center;
-        align-items: center;
-        border-radius: 15px;
-        
-      color:#06549c;
-        margin: 20px;  
-    }
-    .levels{
-        position: sticky;
-      // width: 400px;
-       height: fit-content;
-        border: white;
-      background: white;
-      font-family: roboto;
-      text-align: center;
-      color:#06549c;
-      border-radius: 15px;
-      margin: 20px;
-      h2{
-          //color: #034c5e;
-          color:#086386;
-        }
-        .note{
-            color:#56b0d3;
-        font-size: medium;
+  position: relative;
+  border: white;
+  background: white;
+  text-align: center;
+  border-radius: 6px;
+  grid-column: 5 /span 2;
+}
 
+.col{
+  grid-column: 5/span 2;
+}
+
+.member {
+  color: #01637c;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.designation{
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #9E9E9E;
+}
+
+.margin-top{
+  margin-top: 20px;
+}
+
+.image {
+  width: 60px;
+  display: inline-block;
+  align-items: center;
+  height: 60px;
+  border-radius: 300px;
+  overflow: hidden;
+  margin: 0 0.5rem 0.5rem 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+.my-level {
+  position: relative;
+  display: grid;
+  width: 500px;
+  // height: 200px;
+  border: white;
+  background: white;
+  font-family: roboto;
+  text-align: center;
+  align-items: center;
+  border-radius: 6px;
+
+  color: #06549c;
+  margin: 20px;
+}
+
+.levels {
+  position: sticky;
+  padding: 25px;
+  // width: 400px;
+  height: fit-content;
+  border: white;
+  background: white;
+  font-family: roboto;
+  text-align: center;
+  color: #06549c;
+  border-radius: 6px;
+  grid-column: 1 / span 4;
+
+  h2 {
+    font-size: 24px;
+    padding: 20px;
+    background: #01637c;
+    display: inline-block;
+    position: relative;
+    border-radius: 6px;
+    color: #fff;
+    z-index: 2;
+  }
+
+  .note {
+    font-size: medium;
+
+  }
+}
+
+.left-container {
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.achieved {
+  position: relative;
+  width: 100%;
+  border: white;
+  background: white;
+  font-family: roboto;
+  border-radius: 6px;
+  padding: 10px;
+  h4{
+    font-size: 18px;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 30px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+  }
+
+  li:nth-child(odd) {
+    right: 200px;
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 500px;
+      right: -70px;
+      top: 30px;
+    }
+
+    &::after {
+      width: 30px;
+      background: #f8f9fa;
+      height: 4px;
+      top: 50px;
+      right: -30px;
+    }
+  }
+
+  li:nth-child(even) {
+    left: 200px;
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      left: -70px;
+      top: 30px;
+    }
+
+    &::after {
+      width: 30px;
+      background: #f8f9fa;
+      height: 4px;
+      top: 50px;
+      left: -30px;
+    }
+  }
+  
+  @keyframes scaleAnimation {
+    0%   {transform: scale(1);}
+    100% {transform: scale(1.2);}
+  }
+  li {
+    position: relative;
+    width: 300px;
+    max-height: 120px;
+    display: flex;
+    margin: 10px;
+    background: #f8f9fa;
+    cursor: pointer;
+    &:hover{
+      animation: scaleAnimation alternate infinite 1s ease-in;
+    }
+    h4 {
+      padding: 10px;
+      margin: 0;
+      border-radius: 6px 6px 0 0;
+      color: #fff;
+      font-size: 18px;
+      ;
+    }
+
+    .note {
+      padding: 10px;
+      margin: 0;
+    }
+
+    .logo {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 100%;
       }
     }
-    .left-container{
-        grid-template-rows: 1fr 1fr;
+
+    &::after {
+      content: "";
+      position: absolute;
     }
-    .achieved{
-        position: relative;
-        display: grid;
-        width: 100%;
-        // height: 200px;
-        border: white;
-        background: white;
-        font-family: roboto;
-        border-radius: 15px;
-        
-      color:#1e1247;
-        margin-top: 10px; 
+
+    &.amateur {
+      h4 {
+        background-color: hsl(42.22deg 96.43% 56.08%);
+      }
     }
-    p{
-        font-size: larger;
+
+    &.rookie {
+      h4 {
+        background-color: #4361ee
+      }
     }
+
+    &.veteran {
+      animation: scaleAnimation alternate infinite 1s ease-in;
+      h4 {
+        background-color: #4cc9f0;
+      }
+    }
+
+    &.enthusiast {
+      h4 {
+        background-color: #3a0ca3;
+      }
+    }
+
+    &.proficient {
+      h4 {
+        background-color: #90be6d;
+      }
+    }
+
+    &.legand {
+      h4 {
+        background-color: #f72585;
+      }
+    }
+  }
+}
+

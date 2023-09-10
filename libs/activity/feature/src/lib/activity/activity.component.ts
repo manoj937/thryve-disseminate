@@ -8,13 +8,13 @@ import * as Highcharts from "highcharts";
 })
 export class ActivityComponent implements OnInit {
   levels = [
-    {id: 1, value: 'Amateur', note: "Begginer has started just dive to disseminate"},
-    {id: 2, value: 'Rookie', note: "Began to learn and stepped in exploring"},
-    {id: 4, value: 'Veteran',  note: "Posts questions & rarely answers"},
-    {id: 5, value: 'Enthusiast',  note: "Post Blogs, Post Questions occasionaly"},
-    {id: 6, value: 'Proficient',  note: "Post Blogs, Answers Questions, Post Questions atleast once a week"},
-    {id: 7, value: 'Legend',  note: "Post Blogs, Answers Questions, Post Questions atleast every day"}
-  ];
+    {id: 1, value: 'Amateur', note: "Begginer has started just dive to disseminate", class: "amateur"},
+    {id: 2, value: 'Rookie', note: "Began to learn and stepped in exploring", class: "rookie"},
+    {id: 4, value: 'Veteran',  note: "Posts questions & rarely answers", class: "veteran"},
+    {id: 5, value: 'Enthusiast',  note: "Post Blogs, Post Questions occasionaly", class: "enthusiast"},
+    {id: 6, value: 'Proficient',  note: "Post Blogs, Answers Questions, Post Questions atleast once a week", class: "proficient"},
+    {id: 7, value: 'Legend',  note: "Post Blogs, Answers Questions, Post Questions atleast every day", class: "legand"}
+  ].reverse();
   chart: any;
 
   ngOnInit(): void {
