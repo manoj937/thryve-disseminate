@@ -1,5 +1,5 @@
 export const environment = {
-    production: false,
+    production: true,
     domain: 'https://api.thryve-disseminate.com'
    // domain: 'http://localhost:3000'
 };

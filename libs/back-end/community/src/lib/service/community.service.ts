@@ -47,12 +47,16 @@ export class CommunityService {
 
   setCommunityId(communities: Community[], id: number) {
     const communityId = 'COM' + ('00' + id).slice(-3);
+    let flag = true;
     for (const community of communities) {
       if (community.communityId === communityId) {
+        flag=false;
         this.setCommunityId(communities, id + 1);
       }
     }
-    return communityId;
+    if(flag){
+      return communityId;
+    }
   }
 
   async addCommunity(communityInfo: Community) {
@@ -67,7 +71,7 @@ export class CommunityService {
     const currentDate = `${currentDay}-${currentMonth}-${currentYear}`;
 
     const createCommunityDto: CreateCommunityDto = {
-      communityId,
+      communityId: String(communityId),
       moderatorId: communityInfo.moderatorId,
       title: communityInfo.title,
       description: communityInfo.description,
