@@ -40,7 +40,16 @@ const reducer = createReducer(
   on(BlogsActions.loadBlogsSuccess, (state, action) =>
     blogsAdapter.setAll(action.blogs, { ...state, loaded: true })
   ),
-  on(BlogsActions.loadBlogsFailure, (state, { error }) => ({ ...state, error }))
+  on(BlogsActions.loadBlogsFailure, (state, { error }) => ({ ...state, error })),
+  on(BlogsActions.loadBlogsByIdSuccess, (state, action) =>
+    blogsAdapter.setAll(action.blogs, { ...state, loaded: true })
+  ),
+  on(BlogsActions.loadBlogsByModeratorIdSuccess, (state, action) =>
+    blogsAdapter.setAll(action.blogs, { ...state, loaded: true })
+  ),
+  on(BlogsActions.loadSearchBlogsSuccess, (state, action) =>
+    blogsAdapter.setAll(action.blogs, { ...state, loaded: true })
+  ),
 );
 
 export function blogsReducer(state: BlogsState | undefined, action: Action) {

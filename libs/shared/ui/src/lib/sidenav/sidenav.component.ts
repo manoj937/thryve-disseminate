@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class SidenavComponent {
   isBlog = false;
   isQA = false;
+  moderatorId = sessionStorage.getItem('moderatorId');
 }

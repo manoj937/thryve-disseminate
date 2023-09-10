@@ -1,8 +1,7 @@
 import { Injectable, inject } from '@angular/core';
-import { select, Store, Action } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 
 import * as QaActions from './qa.actions';
-import * as QaFeature from './qa.reducer';
 import * as QaSelectors from './qa.selectors';
 
 @Injectable()
@@ -21,7 +20,19 @@ export class QaFacade {
    * Use the initialization action to perform one
    * or more tasks in your Effects.
    */
-  init() {
-    this.store.dispatch(QaActions.initQa());
+  initLoadQa() {
+    this.store.dispatch(QaActions.initLoadQa());
+  }
+
+  initLoadQaByModeratorId(id: string) {
+    this.store.dispatch(QaActions.initLoadQaByModeratorId({ id }));
+  }
+
+  initLoadQaById(id: string) {
+    this.store.dispatch(QaActions.initLoadQaById({ id }));
+  }
+
+  initLoadSearchQa(keyword: string) {
+    this.store.dispatch(QaActions.initLoadSearchQa({ keyword }));
   }
 }

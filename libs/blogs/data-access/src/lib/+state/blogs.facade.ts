@@ -23,4 +23,16 @@ export class BlogsFacade {
   initLoadBlogs() {
     this.store.dispatch(BlogsActions.initLoadBlogs());
   }
+
+  initLoadBlogsByModeratorId(id: string) {
+    this.store.dispatch(BlogsActions.initLoadBlogsByModeratorId({ id }));
+  }
+
+  initLoadBlogsById(id: string) {
+    this.store.dispatch(BlogsActions.initLoadBlogsById({ id }));
+  }
+
+  initLoadSearchBlogs(keyword: string) {
+    this.store.dispatch(BlogsActions.initLoadSearchBlogs({ keyword }));
+  }
 }

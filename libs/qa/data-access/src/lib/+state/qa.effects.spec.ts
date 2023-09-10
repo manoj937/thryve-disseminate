@@ -27,7 +27,7 @@ describe('QaEffects', () => {
 
   describe('init$', () => {
     it('should work', () => {
-      actions = hot('-a-|', { a: QaActions.initQa() });
+      actions = hot('-a-|', { a: QaActions.initLoadQa() });
 
       const expected = hot('-a-|', { a: QaActions.loadQaSuccess({ qa: [] }) });
 

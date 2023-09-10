@@ -8,7 +8,7 @@ export interface BlogsEntity {
   title: string;
   tags: string[];
   bookmarks: string[];
-  content: string,
+  content: string;
   image: string;
   time: string;
   likes: string;

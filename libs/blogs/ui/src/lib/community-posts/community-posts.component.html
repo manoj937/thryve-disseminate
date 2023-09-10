@@ -39,7 +39,7 @@
             </button>
         </div> -->
         <ng-container *ngFor="let blog of blogsList">
-        <div class="card">
+        <div [routerLink]="'/community/blogs/'+blog.blogId" class="card">
             <img [src]="'assets/blogs/1.jpg'" class="card-img-top" alt="...">
             <div class="card-body">
                   <h5 class="card-title">{{blog?.title}}</h5>
@@ -52,7 +52,7 @@
                     {{blog?.readTime}} min read
                   </div>
               <div class="blog-props">
-                <span class="image"><img [src]="'assets/members/1.jpg'"></span>
+                <span class="image"><img [src]="'assets/members/5.jpg'"></span>
                 <span class="author">Neha V K</span><span class="date">&nbsp; | &nbsp;</span>
                     <span class="date">{{moment(blog.time).from(moment(todaysDate))}}</span>
             </div>

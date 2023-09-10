@@ -29,8 +29,15 @@ const routes: Route[] = [
       },
       {
         path: 'blogs',
-        component: BlogsComponent,
-        children: [{ path: ':id', component: BlogDetailComponent }],
+        component: BlogsComponent
+      },
+      {
+        path: 'blogs/:id',
+        component: BlogDetailComponent
+      },
+      {
+        path: 'myblogs/:id',
+        component: BlogsComponent
       },
       {
         path: 'qa',

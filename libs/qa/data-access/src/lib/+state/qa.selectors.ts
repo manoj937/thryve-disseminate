@@ -27,7 +27,7 @@ export const selectQaEntities = createSelector(
 
 export const selectSelectedId = createSelector(
   selectQaState,
-  (state: QaState) => state.selectedId
+  (state: QaState) => state.selectedQaId
 );
 
 export const selectEntity = createSelector(

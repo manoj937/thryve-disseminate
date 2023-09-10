@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment/moment';
 @Component({
-  selector: 'thryve-disseminate-blog-detail',
+  selector: 'thryve-disseminate-blog-detail-ui',
   templateUrl: './blog-detail.component.html',
   styleUrls: ['./blog-detail.component.scss'],
 })
