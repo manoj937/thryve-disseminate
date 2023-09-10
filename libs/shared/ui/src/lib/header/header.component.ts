@@ -20,9 +20,9 @@ export class HeaderComponent {
   'Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina',
   'South Dakota','Tennessee','Texas','Utah','Vermont',
   'Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
-  navigations = sessionStorage.getItem('admin') === 'true' ? ['Dashboard', 'Community'] : ['Dashboard', 'Community', 'Explore', 'Activity'];
+  navigations = sessionStorage.getItem('admin') === 'true' ? ['Dashboard', 'Community'] : ['Dashboard', 'Community', 'Activity'];
   searchValue = new Subject<string>();
-  url: string = '';
+  url = '';
   constructor(public blogsDetails: BlogsFacade, private router: Router,
     private route:ActivatedRoute) {
       this.router.events.subscribe(
