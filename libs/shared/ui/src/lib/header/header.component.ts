@@ -38,7 +38,7 @@ export class HeaderComponent {
       distinctUntilChanged())
       .subscribe(value => {
         console.log(value);
-        //dispatch the action here
+        this.blogsDetails.initLoadSearchBlogs(value);
         this.blogsDetails.initLoadBlogs();
       });
   }
