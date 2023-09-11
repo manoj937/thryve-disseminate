@@ -14,7 +14,9 @@ export class BlogsComponent {
     if(this.router.url.split('/').includes('myblogs')){
       this.blogsDetails.initLoadBlogsByModeratorId(String(this.moderatorId));
     } else{
-      this.blogsDetails.initLoadBlogs();
+      if(!sessionStorage.getItem('searchKey')) {
+        this.blogsDetails.initLoadBlogs();
+      }
     }
   }
 }

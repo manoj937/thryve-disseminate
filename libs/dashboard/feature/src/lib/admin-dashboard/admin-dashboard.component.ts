@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as Highcharts from "highcharts";
 import { BlogsFacade } from '@thryve-disseminate/blogs/data-access';
 import { CommunityFacade } from '@thryve-disseminate/community/data-access';
+import { DashboardService } from 'libs/dashboard/feature/src/lib/dashboard.service';
 @Component({
   selector: 'thryve-disseminate-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -10,9 +11,11 @@ import { CommunityFacade } from '@thryve-disseminate/community/data-access';
 export class AdminDashboardComponent implements OnInit {
   blogchart: any;
   communitychart: any;
+  tags = ['#Azure','#Angular', '#Thryve', '#Fund Raising', '#AI & Chat GPT', '#Fullstack'  ]
   constructor(
     public communityDetails: CommunityFacade,
-    public blogsDetails: BlogsFacade
+    public blogsDetails: BlogsFacade,
+    private dashboardService: DashboardService,
   ) {}
   admin=sessionStorage.getItem('admin') === 'true'
   ngOnInit(): void {
@@ -58,6 +61,8 @@ export class AdminDashboardComponent implements OnInit {
   this.blogsDetails.allBlogs$.subscribe(x => console.log(x))
 
 }
-  
+  search(tag: string){
+    this.dashboardService.setsearchKey(tag)
+  }
   }
 

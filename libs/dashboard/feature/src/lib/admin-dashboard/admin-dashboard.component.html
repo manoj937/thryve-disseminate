@@ -206,12 +206,8 @@
   <div class="card popular-tags">
     <h3>Popular Tags</h3>
     <ul>
-      <li class="text-primary">#Azure</li>
-      <li class="text-primary">#Angular</li>
-      <li class="text-primary">#FutureIT</li>
-      <li class="text-primary">#Fund Raising</li>
-      <li class="text-primary">#AI & Chat GPT</li>
-      <li class="text-primary">#Fullstack</li>
+      <li *ngFor="let tag of tags" (click)="search(tag)" class="text-primary">{{tag}}</li>
+
     </ul>
   </div>
 </div>
