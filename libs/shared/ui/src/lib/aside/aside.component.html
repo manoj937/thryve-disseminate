@@ -10,14 +10,16 @@
                 {{tag}}
                 </ng-container>
             </span>
-            <div class="d-flex">
-                <div>
+            <table class="d-flex">
+                <tr class="p-2 w-10">
                     <h5>{{content?.title}}</h5>
                     <p>{{content?.moderators?.length}} Moderators</p>
-                </div>
-                  <button *ngIf="content?.joinCommunity" type="button" (click)="join(i)" class="px-2 py-1 mx-3 btn btn-sm btn-outline-primary">Join</button>
-                </div>
-            </div>
+                </tr>
+                <tr class="m-2">
+                    <button *ngIf="content?.joinCommunity" type="button" (click)="join(i)" class="px-2 py-1 mx-3 btn btn-sm btn-outline-primary">Join</button>
+                </tr>
+            </table>
+        </div>
         </li>
     </ul>
 </div>
