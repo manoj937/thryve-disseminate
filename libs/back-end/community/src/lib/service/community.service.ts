@@ -47,14 +47,10 @@ export class CommunityService {
 
   setCommunityId(communities: Community[], id: number) {
     const communityId = 'COM' + ('00' + id).slice(-3);
-    let flag = true;
-    for (const community of communities) {
-      if (community.communityId === communityId) {
-        flag=false;
-        this.setCommunityId(communities, id + 1);
-      }
-    }
-    if(flag){
+    const filteredValues = communities.filter((community)=>community.communityId===communityId);
+    if(filteredValues.length){
+      return 'COM'+ String(Math.floor((Math.random() * ((999 - 100) + 1)) + 100));
+    } else{
       return communityId;
     }
   }
