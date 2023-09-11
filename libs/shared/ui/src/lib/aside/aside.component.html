@@ -2,7 +2,7 @@
 <div class="community" *ngIf="!!communityList?.length">
     <h6>Communities</h6>
     <ul>
-        <li *ngFor="let content of communityList">
+        <li *ngFor="let content of communityList; let i = index">
             <img [src]="'assets/community/1.jpg'" alt="img">
             <div>
               <span>
@@ -10,8 +10,13 @@
                 {{tag}}
                 </ng-container>
             </span>
-              <h5>{{content?.name}}</h5>
-              <p>{{content?.moderators?.length}} Moderators</p>
+            <div class="d-flex">
+                <div>
+                    <h5>{{content?.title}}</h5>
+                    <p>{{content?.moderators?.length}} Moderators</p>
+                </div>
+                  <button *ngIf="content?.joinCommunity" type="button" (click)="join(i)" class="px-2 py-1 mx-3 btn btn-sm btn-outline-primary">Join</button>
+                </div>
             </div>
         </li>
     </ul>
