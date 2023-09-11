@@ -4,7 +4,7 @@ import { filter, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators'
 import { BlogsFacade } from '@thryve-disseminate/blogs/data-access';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { QaFacade } from '@thryve-disseminate/qa/data-access';
-
+import { DashboardService } from 'libs/dashboard/feature/src/lib/dashboard.service';
 @Component({
   selector: 'thryve-disseminate-header',
   templateUrl: './header.component.html',
@@ -13,19 +13,11 @@ import { QaFacade } from '@thryve-disseminate/qa/data-access';
 export class HeaderComponent {
   Math = Math;
   selectedState: string = '';
-  states: string[] = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado',
-  'Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois',
-  'Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine',
-  'Maryland','Massachusetts','Michigan','Minnesota','Mississippi',
-  'Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey',
-  'New Mexico','New York','North Dakota','North Carolina','Ohio',
-  'Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina',
-  'South Dakota','Tennessee','Texas','Utah','Vermont',
-  'Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
   navigations = sessionStorage.getItem('admin') === 'true' ? ['Dashboard', 'Community'] : ['Dashboard', 'Community', 'Activity'];
   searchValue = new Subject<string>();
   url = '';
   constructor(public blogsDetails: BlogsFacade, private router: Router,public qaDetails: QaFacade,
+    private dashboardService: DashboardService,
     private route:ActivatedRoute) {
       const searchkey = sessionStorage.getItem('searchKey');
       if(!!searchkey){
@@ -46,13 +38,6 @@ export class HeaderComponent {
       .subscribe(value => {
         console.log(value);
         if(value){
-          if(value.includes('#')){
-            if(this.url.includes('community/qa')){
-              this.qaDetails.initLoadSearchQa('javascript')
-            } else {
-              this.blogsDetails.initLoadSearchBlogs('javascript');
-            }
-          }
           if(this.url.includes('community/qa')){
             this.qaDetails.initLoadSearchQa(value)
           } else {
@@ -65,6 +50,16 @@ export class HeaderComponent {
             this.blogsDetails.initLoadBlogs();
           }
         }
+      });
+      this.dashboardService.getsearchKeyTag.subscribe((tag: any) => {
+        this.selectedState = tag;
+        sessionStorage.setItem('searchKey', tag)
+        if(this.url.includes('community/qa')){
+          this.qaDetails.initLoadSearchQa( tag.replace('#',''))
+        } else {
+          this.blogsDetails.initLoadSearchBlogs( tag.replace('#',''));
+        }
+        this.routeTo();
       });
   }
   routeTo(){

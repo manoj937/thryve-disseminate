@@ -18,7 +18,6 @@ export class AsideComponent implements OnChanges {
   }
   ngOnChanges(changes: SimpleChanges): void {
     changes['communityList'].currentValue.forEach((value: any,i: any) => {
-      console.log('lllllllll')
       this.communityList[i] = {...this.communityList[i], joinCommunity: Boolean(Math.random() < 0.8)}
       // value.joinCommunity = true;
       // value

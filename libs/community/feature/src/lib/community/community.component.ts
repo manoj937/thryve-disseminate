@@ -20,7 +20,7 @@ export class CommunityComponent implements OnInit {
     this.admin = sessionStorage.getItem('admin');
     this.communityDetails.initLoadCommunities();
     if (this.admin !== 'true') {
-      this.blogsDetails.initLoadBlogs();
+      !sessionStorage.getItem('searchKey') && this.blogsDetails.initLoadBlogs();
     }
   }
 
