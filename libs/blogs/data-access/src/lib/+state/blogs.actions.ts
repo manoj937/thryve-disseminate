@@ -55,3 +55,18 @@ export const loadSearchBlogsFailure = createAction(
   '[Blogs/API] Load Search Blogs Failure',
   props<{ error: any }>()
 );
+
+export const initblogApprove = createAction(
+  '[Blog Community Approve Page] Init',
+  props<{ blogId: string }>()
+);
+
+export const blogApproveSuccess = createAction(
+  '[Community/API] Blog Community Approve Success',
+  props<{ blogId: string }>()
+);
+
+export const blogApproveFailure = createAction(
+  '[Community/API] Blog Community Approve Failure',
+  props<{ error: any }>()
+);

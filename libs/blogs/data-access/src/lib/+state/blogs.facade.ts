@@ -35,4 +35,8 @@ export class BlogsFacade {
   initLoadSearchBlogs(keyword: string) {
     this.store.dispatch(BlogsActions.initLoadSearchBlogs({ keyword }));
   }
+  
+  initblogApprove(blogId: string) {
+    this.store.dispatch(BlogsActions.initblogApprove({ blogId }));
+  }
 }

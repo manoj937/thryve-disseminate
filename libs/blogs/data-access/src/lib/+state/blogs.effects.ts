@@ -7,6 +7,7 @@ import { BlogsService } from '../api/blogs.service';
 import { FindBlogByBlogidService } from '../api/find-blog-by-blogid.service';
 import { FindBlogByModeratoridService } from '../api/find-blog-by-moderatorid.service';
 import { SearchBlogService } from '../api/search-blog.service';
+import { ApproveBlogService } from '../api/approve-blog.service';
 
 @Injectable()
 export class BlogsEffects {
@@ -15,7 +16,8 @@ export class BlogsEffects {
     private readonly blogs: BlogsService,
     private readonly blogsById: FindBlogByBlogidService,
     private readonly blogsByModeratorId: FindBlogByModeratoridService,
-    private readonly searchBlogs: SearchBlogService
+    private readonly searchBlogs: SearchBlogService,
+    private readonly approveBlogService: ApproveBlogService
   ) {}
 
   initLoadBlogs$ = createEffect(() => {
@@ -59,6 +61,18 @@ export class BlogsEffects {
       ofType(BlogsActions.initLoadSearchBlogs),
       switchMap((actions) =>
         this.searchBlogs.getBlogsListByKeyword(actions.keyword).pipe(
+          map((result: any) => BlogsActions.loadBlogsSuccess({ blogs: result})),
+          catchError((error) => of(BlogsActions.loadBlogsFailure(error)))
+        )
+      )
+    )}
+  )
+
+  initblogApprove$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(BlogsActions.initblogApprove),
+      switchMap((actions) =>
+        this.approveBlogService.moderatorApprove(actions.blogId).pipe(
           map((result: any) => BlogsActions.loadBlogsSuccess({ blogs: result})),
           catchError((error) => of(BlogsActions.loadBlogsFailure(error)))
         )
