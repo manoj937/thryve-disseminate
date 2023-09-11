@@ -100,3 +100,12 @@
     top: 70px;
     margin-bottom: 20px;
    }
+
+   button{
+   border-radius: 20px;
+   }
+
+   .content{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+   }
