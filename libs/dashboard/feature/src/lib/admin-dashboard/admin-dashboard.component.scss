@@ -57,6 +57,12 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
+      img{
+        position: absolute;
+        width: 30px;
+        top: 0;
+        right: 0;
+      }
     }
     &.pending-moderators, &.events{
       grid-column: 1 / span 2;

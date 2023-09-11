@@ -47,20 +47,24 @@
       <span class="title">Q&A</span>
     </div>
   </div>
-  <div class="card progress-communities">
+  <div *ngIf="!admin" class="card progress-communities">
     <div class="pie" style="--p:60;--c:#ffa1f5;--b:10px"> 60%</div> 
+    <img src="assets/badge/veteran.png">
   </div>
 
-  <div class="card progress-blogs">
+  <div *ngIf="!admin" class="card progress-blogs">
     <div class="pie" style="--p:80;--c:#BC7AF9;--b:10px"> 80%</div> 
+    <img src="assets/badge/veteran.png">
   </div>
 
-  <div class="card progress-moderators">
+  <div *ngIf="!admin" class="card progress-moderators">
     <div class="pie" style="--p:40;--c:#FDD36A;--b:10px"> 40%</div> 
+    <img src="assets/badge/veteran.png">
   </div>
 
-  <div class="card progress-qa">
+  <div *ngIf="!admin" class="card progress-qa">
     <div class="pie" style="--p:70;--c:#B6E2A1;--b:10px"> 70%</div> 
+    <img src="assets/badge/veteran.png">
   </div>
 
   <div *ngIf="admin" class="card pending-moderators">
