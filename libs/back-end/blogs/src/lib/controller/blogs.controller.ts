@@ -27,7 +27,7 @@ export class BlogsController {
   @Get('search?')
   async findBlogs(@Query('keyword') keyValue: string) {
     const blogs = await this.blogsService.searchBlogs(keyValue);
-    return blogs;
+    return blogs.filter((blog) => !blog.pending);
   }
 
   @Get(':id')

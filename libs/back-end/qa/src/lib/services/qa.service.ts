@@ -62,11 +62,22 @@ export class QaService {
   }
 
   async searchQas(keyValue: string) {
-    return this.qasRepository.find({
+    return (await this.qasRepository.find({
       where: {
         question: Like(`%${keyValue}%`),
       },
-    });
+    })).map((qa) => ({
+      qaId: qa.qaId,
+      moderatorId: qa.moderatorId,
+      communityId: qa.communityId,
+      question: qa.question,
+      bookmarks: qa.bookmarks.split(',').filter((t) => t.length > 3),
+      tags: qa.tags.split(',').filter((t) => t.length > 3),
+      detail: qa.detail,
+      time: qa.time,
+      answers: qa.answers.split(',').filter((t) => t.length > 3),
+      selectedAnswers: qa.selectedAnswers.split(',').filter((t) => t.length > 3)
+    }));
   }
 
   async addQa(qaInfo: Qa) {

@@ -66,11 +66,27 @@ export class BlogsService {
   }
 
   async searchBlogs(keyValue: string) {
-    return this.blogsRepository.find({
+    const blogs = (await this.blogsRepository.find({
       where: {
         title: Like(`%${keyValue}%`),
       },
-    });
+    })).map((blog) => ({
+      blogId: blog.blogId,
+      moderatorId: blog.moderatorId,
+      communityId: blog.communityId,
+      title: blog.title,
+      bookmarks: blog.bookmarks.split(',').filter((t) => t.length > 3),
+      tags: blog.tags.split(',').filter((t) => t.length > 3),
+      content: blog.content,
+      image: blog.image,
+      time: blog.time,
+      likes: blog.likes,
+      comments: blog.comments,
+      views: blog.views,
+      readTime: blog.readTime,
+      pending: blog.pending
+    }));
+  return blogs;
   }
 
   async addBlog(blogInfo: Blogs) {
