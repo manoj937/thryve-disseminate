@@ -11,7 +11,7 @@ import { DashboardService } from 'libs/dashboard/feature/src/lib/dashboard.servi
 export class AdminDashboardComponent implements OnInit {
   blogchart: any;
   communitychart: any;
-  tags = ['#Azure','#Angular', '#FutureIT', '#Fund Raising', '#AI & Chat GPT', '#Fullstack'  ]
+  tags = ['#Azure','#Angular', '#Thryve', '#Fund Raising', '#AI & Chat GPT', '#Fullstack'  ]
   constructor(
     public communityDetails: CommunityFacade,
     public blogsDetails: BlogsFacade,
