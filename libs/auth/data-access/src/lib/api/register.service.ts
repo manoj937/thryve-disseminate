@@ -13,7 +13,8 @@ interface Resister {
   name: string;
   email: string;
   password: string;
-  loginas: string;
+  loginas?: string;
+  isAdmin?: boolean;
 }
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,7 @@ export class RegisterService {
   errorMessage: any;
 
   register(user: Resister): Observable<Resister> {
+    user.isAdmin =  Boolean(user.loginas === "admin"); 
     return this.http.post<Resister>(this.env.domain+'/register', user, httpOptions).pipe(
       catchError((error: any): Observable<any> => {
         this.errorMessage = error.message;
