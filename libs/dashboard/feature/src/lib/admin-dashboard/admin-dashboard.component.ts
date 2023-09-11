@@ -14,6 +14,7 @@ export class AdminDashboardComponent implements OnInit {
     public communityDetails: CommunityFacade,
     public blogsDetails: BlogsFacade
   ) {}
+  admin=sessionStorage.getItem('admin') === 'true'
   ngOnInit(): void {
     this.blogchart = Highcharts.chart('blog', {
       title: {

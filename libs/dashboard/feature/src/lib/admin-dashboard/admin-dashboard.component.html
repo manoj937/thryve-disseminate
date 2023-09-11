@@ -1,79 +1,288 @@
-<div class="grid-container">
-<div class="grid-item pages-info">
-      <div class="d-flex justify-content-between
-      ">
-<div>
-  <h3 class="count">
-    80
-    <i class="fa fa-caret-up green" aria-hidden="true"></i>
-  </h3>
-  <h4>
-    Communities
-  </h4>
+<div class="dashboard">
+  <div class="card communities">
+    <div class="left">
+      <i class="fa fa-users"></i>
+    </div>
+    <div class="right">
+      <span class="count">
+        <span>007</span>
+        <i class="fa fa-caret-up text-success"></i>
+      </span>
+      <span class="title">Communities</span>
+    </div>
+  </div>
+  <div class="card blogs">
+    <div class="left">
+      <i class="fa fa-file-text"></i>
+    </div>
+    <div class="right">
+      <span class="count">
+        <span>167</span>
+        <i class="fa fa-caret-down text-danger"></i>
+      </span>
+      <span class="title">Blogs</span>
+    </div>
+  </div>
+  <div class="card qa">
+    <div class="left">
+      <i class="fa fa-question-circle"></i>
+    </div>
+    <div class="right">
+      <span class="count">
+        <span>326</span>
+        <i class="fa fa-caret-down text-danger"></i>
+      </span>
+      <span class="title">Moderators</span>
+    </div>
+  </div>
+  <div class="card moderators">
+    <div class="left">
+      <i class="fa fa-user"></i>
+    </div>
+    <div class="right">
+      <span class="count">
+        <span>235</span>
+        <i class="fa fa-caret-up text-success"></i>
+      </span>
+      <span class="title">Q&A</span>
+    </div>
+  </div>
+  <div class="card progress-communities">
+    <div class="pie" style="--p:60;--c:#ffa1f5;--b:10px"> 60%</div> 
+  </div>
+
+  <div class="card progress-blogs">
+    <div class="pie" style="--p:80;--c:#BC7AF9;--b:10px"> 80%</div> 
+  </div>
+
+  <div class="card progress-moderators">
+    <div class="pie" style="--p:40;--c:#FDD36A;--b:10px"> 40%</div> 
+  </div>
+
+  <div class="card progress-qa">
+    <div class="pie" style="--p:70;--c:#B6E2A1;--b:10px"> 70%</div> 
+  </div>
+
+  <div *ngIf="admin" class="card pending-moderators">
+    <h3>Community Requests</h3>
+    <ul>
+      <li>
+        <span class="user">
+          <img src="assets/members/5.jpg">
+          <span class="user-details">
+            <span class="name">Manoj</span>
+            <span class="mail">manoj.selvam@thryvedigital.com</span>
+          </span>
+        </span>
+        <span class="community-name text-warning">Fund Raising</span>
+        <span class="actions">
+          <i class="fa fa-check text-success"></i>
+          <i class="fa fa-times text-danger"></i>
+        </span>
+      </li>
+      <li>
+        <span class="user">
+          <img src="assets/members/1.jpg">
+          <span class="user-details">
+            <span class="name">Neha</span>
+            <span class="mail">neha.velmurugan@thryvedigital.com</span>
+          </span>
+        </span>
+        <span class="community-name text-info">Angular</span>
+        <span class="actions">
+          <i class="fa fa-check text-success"></i>
+          <i class="fa fa-times text-danger"></i>
+        </span>
+      </li>
+      <li>
+        <span class="user">
+          <img src="assets/members/5.jpg">
+          <span class="user-details">
+            <span class="name">Manoj</span>
+            <span class="mail">manoj.selvam@thryvedigital.com</span>
+          </span>
+        </span>
+        <span class="community-name text-success">Thryve Digital</span>
+        <span class="actions">
+          <i class="fa fa-check text-success"></i>
+          <i class="fa fa-times text-danger"></i>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="admin" class="card pending-blogs">
+    <h3>Blog Requests</h3>
+    <ul>
+      <li>
+        <span class="user">
+          <img src="assets/members/5.jpg">
+          <span class="user-details">
+            <span class="name">Manoj</span>
+            <span class="mail">manoj.selvam@thryvedigital.com</span>
+          </span>
+        </span>
+        <span class="community-name text-warning">Fund Raising</span>
+        <span class="actions">
+          <i class="fa fa-check text-success"></i>
+          <i class="fa fa-times text-danger"></i>
+        </span>
+      </li>
+      <li>
+        <span class="user">
+          <img src="assets/members/1.jpg">
+          <span class="user-details">
+            <span class="name">Neha</span>
+            <span class="mail">neha.velmurugan@thryvedigital.com</span>
+          </span>
+        </span>
+        <span class="community-name text-info">Angular</span>
+        <span class="actions">
+          <i class="fa fa-check text-success"></i>
+          <i class="fa fa-times text-danger"></i>
+        </span>
+      </li>
+      <li>
+        <span class="user">
+          <img src="assets/members/5.jpg">
+          <span class="user-details">
+            <span class="name">Manoj</span>
+            <span class="mail">manoj.selvam@thryvedigital.com</span>
+          </span>
+        </span>
+        <span class="community-name text-success">Thryve Digital</span>
+        <span class="actions">
+          <i class="fa fa-check text-success"></i>
+          <i class="fa fa-times text-danger"></i>
+        </span>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="card events">
+    <h3>Events</h3>
+    <ul>
+      <li>
+        <span class="user">
+          <img src="assets/calendar.png">
+          <span class="user-details">
+            <span class="name">Leadership Qualities - Seminar</span>
+            <span class="mail">Thryve Digital</span>
+          </span>
+        </span>
+        <span class="actions">
+          <p class="text-dark">Sep 15, 2023, 12:30</p>
+        </span>
+      </li>
+      <li>
+        <span class="user">
+          <img src="assets/calendar.png">
+          <span class="user-details">
+            <span class="name">UI/UX Webinar</span>
+            <span class="mail">Angular</span>
+          </span>
+        </span>
+        <span class="actions">
+          <p class="text-dark">Sep 22, 2023, 15:00</p>
+        </span>
+      </li>
+      <li>
+        <span class="user">
+          <img src="assets/calendar.png">
+          <span class="user-details">
+            <span class="name">Plant trees, Go Grren</span>
+            <span class="mail">Fund Raising</span>
+          </span>
+        </span>
+        <span class="actions">
+          <p class="text-dark">Sep 20, 2023, 13:00</p>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div class="card popular-tags">
+    <h3>Popular Tags</h3>
+    <ul>
+      <li class="text-primary">#Azure</li>
+      <li class="text-primary">#Angular</li>
+      <li class="text-primary">#FutureIT</li>
+      <li class="text-primary">#Fund Raising</li>
+      <li class="text-primary">#AI & Chat GPT</li>
+      <li class="text-primary">#Fullstack</li>
+    </ul>
+  </div>
 </div>
-<div>
-  <i class="fa fa-users" aria-hidden="true"></i>
-</div>
+<!-- <div class="grid-container">
+  <div class="grid-item pages-info">
+    <div class="d-flex justify-content-between">
+      <div>
+        <h3 class="count">
+          80
+          <i class="fa fa-caret-up green" aria-hidden="true"></i>
+        </h3>
+        <h4>Communities</h4>
       </div>
+      <div>
+        <i class="fa fa-users" aria-hidden="true"></i>
+      </div>
+    </div>
   </div>
   <div class="grid-item pages-info">
-    <div class="d-flex justify-content-between
-    ">
-<div>
-<h3 class="count">
-  420
-  <i class="fa fa-caret-down red" aria-hidden="true"></i>
-</h3>
-<h4>
-  Blogs
-</h4>
-</div>
-<div>
-<i class="fa fa-file-text-o" aria-hidden="true"></i>
-</div>
+    <div class="d-flex justify-content-between">
+      <div>
+        <h3 class="count">
+          420
+          <i class="fa fa-caret-down red" aria-hidden="true"></i>
+        </h3>
+        <h4>Blogs</h4>
+      </div>
+      <div>
+        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+      </div>
     </div>
-</div>
-<div class="grid-item pages-info">
-  <div class="d-flex justify-content-between
-  ">
-<div>
-<h3 class="count">
-230
-<i class="fa fa-caret-up green" aria-hidden="true"></i>
-</h3>
-<h4>
-Moderator
-</h4>
-</div>
-<div>
-<i class="fa fa-user" aria-hidden="true"></i>
-</div>
   </div>
-</div>
-    <div class="grid-item pages-info">
-      <h4 class="mx-3">
-        Pending Approvals (Communities)
-      </h4>
-      <ng-container *ngIf="(communityDetails.allCommunity$ | async)?.length">
-      <ng-container *ngFor="let community of (communityDetails.allCommunity$ | async)">
+  <div class="grid-item pages-info">
+    <div class="d-flex justify-content-between">
+      <div>
+        <h3 class="count">
+          230
+          <i class="fa fa-caret-up green" aria-hidden="true"></i>
+        </h3>
+        <h4>Moderator</h4>
+      </div>
+      <div>
+        <i class="fa fa-user" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  <div class="grid-item pages-info">
+    <h4 class="mx-3">Pending Approvals (Communities)</h4>
+    <ng-container *ngIf="(communityDetails.allCommunity$ | async)?.length">
+      <ng-container
+        *ngFor="let community of communityDetails.allCommunity$ | async"
+      >
         <div class="" *ngIf="community?.pendingApprovals?.length">
           <table *ngFor="let moderator of community?.pendingApprovals">
             <tr>
               <td>
                 <div class="name m-3">
-                  {{community?.title}}
+                  {{ community?.title }}
                 </div>
-
               </td>
               <td>
                 <div class="name m-3">
-                  {{moderator}}
+                  {{ moderator }}
                 </div>
               </td>
               <td>
                 <div class="pb-2">
-                  <i class="mx-1 name fa fa-check green pointer" aria-hidden="true"></i>
-                  <i class="mx-1 name fa fa-times red pointer" aria-hidden="true"></i>
+                  <i
+                    class="mx-1 name fa fa-check green pointer"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    class="mx-1 name fa fa-times red pointer"
+                    aria-hidden="true"
+                  ></i>
                 </div>
               </td>
             </tr>
@@ -81,106 +290,76 @@ Moderator
         </div>
       </ng-container>
     </ng-container>
-
-    </div>
-    <div class="grid-item pages-info">
-      <h4 class="mx-3">
-        Pending Approvals (Blogs)
-      </h4>
-      <ng-container *ngIf="(blogsDetails.allBlogs$ | async)?.length">
-        <ng-container *ngFor="let blog of (blogsDetails.allBlogs$ | async)">
-          <div class="" *ngIf="!blog?.pending" >
-            <table>
-              <tr>
-                <td>
-                  <div class="name m-3">
-                    {{blog?.title}}
-                  </div>
-  
-                </td>
-                <td>
-                  <div class="pb-2">
-                    <i class="mx-1 name fa fa-check green pointer" aria-hidden="true"></i>
-                    <i class="mx-1 name fa fa-times red pointer" aria-hidden="true"></i>
-                  </div>
-                </td>
-              </tr>
-            </table>
-          </div>
-          </ng-container>
-      </ng-container>
-
-    </div>
-    <div class="grid-item pages-info">
-      <h4 class="mx-3">
-        Events
-      </h4>
-      <ng-container>
-        <div class="d-flex justify-content-between m-2">
-          <div class="name m-3">
-           UI/Ux Webinar
-          </div>
-          <div class="name">
-            Sep 20 2023
-            <div class="name">
-              18:00
-            </div>
-          </div>
-          
-        </div>
-        <div class="d-flex justify-content-between m-2">
-          <div class="name m-3">
-            Leadership Qualities - Seminar
-           </div>
-           <div class="name">
-             Oct 4 2023
-             <div class="name">
-              09:00
-            </div>
-           </div>
-        </div>
-        <div class="d-flex justify-content-between m-2">
-          <div class="name m-3">
-           Plant trees, Go Grren
-          </div>
-          <div class="name">
-            Oct 13 2023
-            <div class="name">
-              16:00
-            </div>
-          </div>
-        </div>
-      </ng-container>
-
-    </div>  
-    <div class="grid-item"><div id="blog"></div></div>
-    <div class="grid-item"><div id="community"></div></div>
-    <div class="grid-item pages-info">
-      <h4 class="mx-3">
-        Popular Tags
-      </h4>
-      <ng-container>
-        <div class="m-2">
-          <div class="name m-3 pointer">
-           #Fund Raising
-          </div>
-          <div class="name m-3 pointer">
-            #AI & Chat GPT 
-           </div>
-           <div class="name m-3 pointer">
-            #Fullstack
-           </div>
-           <div class="name m-3 pointer">
-            #Azure
-           </div>
-           <div class="name m-3 pointer">
-            #Angular
-           </div>
-           <div class="name m-3 pointer">
-            #FutureIT
-           </div>
-        </div>
-      </ng-container>
-
-    </div> 
   </div>
+  <div class="grid-item pages-info">
+    <h4 class="mx-3">Pending Approvals (Blogs)</h4>
+    <ng-container *ngIf="(blogsDetails.allBlogs$ | async)?.length">
+      <ng-container *ngFor="let blog of blogsDetails.allBlogs$ | async">
+        <div class="" *ngIf="!blog?.pending">
+          <table>
+            <tr>
+              <td>
+                <div class="name m-3">
+                  {{ blog?.title }}
+                </div>
+              </td>
+              <td>
+                <div class="pb-2">
+                  <i
+                    class="mx-1 name fa fa-check green pointer"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    class="mx-1 name fa fa-times red pointer"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+  <div class="grid-item pages-info">
+    <h4 class="mx-3">Events</h4>
+    <ng-container>
+      <div class="d-flex justify-content-between m-2">
+        <div class="name m-3">UI/Ux Webinar</div>
+        <div class="name">
+          Sep 20 2023
+          <div class="name">18:00</div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between m-2">
+        <div class="name m-3">Leadership Qualities - Seminar</div>
+        <div class="name">
+          Oct 4 2023
+          <div class="name">09:00</div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between m-2">
+        <div class="name m-3">Plant trees, Go Grren</div>
+        <div class="name">
+          Oct 13 2023
+          <div class="name">16:00</div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="grid-item"><div id="blog"></div></div>
+  <div class="grid-item"><div id="community"></div></div>
+  <div class="grid-item pages-info">
+    <h4 class="mx-3">Popular Tags</h4>
+    <ng-container>
+      <div class="m-2">
+        <div class="name m-3 pointer">#Fund Raising</div>
+        <div class="name m-3 pointer">#AI & Chat GPT</div>
+        <div class="name m-3 pointer">#Fullstack</div>
+        <div class="name m-3 pointer">#Azure</div>
+        <div class="name m-3 pointer">#Angular</div>
+        <div class="name m-3 pointer">#FutureIT</div>
+      </div>
+    </ng-container>
+  </div>
+</div> -->
