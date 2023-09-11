@@ -10,15 +10,15 @@
                 {{tag}}
                 </ng-container>
             </span>
-            <table class="d-flex">
-                <tr class="p-2 w-10">
+            <div class="content">
+                <div class="p-2 w-10">
                     <h5>{{content?.title}}</h5>
                     <p>{{content?.moderators?.length}} Moderators</p>
-                </tr>
-                <tr class="m-2">
+                </div>
+                <div class="m-2">
                     <button *ngIf="content?.joinCommunity" type="button" (click)="join(i)" class="px-2 py-1 mx-3 btn btn-sm btn-outline-primary">Join</button>
-                </tr>
-            </table>
+                </div>
+            </div>
         </div>
         </li>
     </ul>

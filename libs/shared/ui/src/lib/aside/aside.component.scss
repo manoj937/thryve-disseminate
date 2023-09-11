@@ -104,3 +104,8 @@
    button{
    border-radius: 20px;
    }
+
+   .content{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+   }
