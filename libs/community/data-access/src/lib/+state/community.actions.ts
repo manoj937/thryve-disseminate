@@ -70,3 +70,33 @@ export const deleteCommunityFailure = createAction(
 );
 
 /* Delete Community Ends*/
+
+export const initModeratorRequest = createAction(
+  '[Moderator Community Request Page] Init',
+  props<{ communityId: string, moderatorId: string }>()
+);
+
+export const moderatorRequestSuccess = createAction(
+  '[Community/API] Moderator Community Request Success',
+  props<{ communityId: string }>()
+);
+
+export const moderatorRequestFailure = createAction(
+  '[Community/API] Moderator Community Request Failure',
+  props<{ error: any }>()
+);
+
+export const initModeratorApprove = createAction(
+  '[Moderator Community Approve Page] Init',
+  props<{ communityId: string, moderatorId: string }>()
+);
+
+export const moderatorApproveSuccess = createAction(
+  '[Community/API] Moderator Community Approve Success',
+  props<{ communityId: string }>()
+);
+
+export const moderatorApproveFailure = createAction(
+  '[Community/API] Moderator Community Approve Failure',
+  props<{ error: any }>()
+);

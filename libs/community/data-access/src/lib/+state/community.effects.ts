@@ -5,6 +5,8 @@ import * as CommunityActions from './community.actions';
 import { AddCommunityService } from '../api/add-community.service';
 import { CommunitiesService } from '../api/communities.service';
 import { DeleteCommunityService } from '../api/delete-community.service';
+import { MemberRequestCommunityService } from '../api/member-request-community.service';
+import { MemberApproveCommunityService } from '../api/member-approve-community.service';
 
 @Injectable()
 export class CommunityEffects {
@@ -12,7 +14,9 @@ export class CommunityEffects {
     private readonly actions$: Actions,
     private readonly createCommunity: AddCommunityService,
     private readonly communities: CommunitiesService,
-    private readonly deleteCommunity: DeleteCommunityService
+    private readonly deleteCommunity: DeleteCommunityService,
+    private readonly memberRequestCommunityService: MemberRequestCommunityService,
+    private readonly memberApproveCommunityService: MemberApproveCommunityService
   ) {}
 
   initCommunityCreation$ = createEffect(() =>
@@ -51,6 +55,22 @@ export class CommunityEffects {
           ),
           catchError((error) =>
             of(CommunityActions.deleteCommunityFailure(error))
+          )
+        )
+      )
+    )
+  );
+
+  initModeratorRequest$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(CommunityActions.initModeratorApprove),
+      switchMap((action) =>
+        this.memberApproveCommunityService.moderatorApprove(action.communityId, action.moderatorId).pipe(
+          map((result) =>
+            CommunityActions.moderatorApproveSuccess({ communityId: result })
+          ),
+          catchError((error) =>
+            of(CommunityActions.moderatorApproveFailure(error))
           )
         )
       )

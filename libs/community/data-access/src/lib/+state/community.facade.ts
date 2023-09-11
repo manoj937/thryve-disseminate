@@ -35,4 +35,12 @@ export class CommunityFacade {
   initCommunityDeletion(communityId: string) {
     this.store.dispatch(CommunityActions.initCommunityDeletion({ communityId }));
   }
+
+  initModeratorRequest(communityId: string, moderatorId: string) {
+    this.store.dispatch(CommunityActions.initModeratorRequest({ communityId, moderatorId }));
+  }
+
+  initModeratorApprove(communityId: string, moderatorId: string) {
+    this.store.dispatch(CommunityActions.initModeratorApprove({ communityId, moderatorId }));
+  }
 }
