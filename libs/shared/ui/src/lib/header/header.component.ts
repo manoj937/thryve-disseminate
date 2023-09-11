@@ -46,6 +46,13 @@ export class HeaderComponent {
       .subscribe(value => {
         console.log(value);
         if(value){
+          if(value.includes('#')){
+            if(this.url.includes('community/qa')){
+              this.qaDetails.initLoadSearchQa('javascript')
+            } else {
+              this.blogsDetails.initLoadSearchBlogs('javascript');
+            }
+          }
           if(this.url.includes('community/qa')){
             this.qaDetails.initLoadSearchQa(value)
           } else {
