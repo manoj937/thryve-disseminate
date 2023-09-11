@@ -13,6 +13,7 @@ import { QaUiModule } from '@thryve-disseminate/qa/ui';
 import { BlogsFeatureModule } from '@thryve-disseminate/blogs/feature';
 import { BlogDetailComponent, BlogsComponent, AddBlogComponent } from '@thryve-disseminate/blogs/feature';
 import { AskCommunityComponent, CommunityQuestionsComponent } from '@thryve-disseminate/qa/feature';
+import { QaDetailComponent } from 'libs/qa/feature/src/lib/qa-detail/qa-detail.component';
 
 const routes: Route[] = [
   {
@@ -42,6 +43,14 @@ const routes: Route[] = [
       {
         path: 'qa',
         component: CommunityQuestionsComponent,
+      },
+      {
+        path: 'mythreads/:id',
+        component: CommunityQuestionsComponent,
+      },
+      {
+        path: 'qa/:id',
+        component: QaDetailComponent,
       },
       {
         path: 'ask-community',

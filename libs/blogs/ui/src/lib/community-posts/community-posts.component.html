@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="blogs">
+    <div *ngIf="!!blogsList?.length" class="blogs">
         <!-- <div class="post "> 
             <div class="hero-img">
                 <img  src="assets/blog_img2.jpg" class="avatar" alt="noimage">
@@ -73,5 +73,10 @@
             </div>
           </div>
         </ng-container>
+    </div>
+    <div *ngIf="!blogsList?.length" >
+<h4>
+    No Records Found
+</h4>
     </div>
 </div>

@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="blogs">  
-        <ng-container *ngFor="let blog of blogsList">
+    <div *ngIf="!!qaList?.length" class="blogs">  
+        <ng-container *ngFor="let blog of qaList">
         <div class="card">
             <div class="card-body">
-                  <h3 class="card-title">{{blog?.title}}</h3>
+                  <h3 class="card-title">{{blog?.question}}</h3>
                   <span class="card-text text-primary">
                     <ng-container *ngFor="let tag of blog?.tags">
                         {{tag}}
@@ -35,4 +35,9 @@
           </div>
         </ng-container>
     </div>
+    <ng-container  *ngIf="!qaList?.length" >
+        <h3>
+            No Records Found
+        </h3>
+    </ng-container>
 </div>

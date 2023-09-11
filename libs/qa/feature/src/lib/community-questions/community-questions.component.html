@@ -1,7 +1,7 @@
 <ng-container
   *ngIf="{
-    blogs: blogsDetails.allBlogs$ | async
+    qa: qaDetails.allQa$ | async
   } as data"
 >
-<thryve-disseminate-community-questions-ui [blogsList]="data.blogs"></thryve-disseminate-community-questions-ui>
+<thryve-disseminate-community-questions-ui [qaList]="data.qa"></thryve-disseminate-community-questions-ui>
 </ng-container>
