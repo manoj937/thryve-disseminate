@@ -4,9 +4,9 @@
       <button type="button" class="btn btn-primary">Add Community</button>
     </div>
     <ng-container *ngIf="!!communityList?.length">
-        <div *ngFor="let community of communityList" class="card1">
+        <div *ngFor="let community of communityList;; let i = index" class="card1">
             <div class="card-image">
-              <img [src]="'assets/community/1.jpg'" />
+              <img [src]="'assets/community/'+communities[i]+'.jpg'" />
             </div>
             <div class="card-text">
               <span class="date {{community.type.toLowerCase()}}-text">Created On {{community.createdOn}}</span>

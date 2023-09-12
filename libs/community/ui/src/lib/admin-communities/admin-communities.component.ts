@@ -15,6 +15,8 @@ export class AdminCommunitiesComponent {
   Math= Math;
   modalRef: MdbModalRef<ModalComponent> | null = null;
 
+  communities = ['3', '4', '1', '2', '5', '3', '4'];
+
   constructor(private modalService: MdbModalService) {}
 
   openModal() {
