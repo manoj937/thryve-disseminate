@@ -67,7 +67,7 @@
                     <i data-toggle="tooltip" data-placement="bottom" [title]="blog?.views + ' views'" class="px-2 action-icons fa fa-eye" aria-hidden="true"></i>
                     </div>
                 <div>
-                    <a href="#" class="btn btn-primary">Dive In</a>
+                    <a  [routerLink]="'/community/blogs/'+blog.blogId" class="btn btn-primary">Dive In</a>
                 </div>
             </div>
             </div>

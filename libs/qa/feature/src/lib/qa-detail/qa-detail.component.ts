@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { QaFacade } from '@thryve-disseminate/qa/data-access';
 import * as moment from 'moment/moment';
 @Component({
@@ -9,7 +10,8 @@ import * as moment from 'moment/moment';
 export class QaDetailComponent {
   moment: any = moment;
   todaysDate = new Date();
-  constructor(public qaDetails: QaFacade){
-    this.qaDetails.initLoadQaById('QA000');
+  constructor(public qaDetails: QaFacade, private router: Router){
+    console.log(this.router.url.split('/')[3])
+    this.qaDetails.initLoadQaById(this.router.url.split('/')[3]);
   }
 }
