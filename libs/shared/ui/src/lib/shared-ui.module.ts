@@ -10,7 +10,6 @@ import { AsideComponent } from './aside/aside.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ModalComponent } from './modal/modal.component';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
-import { EventFeatureModule } from '@thryve-disseminate/event/feature';
 
 @NgModule({
   imports: [
@@ -19,7 +18,6 @@ import { EventFeatureModule } from '@thryve-disseminate/event/feature';
     RouterModule,
     MdbModalModule,
     ReactiveFormsModule,
-    EventFeatureModule,
     BsDropdownModule.forRoot(),
     TypeaheadModule.forRoot(),
     CollapseModule.forRoot(),
