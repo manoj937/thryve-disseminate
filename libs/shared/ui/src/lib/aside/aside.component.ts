@@ -13,9 +13,8 @@ export class AsideComponent implements OnChanges {
     {type: "Content type", title: "Community Title", moderators: 65, src: "assets/2.jpg"},
     {type: "Content type", title: "Community Title", moderators: 65, src: "assets/1.jpg"}
   ];
-  constructor(){
-   
-  }
+  
+  images = ['thryve.png', 'fund.png', 'angular.png', 'member-portal.png', 'myehs.png', 'support.png', 'community.png'];
   ngOnChanges(changes: SimpleChanges): void {
     changes['communityList'].currentValue.forEach((value: any,i: any) => {
       this.communityList[i] = {...this.communityList[i], joinCommunity: Boolean(Math.random() < 0.8)}

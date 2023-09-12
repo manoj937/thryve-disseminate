@@ -1,5 +1,5 @@
 
-<div class="community" *ngIf="!!communityList?.length">
+<!-- <div class="community" *ngIf="!!communityList?.length">
     <h6>Communities</h6>
     <ul>
         <li *ngFor="let content of communityList; let i = index">
@@ -22,9 +22,70 @@
         </div>
         </li>
     </ul>
-</div>
-
-<div class="event">
+</div> -->
+<div class="card communities">
+    <h3>Communities</h3>
+    <ul>
+      <li *ngFor="let content of communityList; let i = index">
+        <span class="user">
+          <img [src]="'assets/'+images[i]">
+          <span class="user-details">
+            <span class="name">{{content?.title}}</span>
+            <span class="mail"><ng-container *ngFor="let tag of content.tags">
+                {{tag}}
+                </ng-container></span>
+                <span class="moderators"><p>{{content?.moderators?.length}} Moderators</p></span>
+          </span>
+          
+        </span>
+        <span class="actions">
+            <button *ngIf="content?.joinCommunity" type="button" (click)="join(i)" class="px-2 py-1 mx-3 btn btn-sm btn-outline-primary">Join</button>
+        </span>
+      </li>
+    </ul>
+  </div>
+<div class="card events">
+    <h3>Events</h3>
+    <ul>
+      <li>
+        <span class="user">
+          <img src="assets/calendar.png">
+          <span class="user-details">
+            <span class="name">Leadership Qualities - Seminar</span>
+            <span class="mail">Thryve Digital</span>
+          </span>
+        </span>
+        <span class="actions">
+          <p class="text-dark">Sep 15, 2023, 12:30</p>
+        </span>
+      </li>
+      <li>
+        <span class="user">
+          <img src="assets/calendar.png">
+          <span class="user-details">
+            <span class="name">UI/UX Webinar</span>
+            <span class="mail">Angular</span>
+          </span>
+        </span>
+        <span class="actions">
+          <p class="text-dark">Sep 22, 2023, 15:00</p>
+        </span>
+      </li>
+      <li>
+        <span class="user">
+          <img src="assets/calendar.png">
+          <span class="user-details">
+            <span class="name">Plant trees, Go Grren</span>
+            <span class="mail">Fund Raising</span>
+          </span>
+        </span>
+        <span class="actions">
+          <p class="text-dark">Sep 20, 2023, 13:00</p>
+        </span>
+      </li>
+    </ul>
+  </div>
+<!-- <div class="event">
     <h6>Events</h6>
     <ul>
         <li *ngFor="let content of sectionContent">
@@ -36,5 +97,5 @@
             </div>
         </li>
     </ul>
-</div>
+</div> -->
 

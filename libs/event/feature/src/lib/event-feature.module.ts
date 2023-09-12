@@ -15,6 +15,6 @@ const routes: Route[] = [
 @NgModule({
   imports: [CommonModule, RouterModule.forChild(routes)],
   declarations: [EventComponent, EventsWidgetComponent, EventsListComponent],
-  exports: [EventComponent, RouterModule],
+  exports: [EventComponent, RouterModule, EventsWidgetComponent],
 })
 export class EventFeatureModule {}
