@@ -1,0 +1,2663 @@
+{
+	"info": {
+		"_postman_id": "2b19f94b-2b79-4832-8aa8-ccd94d0bd43c",
+		"name": "Thryve Disseminate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6436321",
+		"_collection_link": "https://speeding-desert-127935.postman.co/workspace/New-Team-Workspace~4b42c8b3-769a-4926-89e2-89efdd432e4c/collection/6436321-2b19f94b-2b79-4832-8aa8-ccd94d0bd43c?action=share&source=collection_link&creator=6436321"
+	},
+	"item": [
+		{
+			"name": "Blogs",
+			"item": [
+				{
+					"name": "Add Blog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"moderatorId\": \"MOD000\",\r\n    \"communityId\": \"COM003\",\r\n    \"title\": \"Improve page performance and LCP with NgOptimizedImage\",\r\n    \"tags\": [\"#Angular\", \"#JavaScript\", \"#JS\", \"#WebDevelopment\", \"#frontend\", \"#Development\"],\r\n    \"bookmarks\": [\"MOD000\", \"MOD001\"],\r\n    \"content\": \"content\",\r\n    \"image\": \"assets/blog_1.jpg\",\r\n    \"time\": \"2023-08-07 11:32:00\",\r\n    \"likes\": \"70\",\r\n    \"comments\": \"13\",\r\n    \"views\": \"132\",\r\n    \"readTime\": \"6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/blogs",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"blogs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Blog",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"moderatorId\": \"MOD000\",\r\n    \"communityId\": \"COM003\",\r\n    \"title\": \"Improve page performance and LCP with NgOptimizedImage\",\r\n    \"tags\": [\"#Angular\", \"#JavaScript\", \"#JS\", \"#WebDevelopment\", \"#frontend\", \"#Development\"],\r\n    \"bookmarks\": [\"MOD000\", \"MOD001\"],\r\n    \"content\": \"content\",\r\n    \"image\": \"assets/blog_1.jpg\",\r\n    \"time\": \"2023-08-07 11:32:00\",\r\n    \"likes\": \"70\",\r\n    \"comments\": \"13\",\r\n    \"views\": \"132\",\r\n    \"readTime\": \"6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/blogs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"blogs"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "367"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16f-05c4UPkCgjWfIlNJLHS8ohNAzDQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 05:12:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"blogId\": \"BLOG000\",\n    \"moderatorId\": \"MOD000\",\n    \"communityId\": \"COM003\",\n    \"title\": \"Improve page performance and LCP with NgOptimizedImage\",\n    \"tags\": \"#Angular,#JavaScript,#JS,#WebDevelopment,#frontend,#Development\",\n    \"content\": \"content\",\n    \"bookmarks\": \"MOD000,MOD001\",\n    \"image\": \"assets/blog_1.jpg\",\n    \"time\": \"2023-08-07 11:32:00\",\n    \"likes\": \"70\",\n    \"comments\": \"13\",\n    \"views\": \"132\",\n    \"readTime\": \"6\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/blogs",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"blogs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Blogs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/blogs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"blogs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1076"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"434-qiBly2ysRWt6Pl2odYlhb6yBw8E\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Aug 2023 03:44:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"blogId\": \"BLOG001\",\n        \"memberId\": \"MEM001\",\n        \"communityId\": \"COM001\",\n        \"title\": \"Ukraine needs your help\",\n        \"bookmarks\": [\n            \"MEM001\",\n            \"MEM002\"\n        ],\n        \"tags\": [\n            \"#public\"\n        ],\n        \"content\": \"content\",\n        \"image\": \"assets/images/blog01.png\",\n        \"time\": \"2023-06-11 15:23:00\",\n        \"likes\": \"768\",\n        \"comments\": \"[\\\"content\\\"]\",\n        \"views\": \"2552\",\n        \"readTime\": \"5\"\n    },\n    {\n        \"blogId\": \"BLOG002\",\n        \"memberId\": \"MEM001\",\n        \"communityId\": \"COM012\",\n        \"title\": \"The Micro-Frontend Chaos (and how to solve it)\",\n        \"bookmarks\": [\n            \"MEM001\",\n            \"MEM002\"\n        ],\n        \"tags\": [\n            \"#frontend\",\n            \"#JavaScript\",\n            \"#WebDevelopment\",\n            \"#Development\"\n        ],\n        \"content\": \"content\",\n        \"image\": \"assets/images/blog01.png\",\n        \"time\": \"2023-06-11 15:23:00\",\n        \"likes\": \"45\",\n        \"comments\": \"[\\\"content\\\"]\",\n        \"views\": \"124\",\n        \"readTime\": \"12\"\n    },\n    {\n        \"blogId\": \"BLOG003\",\n        \"memberId\": \"MEM001\",\n        \"communityId\": \"COM014\",\n        \"title\": \"Improve page performance and LCP with NgOptimizedImage\",\n        \"bookmarks\": [\n            \"MEM001\",\n            \"MEM002\"\n        ],\n        \"tags\": [\n            \"#Angular\",\n            \"#JavaScript\",\n            \"#WebDevelopment\",\n            \"#frontend\",\n            \"#Development\"\n        ],\n        \"content\": \"content\",\n        \"image\": \"assets/images/blog01.png\",\n        \"time\": \"2023-06-11 15:23:00\",\n        \"likes\": \"245\",\n        \"comments\": \"[\\\"content\\\"]\",\n        \"views\": \"1324\",\n        \"readTime\": \"10\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Blog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/blogs/BLOG000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"blogs",
+								"BLOG000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Blog",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/blogs/BLOG000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"blogs",
+										"BLOG000"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "292"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"124-ddOZqTv4im7m8Rdj/BbVDDd8ZA4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Aug 2023 04:40:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"blogId\": \"BLOG000\",\n        \"memberId\": \"MEM001\",\n        \"communityId\": \"COM001\",\n        \"title\": \"Ukraine needs your help\",\n        \"bookmarks\": [\n            \"MEM001,MEM002\"\n        ],\n        \"tags\": [\n            \"#public\"\n        ],\n        \"content\": \"content\",\n        \"image\": \"assets/images/blog01.png\",\n        \"time\": \"2023-06-11 15:23:00\",\n        \"likes\": \"732\",\n        \"comments\": \"21\",\n        \"views\": \"2376\",\n        \"readTime\": \"4\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Blogs By Community",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/blogs/community/COM003",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"blogs",
+								"community",
+								"COM003"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Blogs By Community",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/blogs/community/COM002",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"blogs",
+										"community",
+										"COM002"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "358"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"166-JTBBJ55Dwd7g0RAf31IidihxlqY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Aug 2023 04:42:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"blogId\": \"BLOG001\",\n        \"memberId\": \"MEM001\",\n        \"communityId\": \"COM002\",\n        \"title\": \"The Micro-Frontend Chaos (and how to solve it)\",\n        \"bookmarks\": [\n            \"MEM001,MEM002\"\n        ],\n        \"tags\": [\n            \"#frontend,#JavaScript,#JS,#WebDevelopment,#Development\"\n        ],\n        \"content\": \"content\",\n        \"image\": \"assets/images/blog02.png\",\n        \"time\": \"2023-07-11 09:43:00\",\n        \"likes\": \"45\",\n        \"comments\": \"5\",\n        \"views\": \"67\",\n        \"readTime\": \"8\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "My Blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/blogs/moderator/MOD000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"blogs",
+								"moderator",
+								"MOD000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "My Blogs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/blogs/member/MEM001",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"blogs",
+										"member",
+										"MEM001"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1025"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"401-YfNCP0izlnIWr07NrhF0KWCq41w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Aug 2023 04:45:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"blogId\": \"BLOG000\",\n        \"memberId\": \"MEM001\",\n        \"communityId\": \"COM001\",\n        \"title\": \"Ukraine needs your help\",\n        \"bookmarks\": [\n            \"MEM001,MEM002\"\n        ],\n        \"tags\": [\n            \"#public\"\n        ],\n        \"content\": \"content\",\n        \"image\": \"assets/images/blog01.png\",\n        \"time\": \"2023-06-11 15:23:00\",\n        \"likes\": \"732\",\n        \"comments\": \"21\",\n        \"views\": \"2376\",\n        \"readTime\": \"4\"\n    },\n    {\n        \"blogId\": \"BLOG001\",\n        \"memberId\": \"MEM001\",\n        \"communityId\": \"COM002\",\n        \"title\": \"The Micro-Frontend Chaos (and how to solve it)\",\n        \"bookmarks\": [\n            \"MEM001,MEM002\"\n        ],\n        \"tags\": [\n            \"#frontend,#JavaScript,#JS,#WebDevelopment,#Development\"\n        ],\n        \"content\": \"content\",\n        \"image\": \"assets/images/blog02.png\",\n        \"time\": \"2023-07-11 09:43:00\",\n        \"likes\": \"45\",\n        \"comments\": \"5\",\n        \"views\": \"67\",\n        \"readTime\": \"8\"\n    },\n    {\n        \"blogId\": \"BLOG002\",\n        \"memberId\": \"MEM001\",\n        \"communityId\": \"COM003\",\n        \"title\": \"Improve page performance and LCP with NgOptimizedImage\",\n        \"bookmarks\": [\n            \"MEM001,MEM002\"\n        ],\n        \"tags\": [\n            \"#Angular,#JavaScript,#JS,#WebDevelopment,#frontend,#Development\"\n        ],\n        \"content\": \"content\",\n        \"image\": \"assets/images/blog03.png\",\n        \"time\": \"2023-08-07 11:32:00\",\n        \"likes\": \"70\",\n        \"comments\": \"13\",\n        \"views\": \"132\",\n        \"readTime\": \"6\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "My Blog Bookmarks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/blogs/bookmarks/MOD000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"blogs",
+								"bookmarks",
+								"MOD000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "My Bookmarks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/blogs/bookmarks/MOD000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"blogs",
+										"bookmarks",
+										"MOD000"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "379"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17b-wfxXOL0qlL2CRNVOouT9j1fc5dY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 05:15:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"blogId\": \"BLOG000\",\n        \"moderatorId\": \"MOD000\",\n        \"communityId\": \"COM003\",\n        \"title\": \"Improve page performance and LCP with NgOptimizedImage\",\n        \"bookmarks\": [\n            \"MOD000\",\n            \"MOD001\"\n        ],\n        \"tags\": [\n            \"#Angular\",\n            \"#JavaScript\",\n            \"#WebDevelopment\",\n            \"#frontend\",\n            \"#Development\"\n        ],\n        \"content\": \"content\",\n        \"image\": \"assets/blog_1.jpg\",\n        \"time\": \"2023-08-07 11:32:00\",\n        \"likes\": \"70\",\n        \"comments\": \"13\",\n        \"views\": \"132\",\n        \"readTime\": \"6\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Delete Blog",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/blogs/delete/BLOG000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"blogs",
+								"delete",
+								"BLOG000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Blog",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/blogs/delete/BLOG000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"blogs",
+										"delete",
+										"BLOG000"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "20"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14-EiE39OGx+AlRVUb2NNCuyCpVUdg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 05:53:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"blogId\": \"BLOG000\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Approve Blog",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/blogs/BLOG000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"blogs",
+								"BLOG000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Approve Blog",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/blogs/BLOG000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"blogs",
+										"BLOG000"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "20"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14-EiE39OGx+AlRVUb2NNCuyCpVUdg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 06:28:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"blogId\": \"BLOG000\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Search Blogs By Keyword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/blogs/search?keyword=performance and LCP",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"blogs",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "performance and LCP"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search Blogs By Keyword",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.thryve-disseminate.com/blogs/search?keyword=performance and LCP",
+									"protocol": "https",
+									"host": [
+										"api",
+										"thryve-disseminate",
+										"com"
+									],
+									"path": [
+										"blogs",
+										"search"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "performance and LCP"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 09:22:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-z4tmCctEZQgaoAPxtvwUrwdrD6Y\""
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"blogId\": \"BLOG000\",\n        \"moderatorId\": \"MOD000\",\n        \"communityId\": \"COM003\",\n        \"title\": \"Improve page performance and LCP with NgOptimizedImage\",\n        \"tags\": \"#Angular,#JavaScript,#JS,#WebDevelopment,#frontend,#Development\",\n        \"content\": \"content\",\n        \"bookmarks\": \"MOD000,MOD001\",\n        \"image\": \"assets/blog_1.jpg\",\n        \"time\": \"2023-08-07 11:32:00\",\n        \"likes\": \"70\",\n        \"comments\": \"13\",\n        \"views\": \"132\",\n        \"readTime\": \"6\",\n        \"pending\": false\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Communities",
+			"item": [
+				{
+					"name": "Communities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/communities",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"communities"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Communities",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/communities",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"communities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "344"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"158-BDxcxkIMYAxDmAfpR1bIj7iesc0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Aug 2023 11:20:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"communityId\": \"COM001\",\n        \"name\": \"Public\",\n        \"members\": [\n            \"MEM001\",\n            \"MEM002\"\n        ],\n        \"tags\": [\n            \"#Public\",\n            \"#Thryve\"\n        ]\n    },\n    {\n        \"communityId\": \"COM013\",\n        \"name\": \"Backend\",\n        \"members\": [\n            \"MEM001\",\n            \"MEM002\"\n        ],\n        \"tags\": [\n            \"#Backend\"\n        ]\n    },\n    {\n        \"communityId\": \"COM014\",\n        \"name\": \"Angular\",\n        \"members\": [\n            \"MEM001\",\n            \"MEM002\"\n        ],\n        \"tags\": [\n            \"#Angular\",\n            \"#JavaScript\",\n            \"#WebDevelopment\",\n            \"#frontend\",\n            \"#Development\"\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Community",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/communities/community/COM001",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"communities",
+								"community",
+								"COM001"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Community",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/communities/COM001",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"communities",
+										"COM001"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"63-icKmTv4q5OQmb75wj1JzhwciZKY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Aug 2023 15:23:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"communityId\": \"COM001\",\n    \"tags\": [\n        \"#Public\",\n        \"#Thryve\"\n    ],\n    \"members\": [\n        \"MEM001\",\n        \"MEM002\"\n    ],\n    \"name\": \"Public\"\n}"
+						}
+					]
+				},
+				{
+					"name": "My Communities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/communities/MOD000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"communities",
+								"MOD000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "My Communities",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/communities/MEM001",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"communities",
+										"MEM001"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "344"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"158-BDxcxkIMYAxDmAfpR1bIj7iesc0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Aug 2023 17:56:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"communityId\": \"COM001\",\n        \"name\": \"Public\",\n        \"members\": [\n            \"MEM001\",\n            \"MEM002\"\n        ],\n        \"tags\": [\n            \"#Public\",\n            \"#Thryve\"\n        ]\n    },\n    {\n        \"communityId\": \"COM013\",\n        \"name\": \"Backend\",\n        \"members\": [\n            \"MEM001\",\n            \"MEM002\"\n        ],\n        \"tags\": [\n            \"#Backend\"\n        ]\n    },\n    {\n        \"communityId\": \"COM014\",\n        \"name\": \"Angular\",\n        \"members\": [\n            \"MEM001\",\n            \"MEM002\"\n        ],\n        \"tags\": [\n            \"#Angular\",\n            \"#JavaScript\",\n            \"#WebDevelopment\",\n            \"#frontend\",\n            \"#Development\"\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Add Community",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Fund Raising\",\r\n    \"description\": \"Description about the fund raising community\",\r\n    \"moderatorId\": \"MOD000\",\r\n    \"moderators\": [\"MOD000\"],\r\n    \"tags\": [\"#fund\", \"#help\"],\r\n    \"type\": \"Fund raising\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/communities",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"communities"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Community",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Fund Raising\",\r\n    \"description\": \"Description about the fund raising community\",\r\n    \"moderatorId\": \"MOD000\",\r\n    \"moderators\": [\"MOD000\"],\r\n    \"tags\": [\"#fund\", \"#help\"],\r\n    \"type\": \"Fund raising\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/communities",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"communities"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "243"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f3-9icX0kYOBMvom6TWaNdeuUmr9Rk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 04:55:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"communityId\": \"COM001\",\n    \"moderatorId\": \"MOD000\",\n    \"title\": \"Fund Raising\",\n    \"description\": \"Description about the fund raising community\",\n    \"moderators\": \"MOD000\",\n    \"tags\": \"#fund,#help\",\n    \"type\": \"Fund raising\",\n    \"pendingApprovals\": \"\",\n    \"createdOn\": \"08-09-2023\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Community",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/communities/delete/COM000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"communities",
+								"delete",
+								"COM000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Community",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/communities/delete/COM000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"communities",
+										"delete",
+										"COM000"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18-EDQ+qglQDYbJplm/0u1FQFSE2bY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 05:01:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"communityId\": \"COM000\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Member Request To Community",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"moderatorId\": \"MOD002\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/communities/request/COM000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"communities",
+								"request",
+								"COM000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Member Request To Community",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"moderatorId\": \"MOD002\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/communities/request/COM000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"communities",
+										"request",
+										"COM000"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-dr7hWobjhhVe8KUcTnnp+in5Zb0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 07:03:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"communityId\": \"COM000\",\n    \"moderatorId\": \"MOD002\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Approve Member To Community",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"moderatorId\": \"MOD003\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/communities/approve/COM000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"communities",
+								"approve",
+								"COM000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Approve Member To Community",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"moderatorId\": \"MOD003\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/communities/approve/COM000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"communities",
+										"approve",
+										"COM000"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-Wed28qMoriRqsJ63+VHATGKf3G4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 08:02:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"communityId\": \"COM000\",\n    \"moderatorId\": \"MOD003\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Search Communities By Keyword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/communities/search?keyword=fund",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"communities",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "fund"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search Communities By Keyword",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.thryve-disseminate.com/communities/search?keyword=fund",
+									"protocol": "https",
+									"host": [
+										"api",
+										"thryve-disseminate",
+										"com"
+									],
+									"path": [
+										"communities",
+										"search"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "fund"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 09:25:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fb-aJOmr7N6usgO8qxC8hbZMYiP9Js\""
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"communityId\": \"COM000\",\n        \"moderatorId\": \"MOD000\",\n        \"title\": \"Fund Raising\",\n        \"description\": \"Description about the fund raising community\",\n        \"moderators\": \"MOD000\",\n        \"tags\": \"#fund,#help\",\n        \"type\": \"Fund raising\",\n        \"pendingApprovals\": \"MOD002\",\n        \"createdOn\": \"08-09-2023\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Qa",
+			"item": [
+				{
+					"name": "Qa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/qa/QA000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"qa",
+								"QA000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Qa",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/qa/QA000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"qa",
+										"QA000"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "418"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a2-Vn5JN1mLLgzLrpMWSq0IBAoGff0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 05:37:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"qaId\": \"QA000\",\n        \"moderatorId\": \"MOD000\",\n        \"communityId\": \"COM003\",\n        \"question\": \"How to improve page performance using JavaScript\",\n        \"bookmarks\": [\n            \"MOD000\",\n            \"MOD001\"\n        ],\n        \"tags\": [\n            \"#JavaScript\",\n            \"#WebDevelopment\",\n            \"#frontend\",\n            \"#Development\"\n        ],\n        \"detail\": \"I am trying to find better coding approach to improve my web application's performance using JS\",\n        \"time\": \"2023-08-07 11:32:00\",\n        \"answers\": [\n            \"undefined\"\n        ],\n        \"selectedAnswers\": [\n            \"undefined\"\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Qa List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/qa",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"qa"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Qa",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/qa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"qa"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "418"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a2-Vn5JN1mLLgzLrpMWSq0IBAoGff0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 05:36:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"qaId\": \"QA000\",\n        \"moderatorId\": \"MOD000\",\n        \"communityId\": \"COM003\",\n        \"question\": \"How to improve page performance using JavaScript\",\n        \"bookmarks\": [\n            \"MOD000\",\n            \"MOD001\"\n        ],\n        \"tags\": [\n            \"#JavaScript\",\n            \"#WebDevelopment\",\n            \"#frontend\",\n            \"#Development\"\n        ],\n        \"detail\": \"I am trying to find better coding approach to improve my web application's performance using JS\",\n        \"time\": \"2023-08-07 11:32:00\",\n        \"answers\": [\n            \"undefined\"\n        ],\n        \"selectedAnswers\": [\n            \"undefined\"\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Add Qa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"moderatorId\": \"MOD000\",\r\n    \"communityId\": \"COM003\",\r\n    \"question\": \"How to improve page performance using Angular\",\r\n    \"tags\": [\"#JavaScript\", \"#JS\", \"#WebDevelopment\", \"#frontend\", \"#Development\"],\r\n    \"bookmarks\": [\"MOD000\", \"MOD001\"],\r\n    \"detail\": \"I am trying to find better coding approach to improve my web application's performance using Angular\",\r\n    \"time\": \"2023-08-07 11:32:00\",\r\n    \"answers\": [],\r\n    \"selectedAnswers\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/qa",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"qa"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Qa",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"moderatorId\": \"MOD000\",\r\n    \"communityId\": \"COM003\",\r\n    \"question\": \"How to improve page performance using JavaScript\",\r\n    \"tags\": [\"#JavaScript\", \"#JS\", \"#WebDevelopment\", \"#frontend\", \"#Development\"],\r\n    \"bookmarks\": [\"MOD000\", \"MOD001\"],\r\n    \"detail\": \"I am trying to find better coding approach to improve my web application's performance using JS\",\r\n    \"time\": \"2023-08-07 11:32:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/qa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"qa"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "404"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"194-uUEnfrmVTDbfXTq+5rxrR2N8JB8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 05:36:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"qaId\": \"QA000\",\n    \"moderatorId\": \"MOD000\",\n    \"communityId\": \"COM003\",\n    \"question\": \"How to improve page performance using JavaScript\",\n    \"tags\": \"#JavaScript,#JS,#WebDevelopment,#frontend,#Development\",\n    \"detail\": \"I am trying to find better coding approach to improve my web application's performance using JS\",\n    \"bookmarks\": \"MOD000,MOD001\",\n    \"time\": \"2023-08-07 11:32:00\",\n    \"answers\": \"undefined\",\n    \"selectedAnswers\": \"undefined\"\n}"
+						},
+						{
+							"name": "Add Qa",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"moderatorId\": \"MOD000\",\r\n    \"communityId\": \"COM003\",\r\n    \"question\": \"How to improve page performance using Angular\",\r\n    \"tags\": [\"#JavaScript\", \"#JS\", \"#WebDevelopment\", \"#frontend\", \"#Development\"],\r\n    \"bookmarks\": [\"MOD000\", \"MOD001\"],\r\n    \"detail\": \"I am trying to find better coding approach to improve my web application's performance using Angular\",\r\n    \"time\": \"2023-08-07 11:32:00\",\r\n    \"answers\": [],\r\n    \"selectedAnswers\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/qa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"qa"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "388"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"184-o1HKH1kjy71Xp/pMYr2uUv5iiK8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 05:44:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"qaId\": \"QA001\",\n    \"moderatorId\": \"MOD000\",\n    \"communityId\": \"COM003\",\n    \"question\": \"How to improve page performance using Angular\",\n    \"tags\": \"#JavaScript,#JS,#WebDevelopment,#frontend,#Development\",\n    \"detail\": \"I am trying to find better coding approach to improve my web application's performance using Angular\",\n    \"bookmarks\": \"MOD000,MOD001\",\n    \"time\": \"2023-08-07 11:32:00\",\n    \"answers\": \"\",\n    \"selectedAnswers\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Qa By Community",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/qa/community/COM003",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"qa",
+								"community",
+								"COM003"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Qa By Community",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/qa/community/COM003",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"qa",
+										"community",
+										"COM003"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "418"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a2-Vn5JN1mLLgzLrpMWSq0IBAoGff0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 05:40:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"qaId\": \"QA000\",\n        \"moderatorId\": \"MOD000\",\n        \"communityId\": \"COM003\",\n        \"question\": \"How to improve page performance using JavaScript\",\n        \"bookmarks\": [\n            \"MOD000\",\n            \"MOD001\"\n        ],\n        \"tags\": [\n            \"#JavaScript\",\n            \"#WebDevelopment\",\n            \"#frontend\",\n            \"#Development\"\n        ],\n        \"detail\": \"I am trying to find better coding approach to improve my web application's performance using JS\",\n        \"time\": \"2023-08-07 11:32:00\",\n        \"answers\": [\n            \"undefined\"\n        ],\n        \"selectedAnswers\": [\n            \"undefined\"\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "My Qa Bookmarks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/qa/bookmarks/MOD001",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"qa",
+								"bookmarks",
+								"MOD001"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "My Qa Bookmarks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/qa/bookmarks/MOD001",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"qa",
+										"bookmarks",
+										"MOD001"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "418"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a2-Vn5JN1mLLgzLrpMWSq0IBAoGff0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 05:42:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"qaId\": \"QA000\",\n        \"moderatorId\": \"MOD000\",\n        \"communityId\": \"COM003\",\n        \"question\": \"How to improve page performance using JavaScript\",\n        \"bookmarks\": [\n            \"MOD000\",\n            \"MOD001\"\n        ],\n        \"tags\": [\n            \"#JavaScript\",\n            \"#WebDevelopment\",\n            \"#frontend\",\n            \"#Development\"\n        ],\n        \"detail\": \"I am trying to find better coding approach to improve my web application's performance using JS\",\n        \"time\": \"2023-08-07 11:32:00\",\n        \"answers\": [\n            \"undefined\"\n        ],\n        \"selectedAnswers\": [\n            \"undefined\"\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "My Qa List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/qa/moderator/MOD000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"qa",
+								"moderator",
+								"MOD000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "My Qa List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/qa/moderator/MOD000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"qa",
+										"moderator",
+										"MOD000"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "418"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a2-Vn5JN1mLLgzLrpMWSq0IBAoGff0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 05:41:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"qaId\": \"QA000\",\n        \"moderatorId\": \"MOD000\",\n        \"communityId\": \"COM003\",\n        \"question\": \"How to improve page performance using JavaScript\",\n        \"bookmarks\": [\n            \"MOD000\",\n            \"MOD001\"\n        ],\n        \"tags\": [\n            \"#JavaScript\",\n            \"#WebDevelopment\",\n            \"#frontend\",\n            \"#Development\"\n        ],\n        \"detail\": \"I am trying to find better coding approach to improve my web application's performance using JS\",\n        \"time\": \"2023-08-07 11:32:00\",\n        \"answers\": [\n            \"undefined\"\n        ],\n        \"selectedAnswers\": [\n            \"undefined\"\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Delete Qa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/qa/delete/QA000",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"qa",
+								"delete",
+								"QA000"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Qa",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/blogs/delete/QA000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"blogs",
+										"delete",
+										"QA000"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12-9hJGVAb4LRbyU+DvtlbOlg+9yUM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 05:54:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"blogId\": \"QA000\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Search Qa By Keyword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/qa/search?keyword=improve",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"qa",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "improve"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search Qa By Keyword",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.thryve-disseminate.com/qa/search?keyword=improve",
+									"protocol": "https",
+									"host": [
+										"api",
+										"thryve-disseminate",
+										"com"
+									],
+									"path": [
+										"qa",
+										"search"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "improve"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 09:26:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "795"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31b-VkLfK2Cgw/tKBbWo3GRYEMBwVgk\""
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"qaId\": \"QA000\",\n        \"moderatorId\": \"MOD000\",\n        \"communityId\": \"COM003\",\n        \"question\": \"How to improve page performance using JavaScript\",\n        \"tags\": \"#JavaScript,#JS,#WebDevelopment,#frontend,#Development\",\n        \"detail\": \"I am trying to find better coding approach to improve my web application's performance using JS\",\n        \"bookmarks\": \"MOD000,MOD001\",\n        \"time\": \"2023-08-07 11:32:00\",\n        \"answers\": \"undefined\",\n        \"selectedAnswers\": \"undefined\"\n    },\n    {\n        \"qaId\": \"QA001\",\n        \"moderatorId\": \"MOD000\",\n        \"communityId\": \"COM003\",\n        \"question\": \"How to improve page performance using Angular\",\n        \"tags\": \"#JavaScript,#JS,#WebDevelopment,#frontend,#Development\",\n        \"detail\": \"I am trying to find better coding approach to improve my web application's performance using Angular\",\n        \"bookmarks\": \"MOD000,MOD001\",\n        \"time\": \"2023-08-07 11:32:00\",\n        \"answers\": \"\",\n        \"selectedAnswers\": \"\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"manoj.selvam@thryvedigital.com\",\r\n    \"password\": \"Thryve@123\",\r\n    \"isAdmin\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"manoj.selvam@thryvedigital.com\",\r\n    \"password\": \"Thryve@123\",\r\n    \"isAdmin\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-dtC3FSZmqN/sxjB9/AsztsDJLqM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Aug 2023 09:21:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Login successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"manoj.selvam@thryvedigital.com\",\r\n    \"name\": \"Manoj\",\r\n    \"password\": \"Admin@123\",\r\n    \"isAdmin\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/register",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"manoj.selvam@thryvedigital.com\",\r\n    \"name\": \"Manoj\",\r\n    \"password\": \"Thryve@123\",\r\n    \"loginas\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "152"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"98-JMiBHkS6dffy3kifs6Anb4jmGIw\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 04:24:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"moderatorId\": \"MOD000\",\n    \"name\": \"Manoj\",\n    \"email\": \"manoj.selvam@thryvedigital.com\",\n    \"userPassword\": \"Thryve@123\",\n    \"isAdmin\": true,\n    \"adminPassword\": \"Thryve@123\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"manoj.selvam@thryvedigital.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/login/forget-password",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"login",
+								"forget-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Forgot Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"manoj.selvam@thryvedigital.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/login/forget-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"login",
+										"forget-password"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-GJdlruhPX2sfaPgogrbCvSVerkY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Aug 2023 09:43:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"User Exist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"memberId\": \"MEM000\",\r\n    \"password\": \"Admin@123\",\r\n    \"isAdmin\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/login/reset-password",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"login",
+								"reset-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Reset Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"memberId\": \"MEM000\",\r\n    \"password\": \"Admin@123\",\r\n    \"isAdmin\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/login/reset-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"login",
+										"reset-password"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"72-zSRccXL+J1A3o+WcKpV52Sti/Uk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Aug 2023 10:00:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Password updated successfully\",\n    \"data\": {\n        \"memberId\": \"MEM000\",\n        \"password\": \"Admin@123\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Moderators",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thryve-disseminate.com/moderators",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thryve-disseminate",
+								"com"
+							],
+							"path": [
+								"moderators"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Moderators",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/moderators",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"moderators"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "97"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"61-CgUfYJ6jSuiAVZnEPJD/XVidAIk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 08 Sep 2023 05:17:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"moderatorId\": \"MOD000\",\n        \"name\": \"Manoj\",\n        \"email\": \"manoj.selvam@thryvedigital.com\",\n        \"isAdmin\": true\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}
